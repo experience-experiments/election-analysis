@@ -1,0 +1,2586 @@
+[
+  {
+    "Seat":"seat-1",
+    "Constituency":"Aberavon"
+  },
+  {
+    "Seat":"seat-7",
+    "Constituency":"Aldershot"
+  },
+  {
+    "Seat":"seat-8",
+    "Constituency":"Aldridge-Brownhills"
+  },
+  {
+    "Seat":"seat-9",
+    "Constituency":"Altrincham & Sale West"
+  },
+  {
+    "Seat":"seat-10",
+    "Constituency":"Alyn & Deeside"
+  },
+  {
+    "Seat":"seat-11",
+    "Constituency":"Amber Valley"
+  },
+  {
+    "Seat":"seat-17",
+    "Constituency":"Arundel & South Downs"
+  },
+  {
+    "Seat":"seat-18",
+    "Constituency":"Ashfield"
+  },
+  {
+    "Seat":"seat-19",
+    "Constituency":"Ashford"
+  },
+  {
+    "Seat":"seat-20",
+    "Constituency":"Ashton-under-Lyne"
+  },
+  {
+    "Seat":"seat-21",
+    "Constituency":"Aylesbury"
+  },
+  {
+    "Seat":"seat-23",
+    "Constituency":"Banbury"
+  },
+  {
+    "Seat":"seat-25",
+    "Constituency":"Barking"
+  },
+  {
+    "Seat":"seat-26",
+    "Constituency":"Barnsley Central"
+  },
+  {
+    "Seat":"seat-27",
+    "Constituency":"Barnsley East & Mexborough"
+  },
+  {
+    "Seat":"seat-28",
+    "Constituency":"Barnsley West & Penistone"
+  },
+  {
+    "Seat":"seat-29",
+    "Constituency":"Barrow & Furness"
+  },
+  {
+    "Seat":"seat-30",
+    "Constituency":"Basildon"
+  },
+  {
+    "Seat":"seat-31",
+    "Constituency":"Basingstoke"
+  },
+  {
+    "Seat":"seat-32",
+    "Constituency":"Bassetlaw"
+  },
+  {
+    "Seat":"seat-33",
+    "Constituency":"Bath"
+  },
+  {
+    "Seat":"seat-34",
+    "Constituency":"Batley & Spen"
+  },
+  {
+    "Seat":"seat-35",
+    "Constituency":"Battersea"
+  },
+  {
+    "Seat":"seat-36",
+    "Constituency":"Beaconsfield"
+  },
+  {
+    "Seat":"seat-37",
+    "Constituency":"Beckenham"
+  },
+  {
+    "Seat":"seat-38",
+    "Constituency":"Bedford"
+  },
+  {
+    "Seat":"seat-42",
+    "Constituency":"Belfast East"
+  },
+  {
+    "Seat":"seat-43",
+    "Constituency":"Belfast North"
+  },
+  {
+    "Seat":"seat-44",
+    "Constituency":"Belfast South"
+  },
+  {
+    "Seat":"seat-45",
+    "Constituency":"Belfast West"
+  },
+  {
+    "Seat":"seat-46",
+    "Constituency":"Berwick-upon-Tweed"
+  },
+  {
+    "Seat":"seat-47",
+    "Constituency":"Bethnal Green & Bow"
+  },
+  {
+    "Seat":"seat-48",
+    "Constituency":"Beverley & Holderness"
+  },
+  {
+    "Seat":"seat-49",
+    "Constituency":"Bexhill & Battle"
+  },
+  {
+    "Seat":"seat-50",
+    "Constituency":"Bexleyheath & Crayford"
+  },
+  {
+    "Seat":"seat-51",
+    "Constituency":"Billericay"
+  },
+  {
+    "Seat":"seat-52",
+    "Constituency":"Birkenhead"
+  },
+  {
+    "Seat":"seat-53",
+    "Constituency":"Birmingham, Edgbaston"
+  },
+  {
+    "Seat":"seat-54",
+    "Constituency":"Birmingham, Erdington"
+  },
+  {
+    "Seat":"seat-55",
+    "Constituency":"Birmingham, Hall Green"
+  },
+  {
+    "Seat":"seat-56",
+    "Constituency":"Birmingham, Hodge Hill"
+  },
+  {
+    "Seat":"seat-57",
+    "Constituency":"Birmingham, Ladywood"
+  },
+  {
+    "Seat":"seat-58",
+    "Constituency":"Birmingham, Northfield"
+  },
+  {
+    "Seat":"seat-59",
+    "Constituency":"Birmingham, Perry Barr"
+  },
+  {
+    "Seat":"seat-60",
+    "Constituency":"Birmingham, Selly Oak"
+  },
+  {
+    "Seat":"seat-61",
+    "Constituency":"Birmingham, Sparkbrook & Small Heath"
+  },
+  {
+    "Seat":"seat-62",
+    "Constituency":"Birmingham, Yardley"
+  },
+  {
+    "Seat":"seat-63",
+    "Constituency":"Bishop Auckland"
+  },
+  {
+    "Seat":"seat-64",
+    "Constituency":"Blaby"
+  },
+  {
+    "Seat":"seat-65",
+    "Constituency":"Blackburn"
+  },
+  {
+    "Seat":"seat-66",
+    "Constituency":"Blackpool North & Fleetwood"
+  },
+  {
+    "Seat":"seat-67",
+    "Constituency":"Blackpool South"
+  },
+  {
+    "Seat":"seat-68",
+    "Constituency":"Blaenau Gwent"
+  },
+  {
+    "Seat":"seat-69",
+    "Constituency":"Blaydon"
+  },
+  {
+    "Seat":"seat-70",
+    "Constituency":"Blyth Valley"
+  },
+  {
+    "Seat":"seat-71",
+    "Constituency":"Bognor Regis & Littlehampton"
+  },
+  {
+    "Seat":"seat-72",
+    "Constituency":"Bolsover"
+  },
+  {
+    "Seat":"seat-73",
+    "Constituency":"Bolton North East"
+  },
+  {
+    "Seat":"seat-74",
+    "Constituency":"Bolton South East"
+  },
+  {
+    "Seat":"seat-75",
+    "Constituency":"Bolton West"
+  },
+  {
+    "Seat":"seat-76",
+    "Constituency":"Bootle"
+  },
+  {
+    "Seat":"seat-77",
+    "Constituency":"Boston & Skegness"
+  },
+  {
+    "Seat":"seat-78",
+    "Constituency":"Bosworth"
+  },
+  {
+    "Seat":"seat-79",
+    "Constituency":"Bournemouth East"
+  },
+  {
+    "Seat":"seat-80",
+    "Constituency":"Bournemouth West"
+  },
+  {
+    "Seat":"seat-81",
+    "Constituency":"Bracknell"
+  },
+  {
+    "Seat":"seat-82",
+    "Constituency":"Bradford North"
+  },
+  {
+    "Seat":"seat-83",
+    "Constituency":"Bradford South"
+  },
+  {
+    "Seat":"seat-84",
+    "Constituency":"Bradford West"
+  },
+  {
+    "Seat":"seat-85",
+    "Constituency":"Braintree"
+  },
+  {
+    "Seat":"seat-86",
+    "Constituency":"Brecon & Radnorshire"
+  },
+  {
+    "Seat":"seat-87",
+    "Constituency":"Brent East"
+  },
+  {
+    "Seat":"seat-88",
+    "Constituency":"Brent North"
+  },
+  {
+    "Seat":"seat-89",
+    "Constituency":"Brent South"
+  },
+  {
+    "Seat":"seat-90",
+    "Constituency":"Brentford & Isleworth"
+  },
+  {
+    "Seat":"seat-91",
+    "Constituency":"Brentwood & Ongar"
+  },
+  {
+    "Seat":"seat-92",
+    "Constituency":"Bridgend"
+  },
+  {
+    "Seat":"seat-93",
+    "Constituency":"Bridgwater"
+  },
+  {
+    "Seat":"seat-94",
+    "Constituency":"Brigg & Goole"
+  },
+  {
+    "Seat":"seat-95",
+    "Constituency":"Brighton, Kemptown"
+  },
+  {
+    "Seat":"seat-96",
+    "Constituency":"Brighton, Pavilion"
+  },
+  {
+    "Seat":"seat-97",
+    "Constituency":"Bristol East"
+  },
+  {
+    "Seat":"seat-98",
+    "Constituency":"Bristol North West"
+  },
+  {
+    "Seat":"seat-99",
+    "Constituency":"Bristol South"
+  },
+  {
+    "Seat":"seat-100",
+    "Constituency":"Bristol West"
+  },
+  {
+    "Seat":"seat-101",
+    "Constituency":"Bromley & Chislehurst"
+  },
+  {
+    "Seat":"seat-102",
+    "Constituency":"Bromsgrove"
+  },
+  {
+    "Seat":"seat-103",
+    "Constituency":"Broxbourne"
+  },
+  {
+    "Seat":"seat-104",
+    "Constituency":"Broxtowe"
+  },
+  {
+    "Seat":"seat-105",
+    "Constituency":"Buckingham"
+  },
+  {
+    "Seat":"seat-106",
+    "Constituency":"Burnley"
+  },
+  {
+    "Seat":"seat-107",
+    "Constituency":"Burton"
+  },
+  {
+    "Seat":"seat-108",
+    "Constituency":"Bury North"
+  },
+  {
+    "Seat":"seat-109",
+    "Constituency":"Bury South"
+  },
+  {
+    "Seat":"seat-110",
+    "Constituency":"Bury St Edmunds"
+  },
+  {
+    "Seat":"seat-111",
+    "Constituency":"Caernarfon"
+  },
+  {
+    "Seat":"seat-112",
+    "Constituency":"Caerphilly"
+  },
+  {
+    "Seat":"seat-114",
+    "Constituency":"Calder Valley"
+  },
+  {
+    "Seat":"seat-115",
+    "Constituency":"Camberwell & Peckham"
+  },
+  {
+    "Seat":"seat-116",
+    "Constituency":"Cambridge"
+  },
+  {
+    "Seat":"seat-121",
+    "Constituency":"Cannock Chase"
+  },
+  {
+    "Seat":"seat-122",
+    "Constituency":"Canterbury"
+  },
+  {
+    "Seat":"seat-123",
+    "Constituency":"Cardiff Central"
+  },
+  {
+    "Seat":"seat-124",
+    "Constituency":"Cardiff North"
+  },
+  {
+    "Seat":"seat-125",
+    "Constituency":"Cardiff South & Penarth"
+  },
+  {
+    "Seat":"seat-126",
+    "Constituency":"Cardiff West"
+  },
+  {
+    "Seat":"seat-127",
+    "Constituency":"Carlisle"
+  },
+  {
+    "Seat":"seat-128",
+    "Constituency":"Carmarthen East & Dinefwr"
+  },
+  {
+    "Seat":"seat-129",
+    "Constituency":"Carmarthen West & South Pembrokeshire"
+  },
+  {
+    "Seat":"seat-131",
+    "Constituency":"Carshalton & Wallington"
+  },
+  {
+    "Seat":"seat-132",
+    "Constituency":"Castle Point"
+  },
+  {
+    "Seat":"seat-553",
+    "Constituency":"Central Suffolk & North Ipswich"
+  },
+  {
+    "Seat":"seat-133",
+    "Constituency":"Ceredigion"
+  },
+  {
+    "Seat":"seat-134",
+    "Constituency":"Charnwood"
+  },
+  {
+    "Seat":"seat-135",
+    "Constituency":"Chatham & Aylesford"
+  },
+  {
+    "Seat":"seat-136",
+    "Constituency":"Cheadle"
+  },
+  {
+    "Seat":"seat-138",
+    "Constituency":"Cheltenham"
+  },
+  {
+    "Seat":"seat-139",
+    "Constituency":"Chesham & Amersham"
+  },
+  {
+    "Seat":"seat-140",
+    "Constituency":"Chester, City of"
+  },
+  {
+    "Seat":"seat-141",
+    "Constituency":"Chesterfield"
+  },
+  {
+    "Seat":"seat-142",
+    "Constituency":"Chichester"
+  },
+  {
+    "Seat":"seat-143",
+    "Constituency":"Chingford & Woodford Green"
+  },
+  {
+    "Seat":"seat-144",
+    "Constituency":"Chipping Barnet"
+  },
+  {
+    "Seat":"seat-145",
+    "Constituency":"Chorley"
+  },
+  {
+    "Seat":"seat-146",
+    "Constituency":"Christchurch"
+  },
+  {
+    "Seat":"seat-147",
+    "Constituency":"Cities of London & Westminster"
+  },
+  {
+    "Seat":"seat-148",
+    "Constituency":"Cleethorpes"
+  },
+  {
+    "Seat":"seat-149",
+    "Constituency":"Clwyd South"
+  },
+  {
+    "Seat":"seat-150",
+    "Constituency":"Clwyd West"
+  },
+  {
+    "Seat":"seat-154",
+    "Constituency":"Colchester"
+  },
+  {
+    "Seat":"seat-155",
+    "Constituency":"Colne Valley"
+  },
+  {
+    "Seat":"seat-156",
+    "Constituency":"Congleton"
+  },
+  {
+    "Seat":"seat-157",
+    "Constituency":"Conwy"
+  },
+  {
+    "Seat":"seat-158",
+    "Constituency":"Copeland"
+  },
+  {
+    "Seat":"seat-159",
+    "Constituency":"Corby"
+  },
+  {
+    "Seat":"seat-162",
+    "Constituency":"Cotswold"
+  },
+  {
+    "Seat":"seat-163",
+    "Constituency":"Coventry North East"
+  },
+  {
+    "Seat":"seat-164",
+    "Constituency":"Coventry North West"
+  },
+  {
+    "Seat":"seat-165",
+    "Constituency":"Coventry South"
+  },
+  {
+    "Seat":"seat-166",
+    "Constituency":"Crawley"
+  },
+  {
+    "Seat":"seat-167",
+    "Constituency":"Crewe & Nantwich"
+  },
+  {
+    "Seat":"seat-168",
+    "Constituency":"Crosby"
+  },
+  {
+    "Seat":"seat-169",
+    "Constituency":"Croydon Central"
+  },
+  {
+    "Seat":"seat-170",
+    "Constituency":"Croydon North"
+  },
+  {
+    "Seat":"seat-171",
+    "Constituency":"Croydon South"
+  },
+  {
+    "Seat":"seat-175",
+    "Constituency":"Cynon Valley"
+  },
+  {
+    "Seat":"seat-176",
+    "Constituency":"Dagenham"
+  },
+  {
+    "Seat":"seat-177",
+    "Constituency":"Darlington"
+  },
+  {
+    "Seat":"seat-178",
+    "Constituency":"Dartford"
+  },
+  {
+    "Seat":"seat-179",
+    "Constituency":"Daventry"
+  },
+  {
+    "Seat":"seat-180",
+    "Constituency":"Delyn"
+  },
+  {
+    "Seat":"seat-181",
+    "Constituency":"Denton & Reddish"
+  },
+  {
+    "Seat":"seat-182",
+    "Constituency":"Derby North"
+  },
+  {
+    "Seat":"seat-183",
+    "Constituency":"Derby South"
+  },
+  {
+    "Seat":"seat-187",
+    "Constituency":"Devizes"
+  },
+  {
+    "Seat":"seat-192",
+    "Constituency":"Dewsbury"
+  },
+  {
+    "Seat":"seat-193",
+    "Constituency":"Don Valley"
+  },
+  {
+    "Seat":"seat-194",
+    "Constituency":"Doncaster Central"
+  },
+  {
+    "Seat":"seat-195",
+    "Constituency":"Doncaster North"
+  },
+  {
+    "Seat":"seat-200",
+    "Constituency":"Dover"
+  },
+  {
+    "Seat":"seat-203",
+    "Constituency":"Dudley North"
+  },
+  {
+    "Seat":"seat-204",
+    "Constituency":"Dudley South"
+  },
+  {
+    "Seat":"seat-205",
+    "Constituency":"Dulwich & West Norwood"
+  },
+  {
+    "Seat":"seat-214",
+    "Constituency":"Durham, City of"
+  },
+  {
+    "Seat":"seat-216",
+    "Constituency":"Ealing North"
+  },
+  {
+    "Seat":"seat-215",
+    "Constituency":"Ealing, Acton & Shepherd\\'s Bush"
+  },
+  {
+    "Seat":"seat-217",
+    "Constituency":"Ealing, Southall"
+  },
+  {
+    "Seat":"seat-218",
+    "Constituency":"Easington"
+  },
+  {
+    "Seat":"seat-13",
+    "Constituency":"East Antrim"
+  },
+  {
+    "Seat":"seat-188",
+    "Constituency":"East Devon"
+  },
+  {
+    "Seat":"seat-219",
+    "Constituency":"East Ham"
+  },
+  {
+    "Seat":"seat-295",
+    "Constituency":"East Hampshire"
+  },
+  {
+    "Seat":"seat-382",
+    "Constituency":"East Londonderry"
+  },
+  {
+    "Seat":"seat-559",
+    "Constituency":"East Surrey"
+  },
+  {
+    "Seat":"seat-649",
+    "Constituency":"East Worthing & Shoreham"
+  },
+  {
+    "Seat":"seat-659",
+    "Constituency":"East Yorkshire"
+  },
+  {
+    "Seat":"seat-222",
+    "Constituency":"Eastbourne"
+  },
+  {
+    "Seat":"seat-223",
+    "Constituency":"Eastleigh"
+  },
+  {
+    "Seat":"seat-725",
+    "Constituency":"Renfrewshire East"
+  },
+  {
+    "Seat":"seat-225",
+    "Constituency":"Eccles"
+  },
+  {
+    "Seat":"seat-226",
+    "Constituency":"Eddisbury"
+  },
+  {
+    "Seat":"seat-233",
+    "Constituency":"Edmonton"
+  },
+  {
+    "Seat":"seat-234",
+    "Constituency":"Ellesmere Port & Neston"
+  },
+  {
+    "Seat":"seat-235",
+    "Constituency":"Elmet"
+  },
+  {
+    "Seat":"seat-236",
+    "Constituency":"Eltham"
+  },
+  {
+    "Seat":"seat-237",
+    "Constituency":"Enfield North"
+  },
+  {
+    "Seat":"seat-238",
+    "Constituency":"Enfield, Southgate"
+  },
+  {
+    "Seat":"seat-239",
+    "Constituency":"Epping Forest"
+  },
+  {
+    "Seat":"seat-240",
+    "Constituency":"Epsom & Ewell"
+  },
+  {
+    "Seat":"seat-241",
+    "Constituency":"Erewash"
+  },
+  {
+    "Seat":"seat-242",
+    "Constituency":"Erith & Thamesmead"
+  },
+  {
+    "Seat":"seat-243",
+    "Constituency":"Esher & Walton"
+  },
+  {
+    "Seat":"seat-245",
+    "Constituency":"Exeter"
+  },
+  {
+    "Seat":"seat-248",
+    "Constituency":"Falmouth & Camborne"
+  },
+  {
+    "Seat":"seat-249",
+    "Constituency":"Fareham"
+  },
+  {
+    "Seat":"seat-250",
+    "Constituency":"Faversham & Mid Kent"
+  },
+  {
+    "Seat":"seat-251",
+    "Constituency":"Feltham & Heston"
+  },
+  {
+    "Seat":"seat-252",
+    "Constituency":"Fermanagh & South Tyrone"
+  },
+  {
+    "Seat":"seat-255",
+    "Constituency":"Finchley & Golders Green"
+  },
+  {
+    "Seat":"seat-256",
+    "Constituency":"Folkestone & Hythe"
+  },
+  {
+    "Seat":"seat-257",
+    "Constituency":"Forest of Dean"
+  },
+  {
+    "Seat":"seat-258",
+    "Constituency":"Foyle"
+  },
+  {
+    "Seat":"seat-259",
+    "Constituency":"Fylde"
+  },
+  {
+    "Seat":"seat-260",
+    "Constituency":"Gainsborough"
+  },
+  {
+    "Seat":"seat-262",
+    "Constituency":"Gateshead East & Washington West"
+  },
+  {
+    "Seat":"seat-263",
+    "Constituency":"Gedling"
+  },
+  {
+    "Seat":"seat-264",
+    "Constituency":"Gillingham"
+  },
+  {
+    "Seat":"seat-275",
+    "Constituency":"Gloucester"
+  },
+  {
+    "Seat":"seat-277",
+    "Constituency":"Gosport"
+  },
+  {
+    "Seat":"seat-278",
+    "Constituency":"Gower"
+  },
+  {
+    "Seat":"seat-279",
+    "Constituency":"Grantham & Stamford"
+  },
+  {
+    "Seat":"seat-280",
+    "Constituency":"Gravesham"
+  },
+  {
+    "Seat":"seat-281",
+    "Constituency":"Great Grimsby"
+  },
+  {
+    "Seat":"seat-282",
+    "Constituency":"Great Yarmouth"
+  },
+  {
+    "Seat":"seat-284",
+    "Constituency":"Greenwich & Woolwich"
+  },
+  {
+    "Seat":"seat-285",
+    "Constituency":"Guildford"
+  },
+  {
+    "Seat":"seat-286",
+    "Constituency":"Hackney North & Stoke Newington"
+  },
+  {
+    "Seat":"seat-287",
+    "Constituency":"Hackney South & Shoreditch"
+  },
+  {
+    "Seat":"seat-288",
+    "Constituency":"Halesowen & Rowley Regis"
+  },
+  {
+    "Seat":"seat-289",
+    "Constituency":"Halifax"
+  },
+  {
+    "Seat":"seat-290",
+    "Constituency":"Haltemprice & Howden"
+  },
+  {
+    "Seat":"seat-291",
+    "Constituency":"Halton"
+  },
+  {
+    "Seat":"seat-294",
+    "Constituency":"Hammersmith & Fulham"
+  },
+  {
+    "Seat":"seat-298",
+    "Constituency":"Hampstead & Highgate"
+  },
+  {
+    "Seat":"seat-299",
+    "Constituency":"Harborough"
+  },
+  {
+    "Seat":"seat-300",
+    "Constituency":"Harlow"
+  },
+  {
+    "Seat":"seat-301",
+    "Constituency":"Harrogate & Knaresborough"
+  },
+  {
+    "Seat":"seat-302",
+    "Constituency":"Harrow East"
+  },
+  {
+    "Seat":"seat-303",
+    "Constituency":"Harrow West"
+  },
+  {
+    "Seat":"seat-304",
+    "Constituency":"Hartlepool"
+  },
+  {
+    "Seat":"seat-305",
+    "Constituency":"Harwich"
+  },
+  {
+    "Seat":"seat-306",
+    "Constituency":"Hastings & Rye"
+  },
+  {
+    "Seat":"seat-307",
+    "Constituency":"Havant"
+  },
+  {
+    "Seat":"seat-308",
+    "Constituency":"Hayes & Harlington"
+  },
+  {
+    "Seat":"seat-309",
+    "Constituency":"Hazel Grove"
+  },
+  {
+    "Seat":"seat-310",
+    "Constituency":"Hemel Hempstead"
+  },
+  {
+    "Seat":"seat-311",
+    "Constituency":"Hemsworth"
+  },
+  {
+    "Seat":"seat-312",
+    "Constituency":"Hendon"
+  },
+  {
+    "Seat":"seat-313",
+    "Constituency":"Henley"
+  },
+  {
+    "Seat":"seat-314",
+    "Constituency":"Hereford"
+  },
+  {
+    "Seat":"seat-315",
+    "Constituency":"Hertford & Stortford"
+  },
+  {
+    "Seat":"seat-318",
+    "Constituency":"Hertsmere"
+  },
+  {
+    "Seat":"seat-319",
+    "Constituency":"Hexham"
+  },
+  {
+    "Seat":"seat-320",
+    "Constituency":"Heywood & Middleton"
+  },
+  {
+    "Seat":"seat-321",
+    "Constituency":"High Peak"
+  },
+  {
+    "Seat":"seat-322",
+    "Constituency":"Hitchin & Harpenden"
+  },
+  {
+    "Seat":"seat-323",
+    "Constituency":"Holborn & St Pancras"
+  },
+  {
+    "Seat":"seat-324",
+    "Constituency":"Hornchurch"
+  },
+  {
+    "Seat":"seat-325",
+    "Constituency":"Hornsey & Wood Green"
+  },
+  {
+    "Seat":"seat-326",
+    "Constituency":"Horsham"
+  },
+  {
+    "Seat":"seat-327",
+    "Constituency":"Houghton & Washington East"
+  },
+  {
+    "Seat":"seat-328",
+    "Constituency":"Hove"
+  },
+  {
+    "Seat":"seat-329",
+    "Constituency":"Huddersfield"
+  },
+  {
+    "Seat":"seat-333",
+    "Constituency":"Huntingdon"
+  },
+  {
+    "Seat":"seat-334",
+    "Constituency":"Hyndburn"
+  },
+  {
+    "Seat":"seat-335",
+    "Constituency":"Ilford North"
+  },
+  {
+    "Seat":"seat-336",
+    "Constituency":"Ilford South"
+  },
+  {
+    "Seat":"seat-338",
+    "Constituency":"Ipswich"
+  },
+  {
+    "Seat":"seat-339",
+    "Constituency":"Isle of Wight"
+  },
+  {
+    "Seat":"seat-340",
+    "Constituency":"Islington North"
+  },
+  {
+    "Seat":"seat-341",
+    "Constituency":"Islington South & Finsbury"
+  },
+  {
+    "Seat":"seat-342",
+    "Constituency":"Islwyn"
+  },
+  {
+    "Seat":"seat-343",
+    "Constituency":"Jarrow"
+  },
+  {
+    "Seat":"seat-344",
+    "Constituency":"Keighley"
+  },
+  {
+    "Seat":"seat-345",
+    "Constituency":"Kensington & Chelsea"
+  },
+  {
+    "Seat":"seat-346",
+    "Constituency":"Kettering"
+  },
+  {
+    "Seat":"seat-348",
+    "Constituency":"Kingston & Surbiton"
+  },
+  {
+    "Seat":"seat-330",
+    "Constituency":"Kingston upon Hull East"
+  },
+  {
+    "Seat":"seat-331",
+    "Constituency":"Kingston upon Hull North"
+  },
+  {
+    "Seat":"seat-332",
+    "Constituency":"Kingston upon Hull West & Hessle"
+  },
+  {
+    "Seat":"seat-349",
+    "Constituency":"Kingswood"
+  },
+  {
+    "Seat":"seat-351",
+    "Constituency":"Knowsley North & Sefton East"
+  },
+  {
+    "Seat":"seat-352",
+    "Constituency":"Knowsley South"
+  },
+  {
+    "Seat":"seat-353",
+    "Constituency":"Lagan Valley"
+  },
+  {
+    "Seat":"seat-355",
+    "Constituency":"Lancaster & Wyre"
+  },
+  {
+    "Seat":"seat-356",
+    "Constituency":"Leeds Central"
+  },
+  {
+    "Seat":"seat-357",
+    "Constituency":"Leeds East"
+  },
+  {
+    "Seat":"seat-358",
+    "Constituency":"Leeds North East"
+  },
+  {
+    "Seat":"seat-359",
+    "Constituency":"Leeds North West"
+  },
+  {
+    "Seat":"seat-360",
+    "Constituency":"Leeds West"
+  },
+  {
+    "Seat":"seat-361",
+    "Constituency":"Leicester East"
+  },
+  {
+    "Seat":"seat-362",
+    "Constituency":"Leicester South"
+  },
+  {
+    "Seat":"seat-363",
+    "Constituency":"Leicester West"
+  },
+  {
+    "Seat":"seat-365",
+    "Constituency":"Leigh"
+  },
+  {
+    "Seat":"seat-366",
+    "Constituency":"Leominster"
+  },
+  {
+    "Seat":"seat-367",
+    "Constituency":"Lewes"
+  },
+  {
+    "Seat":"seat-369",
+    "Constituency":"Lewisham East"
+  },
+  {
+    "Seat":"seat-370",
+    "Constituency":"Lewisham West"
+  },
+  {
+    "Seat":"seat-368",
+    "Constituency":"Lewisham, Deptford"
+  },
+  {
+    "Seat":"seat-371",
+    "Constituency":"Leyton & Wanstead"
+  },
+  {
+    "Seat":"seat-372",
+    "Constituency":"Lichfield"
+  },
+  {
+    "Seat":"seat-373",
+    "Constituency":"Lincoln"
+  },
+  {
+    "Seat":"seat-375",
+    "Constituency":"Liverpool, Garston"
+  },
+  {
+    "Seat":"seat-376",
+    "Constituency":"Liverpool, Riverside"
+  },
+  {
+    "Seat":"seat-377",
+    "Constituency":"Liverpool, Walton"
+  },
+  {
+    "Seat":"seat-378",
+    "Constituency":"Liverpool, Wavertree"
+  },
+  {
+    "Seat":"seat-379",
+    "Constituency":"Liverpool, West Derby"
+  },
+  {
+    "Seat":"seat-381",
+    "Constituency":"Llanelli"
+  },
+  {
+    "Seat":"seat-383",
+    "Constituency":"Loughborough"
+  },
+  {
+    "Seat":"seat-384",
+    "Constituency":"Louth & Horncastle"
+  },
+  {
+    "Seat":"seat-385",
+    "Constituency":"Ludlow"
+  },
+  {
+    "Seat":"seat-386",
+    "Constituency":"Luton North"
+  },
+  {
+    "Seat":"seat-387",
+    "Constituency":"Luton South"
+  },
+  {
+    "Seat":"seat-388",
+    "Constituency":"Macclesfield"
+  },
+  {
+    "Seat":"seat-389",
+    "Constituency":"Maidenhead"
+  },
+  {
+    "Seat":"seat-390",
+    "Constituency":"Maidstone & The Weald"
+  },
+  {
+    "Seat":"seat-391",
+    "Constituency":"Makerfield"
+  },
+  {
+    "Seat":"seat-392",
+    "Constituency":"Maldon & East Chelmsford"
+  },
+  {
+    "Seat":"seat-394",
+    "Constituency":"Manchester Central"
+  },
+  {
+    "Seat":"seat-393",
+    "Constituency":"Manchester, Blackley"
+  },
+  {
+    "Seat":"seat-395",
+    "Constituency":"Manchester, Gorton"
+  },
+  {
+    "Seat":"seat-396",
+    "Constituency":"Manchester, Withington"
+  },
+  {
+    "Seat":"seat-397",
+    "Constituency":"Mansfield"
+  },
+  {
+    "Seat":"seat-398",
+    "Constituency":"Medway"
+  },
+  {
+    "Seat":"seat-399",
+    "Constituency":"Meirionnydd Nant Conwy"
+  },
+  {
+    "Seat":"seat-400",
+    "Constituency":"Meriden"
+  },
+  {
+    "Seat":"seat-401",
+    "Constituency":"Merthyr Tydfil & Rhymney"
+  },
+  {
+    "Seat":"seat-39",
+    "Constituency":"Mid Bedfordshire"
+  },
+  {
+    "Seat":"seat-196",
+    "Constituency":"Mid Dorset & North Poole"
+  },
+  {
+    "Seat":"seat-427",
+    "Constituency":"Mid Norfolk"
+  },
+  {
+    "Seat":"seat-562",
+    "Constituency":"Mid Sussex"
+  },
+  {
+    "Seat":"seat-594",
+    "Constituency":"Mid Ulster"
+  },
+  {
+    "Seat":"seat-645",
+    "Constituency":"Mid Worcestershire"
+  },
+  {
+    "Seat":"seat-402",
+    "Constituency":"Middlesbrough"
+  },
+  {
+    "Seat":"seat-403",
+    "Constituency":"Middlesbrough South & East Cleveland"
+  },
+  {
+    "Seat":"seat-406",
+    "Constituency":"Milton Keynes South West"
+  },
+  {
+    "Seat":"seat-407",
+    "Constituency":"Mitcham & Morden"
+  },
+  {
+    "Seat":"seat-408",
+    "Constituency":"Mole Valley"
+  },
+  {
+    "Seat":"seat-409",
+    "Constituency":"Monmouth"
+  },
+  {
+    "Seat":"seat-410",
+    "Constituency":"Montgomeryshire"
+  },
+  {
+    "Seat":"seat-412",
+    "Constituency":"Morecambe & Lunesdale"
+  },
+  {
+    "Seat":"seat-413",
+    "Constituency":"Morley & Rothwell"
+  },
+  {
+    "Seat":"seat-415",
+    "Constituency":"Neath"
+  },
+  {
+    "Seat":"seat-416",
+    "Constituency":"New Forest East"
+  },
+  {
+    "Seat":"seat-417",
+    "Constituency":"New Forest West"
+  },
+  {
+    "Seat":"seat-418",
+    "Constituency":"Newark"
+  },
+  {
+    "Seat":"seat-419",
+    "Constituency":"Newbury"
+  },
+  {
+    "Seat":"seat-421",
+    "Constituency":"Newcastle upon Tyne Central"
+  },
+  {
+    "Seat":"seat-422",
+    "Constituency":"Newcastle upon Tyne East & Wallsend"
+  },
+  {
+    "Seat":"seat-423",
+    "Constituency":"Newcastle upon Tyne North"
+  },
+  {
+    "Seat":"seat-420",
+    "Constituency":"Newcastle-under-Lyme"
+  },
+  {
+    "Seat":"seat-424",
+    "Constituency":"Newport East"
+  },
+  {
+    "Seat":"seat-425",
+    "Constituency":"Newport West"
+  },
+  {
+    "Seat":"seat-426",
+    "Constituency":"Newry & Armagh"
+  },
+  {
+    "Seat":"seat-432",
+    "Constituency":"Normanton"
+  },
+  {
+    "Seat":"seat-14",
+    "Constituency":"North Antrim"
+  },
+  {
+    "Seat":"seat-160",
+    "Constituency":"North Cornwall"
+  },
+  {
+    "Seat":"seat-189",
+    "Constituency":"North Devon"
+  },
+  {
+    "Seat":"seat-197",
+    "Constituency":"North Dorset"
+  },
+  {
+    "Seat":"seat-201",
+    "Constituency":"North Down"
+  },
+  {
+    "Seat":"seat-212",
+    "Constituency":"North Durham"
+  },
+  {
+    "Seat":"seat-40",
+    "Constituency":"North East Bedfordshire"
+  },
+  {
+    "Seat":"seat-117",
+    "Constituency":"North East Cambridgeshire"
+  },
+  {
+    "Seat":"seat-184",
+    "Constituency":"North East Derbyshire"
+  },
+  {
+    "Seat":"seat-296",
+    "Constituency":"North East Hampshire"
+  },
+  {
+    "Seat":"seat-316",
+    "Constituency":"North East Hertfordshire"
+  },
+  {
+    "Seat":"seat-405",
+    "Constituency":"North East Milton Keynes"
+  },
+  {
+    "Seat":"seat-244",
+    "Constituency":"North Essex"
+  },
+  {
+    "Seat":"seat-428",
+    "Constituency":"North Norfolk"
+  },
+  {
+    "Seat":"seat-518",
+    "Constituency":"North Shropshire"
+  },
+  {
+    "Seat":"seat-531",
+    "Constituency":"North Southwark & Bermondsey"
+  },
+  {
+    "Seat":"seat-567",
+    "Constituency":"North Swindon"
+  },
+  {
+    "Seat":"seat-576",
+    "Constituency":"North Thanet"
+  },
+  {
+    "Seat":"seat-592",
+    "Constituency":"North Tyneside"
+  },
+  {
+    "Seat":"seat-614",
+    "Constituency":"North Warwickshire"
+  },
+  {
+    "Seat":"seat-118",
+    "Constituency":"North West Cambridgeshire"
+  },
+  {
+    "Seat":"seat-213",
+    "Constituency":"North West Durham"
+  },
+  {
+    "Seat":"seat-297",
+    "Constituency":"North West Hampshire"
+  },
+  {
+    "Seat":"seat-364",
+    "Constituency":"North West Leicestershire"
+  },
+  {
+    "Seat":"seat-429",
+    "Constituency":"North West Norfolk"
+  },
+  {
+    "Seat":"seat-631",
+    "Constituency":"North Wiltshire"
+  },
+  {
+    "Seat":"seat-433",
+    "Constituency":"Northampton North"
+  },
+  {
+    "Seat":"seat-434",
+    "Constituency":"Northampton South"
+  },
+  {
+    "Seat":"seat-435",
+    "Constituency":"Northavon"
+  },
+  {
+    "Seat":"seat-436",
+    "Constituency":"Norwich North"
+  },
+  {
+    "Seat":"seat-437",
+    "Constituency":"Norwich South"
+  },
+  {
+    "Seat":"seat-438",
+    "Constituency":"Nottingham East"
+  },
+  {
+    "Seat":"seat-439",
+    "Constituency":"Nottingham North"
+  },
+  {
+    "Seat":"seat-440",
+    "Constituency":"Nottingham South"
+  },
+  {
+    "Seat":"seat-441",
+    "Constituency":"Nuneaton"
+  },
+  {
+    "Seat":"seat-443",
+    "Constituency":"Ogmore"
+  },
+  {
+    "Seat":"seat-444",
+    "Constituency":"Old Bexley & Sidcup"
+  },
+  {
+    "Seat":"seat-445",
+    "Constituency":"Oldham East & Saddleworth"
+  },
+  {
+    "Seat":"seat-446",
+    "Constituency":"Oldham West & Royton"
+  },
+  {
+    "Seat":"seat-721",
+    "Constituency":"Orkney & Shetland"
+  },
+  {
+    "Seat":"seat-448",
+    "Constituency":"Orpington"
+  },
+  {
+    "Seat":"seat-449",
+    "Constituency":"Oxford East"
+  },
+  {
+    "Seat":"seat-450",
+    "Constituency":"Oxford West & Abingdon"
+  },
+  {
+    "Seat":"seat-453",
+    "Constituency":"Pendle"
+  },
+  {
+    "Seat":"seat-454",
+    "Constituency":"Penrith & The Border"
+  },
+  {
+    "Seat":"seat-456",
+    "Constituency":"Peterborough"
+  },
+  {
+    "Seat":"seat-457",
+    "Constituency":"Plymouth, Devonport"
+  },
+  {
+    "Seat":"seat-458",
+    "Constituency":"Plymouth, Sutton"
+  },
+  {
+    "Seat":"seat-459",
+    "Constituency":"Pontefract & Castleford"
+  },
+  {
+    "Seat":"seat-460",
+    "Constituency":"Pontypridd"
+  },
+  {
+    "Seat":"seat-461",
+    "Constituency":"Poole"
+  },
+  {
+    "Seat":"seat-462",
+    "Constituency":"Poplar & Canning Town"
+  },
+  {
+    "Seat":"seat-463",
+    "Constituency":"Portsmouth North"
+  },
+  {
+    "Seat":"seat-464",
+    "Constituency":"Portsmouth South"
+  },
+  {
+    "Seat":"seat-465",
+    "Constituency":"Preseli Pembrokeshire"
+  },
+  {
+    "Seat":"seat-466",
+    "Constituency":"Preston"
+  },
+  {
+    "Seat":"seat-467",
+    "Constituency":"Pudsey"
+  },
+  {
+    "Seat":"seat-468",
+    "Constituency":"Putney"
+  },
+  {
+    "Seat":"seat-483",
+    "Constituency":"Rayleigh"
+  },
+  {
+    "Seat":"seat-470",
+    "Constituency":"Reading East"
+  },
+  {
+    "Seat":"seat-471",
+    "Constituency":"Reading West"
+  },
+  {
+    "Seat":"seat-472",
+    "Constituency":"Redcar"
+  },
+  {
+    "Seat":"seat-473",
+    "Constituency":"Redditch"
+  },
+  {
+    "Seat":"seat-474",
+    "Constituency":"Regent\\'s Park & Kensington North"
+  },
+  {
+    "Seat":"seat-475",
+    "Constituency":"Reigate"
+  },
+  {
+    "Seat":"seat-477",
+    "Constituency":"Rhondda"
+  },
+  {
+    "Seat":"seat-479",
+    "Constituency":"Ribble Valley"
+  },
+  {
+    "Seat":"seat-480",
+    "Constituency":"Richmond (Yorks)"
+  },
+  {
+    "Seat":"seat-481",
+    "Constituency":"Richmond Park"
+  },
+  {
+    "Seat":"seat-482",
+    "Constituency":"Rochdale"
+  },
+  {
+    "Seat":"seat-469",
+    "Constituency":"Rochford & Southend East"
+  },
+  {
+    "Seat":"seat-484",
+    "Constituency":"Romford"
+  },
+  {
+    "Seat":"seat-485",
+    "Constituency":"Romsey"
+  },
+  {
+    "Seat":"seat-487",
+    "Constituency":"Rossendale & Darwen"
+  },
+  {
+    "Seat":"seat-488",
+    "Constituency":"Rother Valley"
+  },
+  {
+    "Seat":"seat-489",
+    "Constituency":"Rotherham"
+  },
+  {
+    "Seat":"seat-491",
+    "Constituency":"Rugby & Kenilworth"
+  },
+  {
+    "Seat":"seat-492",
+    "Constituency":"Ruislip - Northwood"
+  },
+  {
+    "Seat":"seat-493",
+    "Constituency":"Runnymede & Weybridge"
+  },
+  {
+    "Seat":"seat-494",
+    "Constituency":"Rushcliffe"
+  },
+  {
+    "Seat":"seat-495",
+    "Constituency":"Rutland & Melton"
+  },
+  {
+    "Seat":"seat-496",
+    "Constituency":"Ryedale"
+  },
+  {
+    "Seat":"seat-497",
+    "Constituency":"Saffron Walden"
+  },
+  {
+    "Seat":"seat-502",
+    "Constituency":"Salford"
+  },
+  {
+    "Seat":"seat-503",
+    "Constituency":"Salisbury"
+  },
+  {
+    "Seat":"seat-504",
+    "Constituency":"Scarborough & Whitby"
+  },
+  {
+    "Seat":"seat-505",
+    "Constituency":"Scunthorpe"
+  },
+  {
+    "Seat":"seat-506",
+    "Constituency":"Sedgefield"
+  },
+  {
+    "Seat":"seat-507",
+    "Constituency":"Selby"
+  },
+  {
+    "Seat":"seat-508",
+    "Constituency":"Sevenoaks"
+  },
+  {
+    "Seat":"seat-511",
+    "Constituency":"Sheffield Central"
+  },
+  {
+    "Seat":"seat-509",
+    "Constituency":"Sheffield, Attercliffe"
+  },
+  {
+    "Seat":"seat-510",
+    "Constituency":"Sheffield, Brightside"
+  },
+  {
+    "Seat":"seat-512",
+    "Constituency":"Sheffield, Hallam"
+  },
+  {
+    "Seat":"seat-513",
+    "Constituency":"Sheffield, Heeley"
+  },
+  {
+    "Seat":"seat-514",
+    "Constituency":"Sheffield, Hillsborough"
+  },
+  {
+    "Seat":"seat-515",
+    "Constituency":"Sherwood"
+  },
+  {
+    "Seat":"seat-516",
+    "Constituency":"Shipley"
+  },
+  {
+    "Seat":"seat-517",
+    "Constituency":"Shrewsbury & Atcham"
+  },
+  {
+    "Seat":"seat-519",
+    "Constituency":"Sittingbourne & Sheppey"
+  },
+  {
+    "Seat":"seat-520",
+    "Constituency":"Skipton & Ripon"
+  },
+  {
+    "Seat":"seat-521",
+    "Constituency":"Sleaford & North Hykeham"
+  },
+  {
+    "Seat":"seat-522",
+    "Constituency":"Slough"
+  },
+  {
+    "Seat":"seat-523",
+    "Constituency":"Solihull"
+  },
+  {
+    "Seat":"seat-524",
+    "Constituency":"Somerton & Frome"
+  },
+  {
+    "Seat":"seat-15",
+    "Constituency":"South Antrim"
+  },
+  {
+    "Seat":"seat-119",
+    "Constituency":"South Cambridgeshire"
+  },
+  {
+    "Seat":"seat-185",
+    "Constituency":"South Derbyshire"
+  },
+  {
+    "Seat":"seat-198",
+    "Constituency":"South Dorset"
+  },
+  {
+    "Seat":"seat-202",
+    "Constituency":"South Down"
+  },
+  {
+    "Seat":"seat-120",
+    "Constituency":"South East Cambridgeshire"
+  },
+  {
+    "Seat":"seat-161",
+    "Constituency":"South East Cornwall"
+  },
+  {
+    "Seat":"seat-525",
+    "Constituency":"South Holland & The Deepings"
+  },
+  {
+    "Seat":"seat-430",
+    "Constituency":"South Norfolk"
+  },
+  {
+    "Seat":"seat-478",
+    "Constituency":"South Ribble"
+  },
+  {
+    "Seat":"seat-526",
+    "Constituency":"South Shields"
+  },
+  {
+    "Seat":"seat-535",
+    "Constituency":"South Staffordshire"
+  },
+  {
+    "Seat":"seat-555",
+    "Constituency":"South Suffolk"
+  },
+  {
+    "Seat":"seat-568",
+    "Constituency":"South Swindon"
+  },
+  {
+    "Seat":"seat-577",
+    "Constituency":"South Thanet"
+  },
+  {
+    "Seat":"seat-41",
+    "Constituency":"South West Bedfordshire"
+  },
+  {
+    "Seat":"seat-191",
+    "Constituency":"South West Devon"
+  },
+  {
+    "Seat":"seat-317",
+    "Constituency":"South West Hertfordshire"
+  },
+  {
+    "Seat":"seat-431",
+    "Constituency":"South West Norfolk"
+  },
+  {
+    "Seat":"seat-561",
+    "Constituency":"South West Surrey"
+  },
+  {
+    "Seat":"seat-527",
+    "Constituency":"Southampton, Itchen"
+  },
+  {
+    "Seat":"seat-528",
+    "Constituency":"Southampton, Test"
+  },
+  {
+    "Seat":"seat-529",
+    "Constituency":"Southend West"
+  },
+  {
+    "Seat":"seat-530",
+    "Constituency":"Southport"
+  },
+  {
+    "Seat":"seat-532",
+    "Constituency":"Spelthorne"
+  },
+  {
+    "Seat":"seat-498",
+    "Constituency":"St Albans"
+  },
+  {
+    "Seat":"seat-499",
+    "Constituency":"St Helens North"
+  },
+  {
+    "Seat":"seat-500",
+    "Constituency":"St Helens South"
+  },
+  {
+    "Seat":"seat-501",
+    "Constituency":"St Ives"
+  },
+  {
+    "Seat":"seat-533",
+    "Constituency":"Stafford"
+  },
+  {
+    "Seat":"seat-534",
+    "Constituency":"Staffordshire Moorlands"
+  },
+  {
+    "Seat":"seat-536",
+    "Constituency":"Stalybridge & Hyde"
+  },
+  {
+    "Seat":"seat-537",
+    "Constituency":"Stevenage"
+  },
+  {
+    "Seat":"seat-539",
+    "Constituency":"Stockport"
+  },
+  {
+    "Seat":"seat-540",
+    "Constituency":"Stockton North"
+  },
+  {
+    "Seat":"seat-541",
+    "Constituency":"Stockton South"
+  },
+  {
+    "Seat":"seat-542",
+    "Constituency":"Stoke-on-Trent Central"
+  },
+  {
+    "Seat":"seat-543",
+    "Constituency":"Stoke-on-Trent North"
+  },
+  {
+    "Seat":"seat-544",
+    "Constituency":"Stoke-on-Trent South"
+  },
+  {
+    "Seat":"seat-545",
+    "Constituency":"Stone"
+  },
+  {
+    "Seat":"seat-546",
+    "Constituency":"Stourbridge"
+  },
+  {
+    "Seat":"seat-547",
+    "Constituency":"Strangford"
+  },
+  {
+    "Seat":"seat-548",
+    "Constituency":"Stratford-on-Avon"
+  },
+  {
+    "Seat":"seat-550",
+    "Constituency":"Streatham"
+  },
+  {
+    "Seat":"seat-551",
+    "Constituency":"Stretford & Urmston"
+  },
+  {
+    "Seat":"seat-552",
+    "Constituency":"Stroud"
+  },
+  {
+    "Seat":"seat-554",
+    "Constituency":"Suffolk Coastal"
+  },
+  {
+    "Seat":"seat-557",
+    "Constituency":"Sunderland North"
+  },
+  {
+    "Seat":"seat-558",
+    "Constituency":"Sunderland South"
+  },
+  {
+    "Seat":"seat-560",
+    "Constituency":"Surrey Heath"
+  },
+  {
+    "Seat":"seat-563",
+    "Constituency":"Sutton & Cheam"
+  },
+  {
+    "Seat":"seat-564",
+    "Constituency":"Sutton Coldfield"
+  },
+  {
+    "Seat":"seat-565",
+    "Constituency":"Swansea East"
+  },
+  {
+    "Seat":"seat-566",
+    "Constituency":"Swansea West"
+  },
+  {
+    "Seat":"seat-569",
+    "Constituency":"Tamworth"
+  },
+  {
+    "Seat":"seat-570",
+    "Constituency":"Tatton"
+  },
+  {
+    "Seat":"seat-571",
+    "Constituency":"Taunton"
+  },
+  {
+    "Seat":"seat-573",
+    "Constituency":"Teignbridge"
+  },
+  {
+    "Seat":"seat-574",
+    "Constituency":"Telford"
+  },
+  {
+    "Seat":"seat-575",
+    "Constituency":"Tewkesbury"
+  },
+  {
+    "Seat":"seat-578",
+    "Constituency":"Thurrock"
+  },
+  {
+    "Seat":"seat-579",
+    "Constituency":"Tiverton & Honiton"
+  },
+  {
+    "Seat":"seat-580",
+    "Constituency":"Tonbridge & Malling"
+  },
+  {
+    "Seat":"seat-581",
+    "Constituency":"Tooting"
+  },
+  {
+    "Seat":"seat-582",
+    "Constituency":"Torbay"
+  },
+  {
+    "Seat":"seat-583",
+    "Constituency":"Torfaen"
+  },
+  {
+    "Seat":"seat-190",
+    "Constituency":"Torridge & West Devon"
+  },
+  {
+    "Seat":"seat-584",
+    "Constituency":"Totnes"
+  },
+  {
+    "Seat":"seat-585",
+    "Constituency":"Tottenham"
+  },
+  {
+    "Seat":"seat-586",
+    "Constituency":"Truro & St Austell"
+  },
+  {
+    "Seat":"seat-587",
+    "Constituency":"Tunbridge Wells"
+  },
+  {
+    "Seat":"seat-589",
+    "Constituency":"Twickenham"
+  },
+  {
+    "Seat":"seat-590",
+    "Constituency":"Tyne Bridge"
+  },
+  {
+    "Seat":"seat-591",
+    "Constituency":"Tynemouth"
+  },
+  {
+    "Seat":"seat-595",
+    "Constituency":"Upminster"
+  },
+  {
+    "Seat":"seat-596",
+    "Constituency":"Upper Bann"
+  },
+  {
+    "Seat":"seat-597",
+    "Constituency":"Uxbridge"
+  },
+  {
+    "Seat":"seat-598",
+    "Constituency":"Vale of Clwyd"
+  },
+  {
+    "Seat":"seat-599",
+    "Constituency":"Vale of Glamorgan"
+  },
+  {
+    "Seat":"seat-600",
+    "Constituency":"Vale of York"
+  },
+  {
+    "Seat":"seat-601",
+    "Constituency":"Vauxhall"
+  },
+  {
+    "Seat":"seat-602",
+    "Constituency":"Wakefield"
+  },
+  {
+    "Seat":"seat-603",
+    "Constituency":"Wallasey"
+  },
+  {
+    "Seat":"seat-604",
+    "Constituency":"Walsall North"
+  },
+  {
+    "Seat":"seat-605",
+    "Constituency":"Walsall South"
+  },
+  {
+    "Seat":"seat-606",
+    "Constituency":"Walthamstow"
+  },
+  {
+    "Seat":"seat-607",
+    "Constituency":"Wansbeck"
+  },
+  {
+    "Seat":"seat-608",
+    "Constituency":"Wansdyke"
+  },
+  {
+    "Seat":"seat-609",
+    "Constituency":"Wantage"
+  },
+  {
+    "Seat":"seat-610",
+    "Constituency":"Warley"
+  },
+  {
+    "Seat":"seat-611",
+    "Constituency":"Warrington North"
+  },
+  {
+    "Seat":"seat-612",
+    "Constituency":"Warrington South"
+  },
+  {
+    "Seat":"seat-613",
+    "Constituency":"Warwick & Leamington"
+  },
+  {
+    "Seat":"seat-615",
+    "Constituency":"Watford"
+  },
+  {
+    "Seat":"seat-616",
+    "Constituency":"Waveney"
+  },
+  {
+    "Seat":"seat-617",
+    "Constituency":"Wealden"
+  },
+  {
+    "Seat":"seat-618",
+    "Constituency":"Weaver Vale"
+  },
+  {
+    "Seat":"seat-619",
+    "Constituency":"Wellingborough"
+  },
+  {
+    "Seat":"seat-620",
+    "Constituency":"Wells"
+  },
+  {
+    "Seat":"seat-621",
+    "Constituency":"Welwyn Hatfield"
+  },
+  {
+    "Seat":"seat-622",
+    "Constituency":"Wentworth"
+  },
+  {
+    "Seat":"seat-623",
+    "Constituency":"West Bromwich East"
+  },
+  {
+    "Seat":"seat-624",
+    "Constituency":"West Bromwich West"
+  },
+  {
+    "Seat":"seat-137",
+    "Constituency":"West Chelmsford"
+  },
+  {
+    "Seat":"seat-186",
+    "Constituency":"West Derbyshire"
+  },
+  {
+    "Seat":"seat-199",
+    "Constituency":"West Dorset"
+  },
+  {
+    "Seat":"seat-625",
+    "Constituency":"West Ham"
+  },
+  {
+    "Seat":"seat-354",
+    "Constituency":"West Lancashire"
+  },
+  {
+    "Seat":"seat-556",
+    "Constituency":"West Suffolk"
+  },
+  {
+    "Seat":"seat-593",
+    "Constituency":"West Tyrone"
+  },
+  {
+    "Seat":"seat-646",
+    "Constituency":"West Worcestershire"
+  },
+  {
+    "Seat":"seat-626",
+    "Constituency":"Westbury"
+  },
+  {
+    "Seat":"seat-719",
+    "Constituency":"Na h-Eileanan an Iar"
+  },
+  {
+    "Seat":"seat-628",
+    "Constituency":"Westmorland & Lonsdale"
+  },
+  {
+    "Seat":"seat-629",
+    "Constituency":"Weston-Super-Mare"
+  },
+  {
+    "Seat":"seat-630",
+    "Constituency":"Wigan"
+  },
+  {
+    "Seat":"seat-632",
+    "Constituency":"Wimbledon"
+  },
+  {
+    "Seat":"seat-633",
+    "Constituency":"Winchester"
+  },
+  {
+    "Seat":"seat-634",
+    "Constituency":"Windsor"
+  },
+  {
+    "Seat":"seat-635",
+    "Constituency":"Wirral South"
+  },
+  {
+    "Seat":"seat-636",
+    "Constituency":"Wirral West"
+  },
+  {
+    "Seat":"seat-637",
+    "Constituency":"Witney"
+  },
+  {
+    "Seat":"seat-638",
+    "Constituency":"Woking"
+  },
+  {
+    "Seat":"seat-639",
+    "Constituency":"Wokingham"
+  },
+  {
+    "Seat":"seat-640",
+    "Constituency":"Wolverhampton North East"
+  },
+  {
+    "Seat":"seat-641",
+    "Constituency":"Wolverhampton South East"
+  },
+  {
+    "Seat":"seat-642",
+    "Constituency":"Wolverhampton South West"
+  },
+  {
+    "Seat":"seat-643",
+    "Constituency":"Woodspring"
+  },
+  {
+    "Seat":"seat-644",
+    "Constituency":"Worcester"
+  },
+  {
+    "Seat":"seat-647",
+    "Constituency":"Workington"
+  },
+  {
+    "Seat":"seat-648",
+    "Constituency":"Worsley"
+  },
+  {
+    "Seat":"seat-650",
+    "Constituency":"Worthing West"
+  },
+  {
+    "Seat":"seat-651",
+    "Constituency":"Wrekin, The"
+  },
+  {
+    "Seat":"seat-652",
+    "Constituency":"Wrexham"
+  },
+  {
+    "Seat":"seat-653",
+    "Constituency":"Wycombe"
+  },
+  {
+    "Seat":"seat-654",
+    "Constituency":"Wyre Forest"
+  },
+  {
+    "Seat":"seat-655",
+    "Constituency":"Wythenshawe & Sale East"
+  },
+  {
+    "Seat":"seat-656",
+    "Constituency":"Yeovil"
+  },
+  {
+    "Seat":"seat-657",
+    "Constituency":"Ynys M�n"
+  },
+  {
+    "Seat":"seat-658",
+    "Constituency":"York, City of"
+  },
+  {
+    "Seat":"seat-670",
+    "Constituency":"Aberdeen North"
+  },
+  {
+    "Seat":"seat-671",
+    "Constituency":"Aberdeen South"
+  },
+  {
+    "Seat":"seat-672",
+    "Constituency":"Aberdeenshire West & Kincardine"
+  },
+  {
+    "Seat":"seat-673",
+    "Constituency":"Airdrie & Shotts"
+  },
+  {
+    "Seat":"seat-674",
+    "Constituency":"Angus"
+  },
+  {
+    "Seat":"seat-675",
+    "Constituency":"Argyll & Bute"
+  },
+  {
+    "Seat":"seat-676",
+    "Constituency":"Ayr, Carrick & Cumnock"
+  },
+  {
+    "Seat":"seat-677",
+    "Constituency":"Ayrshire Central"
+  },
+  {
+    "Seat":"seat-678",
+    "Constituency":"Ayrshire North & Arran"
+  },
+  {
+    "Seat":"seat-679",
+    "Constituency":"Banff & Buchan"
+  },
+  {
+    "Seat":"seat-680",
+    "Constituency":"Berwickshire, Roxburgh & Selkirk"
+  },
+  {
+    "Seat":"seat-681",
+    "Constituency":"Caithness, Sutherland & Easter Ross"
+  },
+  {
+    "Seat":"seat-682",
+    "Constituency":"Coatbridge, Chryston & Bellshill"
+  },
+  {
+    "Seat":"seat-683",
+    "Constituency":"Cumbernauld, Kilsyth & Kirkintilloch East"
+  },
+  {
+    "Seat":"seat-684",
+    "Constituency":"Dumfries & Galloway"
+  },
+  {
+    "Seat":"seat-685",
+    "Constituency":"Dumfriesshire, Clydesdale & Tweeddale"
+  },
+  {
+    "Seat":"seat-686",
+    "Constituency":"East Dunbartonshire"
+  },
+  {
+    "Seat":"seat-687",
+    "Constituency":"West Dunbartonshire"
+  },
+  {
+    "Seat":"seat-688",
+    "Constituency":"Dundee East"
+  },
+  {
+    "Seat":"seat-689",
+    "Constituency":"Dundee West"
+  },
+  {
+    "Seat":"seat-690",
+    "Constituency":"Dunfermline & Fife West"
+  },
+  {
+    "Seat":"seat-691",
+    "Constituency":"East Kilbride, Strathaven & Lesmahagow"
+  },
+  {
+    "Seat":"seat-692",
+    "Constituency":"East Lothian"
+  },
+  {
+    "Seat":"seat-693",
+    "Constituency":"Edinburgh East"
+  },
+  {
+    "Seat":"seat-694",
+    "Constituency":"Edinburgh North & Leith"
+  },
+  {
+    "Seat":"seat-695",
+    "Constituency":"Edinburgh South"
+  },
+  {
+    "Seat":"seat-696",
+    "Constituency":"Edinburgh South West"
+  },
+  {
+    "Seat":"seat-697",
+    "Constituency":"Edinburgh West"
+  },
+  {
+    "Seat":"seat-698",
+    "Constituency":"Falkirk"
+  },
+  {
+    "Seat":"seat-699",
+    "Constituency":"Fife North East"
+  },
+  {
+    "Seat":"seat-700",
+    "Constituency":"Glasgow Central"
+  },
+  {
+    "Seat":"seat-701",
+    "Constituency":"Glasgow East"
+  },
+  {
+    "Seat":"seat-702",
+    "Constituency":"Glasgow North"
+  },
+  {
+    "Seat":"seat-703",
+    "Constituency":"Glasgow North East"
+  },
+  {
+    "Seat":"seat-704",
+    "Constituency":"Glasgow North West"
+  },
+  {
+    "Seat":"seat-705",
+    "Constituency":"Glasgow South"
+  },
+  {
+    "Seat":"seat-706",
+    "Constituency":"Glasgow South West"
+  },
+  {
+    "Seat":"seat-707",
+    "Constituency":"Glenrothes"
+  },
+  {
+    "Seat":"seat-708",
+    "Constituency":"Gordon"
+  },
+  {
+    "Seat":"seat-709",
+    "Constituency":"Inverclyde"
+  },
+  {
+    "Seat":"seat-710",
+    "Constituency":"Inverness, Nairn, Badenoch & Strathspey"
+  },
+  {
+    "Seat":"seat-711",
+    "Constituency":"Kilmarnock & Loudoun"
+  },
+  {
+    "Seat":"seat-712",
+    "Constituency":"Kirkcaldy & Cowdenbeath"
+  },
+  {
+    "Seat":"seat-713",
+    "Constituency":"Lanark & Hamilton East"
+  },
+  {
+    "Seat":"seat-714",
+    "Constituency":"Linlithgow & Falkirk East"
+  },
+  {
+    "Seat":"seat-715",
+    "Constituency":"Livingston"
+  },
+  {
+    "Seat":"seat-716",
+    "Constituency":"Midlothian"
+  },
+  {
+    "Seat":"seat-717",
+    "Constituency":"Moray"
+  },
+  {
+    "Seat":"seat-718",
+    "Constituency":"Motherwell & Wishaw"
+  },
+  {
+    "Seat":"seat-720",
+    "Constituency":"Ochil & Perthshire South"
+  },
+  {
+    "Seat":"seat-722",
+    "Constituency":"Paisley & Renfrewshire North"
+  },
+  {
+    "Seat":"seat-723",
+    "Constituency":"Paisley & Renfrewshire South"
+  },
+  {
+    "Seat":"seat-724",
+    "Constituency":"Perth & Perthshire North"
+  },
+  {
+    "Seat":"seat-726",
+    "Constituency":"Ross, Skye & Lochaber"
+  },
+  {
+    "Seat":"seat-727",
+    "Constituency":"Rutherglen & Hamilton West"
+  },
+  {
+    "Seat":"seat-728",
+    "Constituency":"Stirling"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "name": "voting",
+  "version": "0.0.0",
+  "description": "Visual Map of voting intentions",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicholas Tettenborn",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.10.6"
+  }
+}
