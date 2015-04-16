@@ -4,6 +4,7 @@
 		this.numberOfUndefinedMapItems = 0;
 		this.twentyTenPercentageResult = {'con':36.1,'lab':29.1,'libdem':23,'other':11.9};
 		this.previousPercentageState = {};
+		this.elements = [];
 
 	};
 
@@ -15,21 +16,21 @@
 
 
 	mapConvertor.prototype.setTwentyTenResults = function() {
-		for (party in mapConvertor.prototype.twentyTenPercentageResult) {
-			mapConvertor.prototype.previousPercentageState[party] = document.getElementById(party + '_rangeinput').value = mapConvertor.prototype.twentyTenPercentageResult[party];
+		for (var party in this.twentyTenPercentageResult) {
+			this.previousPercentageState[party] = document.getElementById(party + '_rangeinput').value = this.twentyTenPercentageResult[party];
 		}
 	};
 
 	mapConvertor.prototype.recalculateSeats = function(node) {
 
-		for (party in mapConvertor.prototype.twentyTenPercentageResult) {
-			mapConvertor[party + '_rangeinput'] = document.getElementById(party + '_rangeinput').value;
+		for (var party in this.twentyTenPercentageResult) {
+			this.elements[party + '_rangeinput'] = document.getElementById(party + '_rangeinput').value;
 		}
 
-		mapConvertor.prototype.reCalculateTo100percent(node.id);
-		mapConvertor.prototype.updateRangeValues();
+		this.reCalculateTo100percent(node.id);
+		this.updateRangeValues();
 
-		mapConvertor.prototype.updateVotes();
+		this.updateVotes();
 
 	};
 
@@ -38,13 +39,13 @@
 		var increaseInVotes = 0,
 			voteDiffs = {},
 			aSeat;
-		otherParties = [];
+		var otherParties = [];
 
 		// calculate the percentage changes
-		for (party in mapConvertor.prototype.twentyTenPercentageResult) {
-			console.log('party ' + party + ' ' + mapConvertor.prototype.twentyTenPercentageResult[party] + ' ' + mapConvertor.prototype.previousPercentageState[party]);
-			voteDiffs[mapConvertor.prototype.partyCodeLookup(party)] = (Number(mapConvertor.prototype.previousPercentageState[party]) / Number(mapConvertor.prototype.twentyTenPercentageResult[party]) ) ;
-			console.log('result: ' + voteDiffs[mapConvertor.prototype.partyCodeLookup(party)]);
+		for (var party in this.twentyTenPercentageResult) {
+			console.log('party ' + party + ' ' + this.twentyTenPercentageResult[party] + ' ' + this.previousPercentageState[party]);
+			voteDiffs[this.partyCodeLookup(party)] = (Number(this.previousPercentageState[party]) / Number(this.twentyTenPercentageResult[party]) ) ;
+			console.log('result: ' + voteDiffs[this.partyCodeLookup(party)]);
 		}
 
 		// copy other difference and create the other parties
@@ -60,16 +61,16 @@
 		delete voteDiffs['other']; // not a valid party anymore
 
 
-		for (constituency in this.mapSeatLookup){
+		for (var constituency in this.mapSeatLookup){
 
 			//if (constituency === 'Brighton Pavilion') {
 
-			for (voteDiffParty in voteDiffs) {
+			for (var voteDiffParty in voteDiffs) {
 
 				//console.log('Difference in vote ' + voteDiffParty + ' ' + voteDiffs[voteDiffParty]);
 
 				//console.log('Before: constituency ' + constituency + ' ' + voteDiffParty + ' votes ' + this.mapSeatLookup[constituency].result[voteDiffParty] );
-				adjustedVotes = Math.round( (this.mapSeatLookup[constituency].result[voteDiffParty] * voteDiffs[voteDiffParty] ) );
+				var adjustedVotes = Math.round( (this.mapSeatLookup[constituency].result[voteDiffParty] * voteDiffs[voteDiffParty] ) );
 
 				//console.log('votes for ' + voteDiffParty + ' would change to ' + adjustedVotes);
 
@@ -87,7 +88,7 @@
 
 	mapConvertor.prototype.getOtherParties = function(aSeat) {
 		var otherParties = [];
-		for (partyCode in this.mapSeatLookup[aSeat].result) {
+		for (var partyCode in this.mapSeatLookup[aSeat].result) {
 			//TODO now add to VoteDiffs each of the valid party names.
 			if (partyCode.indexOf('_adjusted') < 0
 				&& this.isValidParty(partyCode)
@@ -101,13 +102,13 @@
 
 	mapConvertor.prototype.reCalculateTo100percent = function(value_changed) {
 		value_changed = value_changed.replace(/\_.+/,'');
-		var amountChanged = mapConvertor[value_changed + '_rangeinput'] - this.previousPercentageState[value_changed];
+		var amountChanged = this.elements[value_changed + '_rangeinput'] - this.previousPercentageState[value_changed];
 		amountChanged = amountChanged / 3; // 3 is the number of other other parties to share adjustment accross
 
 		// set the changed value to the state store
-		this.previousPercentageState[value_changed] = mapConvertor[value_changed + '_rangeinput'];
+		this.previousPercentageState[value_changed] = this.elements[value_changed + '_rangeinput'];
 
-		for (party in mapConvertor.prototype.twentyTenPercentageResult) {
+		for (var party in this.twentyTenPercentageResult) {
 			if (value_changed !== party) {
 				this.previousPercentageState[party] = this.previousPercentageState[party] - amountChanged;
 				document.getElementById(party + '_rangeinput').value = this.previousPercentageState[party]
@@ -117,32 +118,26 @@
 
 
 	mapConvertor.prototype.updateRangeValues = function() {
-		for (party in mapConvertor.prototype.twentyTenPercentageResult) {
-			document.getElementById(party + '_rangevalue').value = Math.ceil(mapConvertor.prototype.previousPercentageState[party] * 10) / 10;
+		for (var party in this.twentyTenPercentageResult) {
+			document.getElementById(party + '_rangevalue').value = Math.ceil(this.previousPercentageState[party] * 10) / 10;
 		}
-	};
-
-
-// Below is for loading the map and associated data
-	mapConvertor.prototype.isSVGLoaded = function() {
-
 	};
 
 	mapConvertor.prototype.loadData = function() {
 
 		d3.json("data/SeatLookup.json", function(mapSeats) {
-			mapConvertor.prototype.mapSeatLookup = {};
+			this.mapSeatLookup = {};
 			for (var i = 0; i < mapSeats.length; i++) {
-				mapConvertor.prototype.mapSeatLookup[mapSeats[i].Constituency] = {'seatId':mapSeats[i].Seat,result:{}};
+				this.mapSeatLookup[mapSeats[i].Constituency] = {'seatId':mapSeats[i].Seat,result:{}};
 			}
-		});
+		}.bind(this));
 
 		d3.json("data/convertcsv.json", function(seats) {
 			for (var i = 0; i < seats.length; i++) {
-				mapConvertor.prototype.storeVotesPerConstituency(seats[i]);
-				mapConvertor.prototype.calculateSeatColor(seats[i]);
+				this.storeVotesPerConstituency(seats[i]);
+				this.calculateSeatColor(seats[i]);
 			}
-		});
+		}.bind(this));
 	};
 
 	mapConvertor.prototype.storeVotesPerConstituency = function(seat) {
@@ -191,14 +186,13 @@
 	mapConvertor.prototype.setConstituencyName = function(ref,constituency) {
 		if (!ref) {
 			this.numberOfUndefinedMapItems++;
-			//console.log(mapConvertor.prototype.numberOfUndefinedMapItems + ' ' + ref + ' ' + constituency);
 		}
 
 		d3.select('#' + ref).attr('constituency',constituency);
 	};
 
 	mapConvertor.prototype.setClickHandlers = function() {
-		d3.selectAll('path').on('click',mapConvertor.prototype.constituencyClickHandler)
+		d3.selectAll('path').on('click',this.constituencyClickHandler)
 	};
 
 
@@ -249,11 +243,11 @@
 
 			return;
 		}
-		//console.log(mapConvertor.prototype.mapSeatLookup[this.getAttribute('constituency')].result['Con_adjusted']);
+
 		console.log(this.getAttribute('constituency'));
 
-		for(party in mapConvertor.prototype.mapSeatLookup[this.getAttribute('constituency')].result) {
-			votes = mapConvertor.prototype.mapSeatLookup[this.getAttribute('constituency')].result[party];
+		for(var party in this.mapSeatLookup[this.getAttribute('constituency')].result) {
+			votes = this.mapSeatLookup[this.getAttribute('constituency')].result[party];
 		}
 
 	};
