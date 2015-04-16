@@ -1,0 +1,44 @@
+body {
+    padding: 10px;
+}
+
+.controls {
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    width: 400px;
+    height: auto;
+    opacity: .6;
+}
+
+.mapContainer {
+    border: solid black 1px;
+    background-color: lightblue;
+    margin: 40px;
+    padding: 2px;
+}
+
+input[type=range] {
+    width: 300px;
+}
+
+.slider-and-output input, output {
+    display: inline-block;
+}
+
+path.labour { fill: #F00; }     /* Labour Party */
+path.tory { fill: #33C; }       /* Conservative Party */
+path.libdem { fill: #FC0; }     /* Liberal Democrat Party */
+path.snp { fill: #FF0; }        /* Scottish National Party */
+path.pc { fill: #6C3; }         /* Plaid Cymru */
+path.sf { fill: #060; }         /* Sinn Féin */
+path.sdlp { fill: #3C3; }       /* Social Democratic and Labour Party */
+path.uup { fill: #99F; }        /* Ulster Unionist Party */
+path.dup { fill: #C30; }        /* Democratic Unionist Party */
+path.respect { fill: #F60; }    /* Respect Party (George Galloway) */
+path.ind { fill: #C0C0C0; }     /* independent candidate */
+path.grn {fill: #0F0;}
+path.seat { stroke: black; stroke-width: 0.3; }
+path.ukip { fill: #7027C3;}
+path.other {fill: #FAA51A;}
+

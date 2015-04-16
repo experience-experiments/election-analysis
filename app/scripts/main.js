@@ -124,14 +124,14 @@ mapConvertor.isSVGLoaded = function() {
 
 mapConvertor.loadData = function() {
 	 
-	d3.json("./SeatLookup.json", function(mapSeats) {
+	d3.json("data/SeatLookup.json", function(mapSeats) {
 		mapConvertor.mapSeatLookup = {};
 		for (var i = 0; i < mapSeats.length; i++) {
 			mapConvertor.mapSeatLookup[mapSeats[i].Constituency] = {'seatId':mapSeats[i].Seat,result:{}}; 
 		}
 	});
 	
-	d3.json("./convertcsv.json", function(seats) {
+	d3.json("data/convertcsv.json", function(seats) {
 		for (var i = 0; i < seats.length; i++) {
 			mapConvertor.storeVotesPerConstituency(seats[i]);
 			mapConvertor.calculateSeatColor(seats[i]);
