@@ -16,6 +16,22 @@ Once you clone the repository you can run the following commands from the projec
 
 For more information check the `Gruntfile`
 
+### Releasing to public
+
+To build and upload to S3 bucket, create a aws-s3-credentials.json file as following:
+
+```
+{
+  "accessKeyId": "...",
+  "secretAccessKey": "..."
+}
+```
+
+Note that this file should not be committed to the git repository. Then run the following command to release the app.
+
+`grunt release`
+
+
 # LICENCE
 
 The MIT License (MIT)
