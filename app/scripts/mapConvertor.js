@@ -1,7 +1,8 @@
 (function(){
 	function mapConvertor() {
 
-		this.numberOfUndefinedMapItems = 0;
+		this.visibleParties = ["Con","Lab","LD"];
+
 		this.twentyTenPercentageResult = {'con':36.1,'lab':29.1,'libdem':23,'other':11.9};
 		this.previousPercentageState = {};
 		this.elements = [];
@@ -34,70 +35,38 @@
 
 	};
 
-
 	mapConvertor.prototype.updateVotes = function() {
-		var increaseInVotes = 0,
-			voteDiffs = {},
-			aSeat;
-		var otherParties = [];
+		var voteDiffs = {};
 
-		// calculate the percentage changes
 		for (var party in this.twentyTenPercentageResult) {
 			console.log('party ' + party + ' ' + this.twentyTenPercentageResult[party] + ' ' + this.previousPercentageState[party]);
 			voteDiffs[this.partyCodeLookup(party)] = (Number(this.previousPercentageState[party]) / Number(this.twentyTenPercentageResult[party]) ) ;
 			console.log('result: ' + voteDiffs[this.partyCodeLookup(party)]);
 		}
 
-		// copy other difference and create the other parties
-		for (aSeat in this.mapSeatLookup) break;
-
-		otherParties = this.getOtherParties(aSeat);
+		var otherParties = this.getOtherParties();
 
 		for (var i = 0; i < otherParties.length; i++) {
-			//console.log(otherParties[i]);
 			voteDiffs[otherParties[i]] = voteDiffs['other'];
 		}
 
 		delete voteDiffs['other']; // not a valid party anymore
 
-
-		for (var constituency in this.mapSeatLookup){
-
-			//if (constituency === 'Brighton Pavilion') {
-
+		for (var id in this.seats){
+			var constituency = this.seats[id];
 			for (var voteDiffParty in voteDiffs) {
-
-				//console.log('Difference in vote ' + voteDiffParty + ' ' + voteDiffs[voteDiffParty]);
-
-				//console.log('Before: constituency ' + constituency + ' ' + voteDiffParty + ' votes ' + this.mapSeatLookup[constituency].result[voteDiffParty] );
-				var adjustedVotes = Math.round( (this.mapSeatLookup[constituency].result[voteDiffParty] * voteDiffs[voteDiffParty] ) );
-
-				//console.log('votes for ' + voteDiffParty + ' would change to ' + adjustedVotes);
-
-				this.mapSeatLookup[constituency].result[voteDiffParty + '_adjusted'] = adjustedVotes;
-				//console.log('after: constituency ' + constituency + ' ' + voteDiffParty + ' votes ' + this.mapSeatLookup[constituency].result[voteDiffParty + '_adjusted'] );
-
+				var adjustedVotes = Math.round( (constituency[voteDiffParty] * voteDiffs[voteDiffParty] ) );
+				constituency[voteDiffParty + '_adjusted'] = adjustedVotes;
 			}
-			this.calculateSeatColor(this.mapSeatLookup[constituency].result);
-
-			//}
+			this.calculateSeatColor(constituency);
 		}
-
-
 	};
 
-	mapConvertor.prototype.getOtherParties = function(aSeat) {
-		var otherParties = [];
-		for (var partyCode in this.mapSeatLookup[aSeat].result) {
-			//TODO now add to VoteDiffs each of the valid party names.
-			if (partyCode.indexOf('_adjusted') < 0
-				&& this.isValidParty(partyCode)
-				&& this.isNotAMainParty(partyCode)) {
-				//console.log(partyCode + ' ' + this.isNotAMainParty(partyCode) );
-				otherParties.push(partyCode)
-			}
-		}
-		return otherParties;
+	mapConvertor.prototype.getOtherParties = function() {
+		var allParties = ["AC","AD","AGS","APNI","APP","AWL","AWP","BB","BCP","Bean","Best","BGPV","BIB","BIC","Blue","BNP","BP Elvis","C28","Cam Soc","CG","Ch M","Ch P","CIP","CITY","CNPG","Comm","Comm L","Con","Cor D","CPA","CSP","CTDP","CURE","D Lab","D Nat","DDP","DUP","ED","EIP","EPA","FAWG","FDP","FFR","Grn","GSOT","Hum","ICHC","IEAC","IFED","ILEU","Impact","Ind1","Ind2","Ind3","Ind4","Ind5","IPT","ISGB","ISQM","IUK","IVH","IZB","JAC","Joy","JP","Lab","Land","LD","Lib","Libert","LIND","LLPB","LTT","MACI","MCP","MEDI","MEP","MIF","MK","MPEA","MRLP","MRP","Nat Lib","NCDV","ND","New","NF","NFP","NICF","Nobody","NSPS","PBP","PC","Pirate","PNDP","Poet","PPBF","PPE","PPNV","Reform","Respect","Rest","RRG","RTBP","SACL","Sci","SDLP","SEP","SF","SIG","SJP","SKGP","SMA","SMRA","SNP","Soc","Soc Alt","Soc Dem","Soc Lab","South","Speaker","SSP","TF","TOC","Trust","TUSC","TUV","UCUNF","UKIP","UPS","UV","VCCA","Vote","Wessex Reg","WRP","You","Youth","YRDPL"];
+		return allParties.filter(function(item){
+			return this.visibleParties.indexOf(item) === -1;
+		}.bind(this));
 	};
 
 	mapConvertor.prototype.reCalculateTo100percent = function(value_changed) {
@@ -116,26 +85,23 @@
 		}
 	};
 
-
 	mapConvertor.prototype.updateRangeValues = function() {
 		for (var party in this.twentyTenPercentageResult) {
 			document.getElementById(party + '_rangevalue').value = Math.ceil(this.previousPercentageState[party] * 10) / 10;
 		}
 	};
 
+	mapConvertor.prototype.convertToId = function(constituencyName) {
+		return constituencyName.replace(/[\s,]/g,'_').replace(/&/g,'and').replace(/[()]/g,'');
+	};
+
 	mapConvertor.prototype.loadData = function() {
 
-		d3.json("data/SeatLookup.json", function(mapSeats) {
-			this.mapSeatLookup = {};
-			for (var i = 0; i < mapSeats.length; i++) {
-				this.mapSeatLookup[mapSeats[i].Constituency] = {'seatId':mapSeats[i].Seat,result:{}};
-			}
-		}.bind(this));
-
-		d3.json("data/convertcsv.json", function(seats) {
-			for (var i = 0; i < seats.length; i++) {
-				this.storeVotesPerConstituency(seats[i]);
-				this.calculateSeatColor(seats[i]);
+		d3.json("data/2010.json", function(seats) {
+			this.seats = seats;
+			for(var id in seats) {
+				this.storeVotesPerConstituency(seats[id]);
+				this.calculateSeatColor(seats[id]);
 			}
 		}.bind(this));
 	};
@@ -143,72 +109,43 @@
 	mapConvertor.prototype.storeVotesPerConstituency = function(seat) {
 
 		// store in an adjusted variable as well
-		for (party in seat) {
+		for (var party in seat) {
 			if (this.isValidParty(party)) {
 				seat[party + '_adjusted'] = seat[party];
 			}
 		}
-		if ( this.mapSeatLookup[seat["Constituency Name"]] ) {
-			this.mapSeatLookup[seat["Constituency Name"]].result = seat;
-		}
+
 	};
 
 	mapConvertor.prototype.isNotAMainParty = function(partyCode) {
 		var mainParties = ['Con','Lab','LD'];
-
-		return (mainParties.indexOf(partyCode) > -1) ? false:true;
-	}
+		return !(mainParties.indexOf(partyCode) > -1);
+	};
 
 	mapConvertor.prototype.isValidParty = function(party) {
 		var notValidParties = ['Press Association Reference','Constituency Name','Region','Election Year','Electorate','Votes'];
-		return (notValidParties.indexOf(party) > -1) ? false: true;
+		return !(notValidParties.indexOf(party) > -1);
 	};
 
-
-
 	mapConvertor.prototype.calculateSeatColor = function(seat) {
-		var winner = {party:null,votes:0};
-		var mapSeat = this.getMapSeat(seat["Constituency Name"]);
+		var winner = {party:null, votes:0};
 
-		for (party in seat) {
-			if (winner.votes < seat[party + '_adjusted']
-				&& this.isValidParty(party)) {
+		var mapSeat = d3.select('#' + this.convertToId(seat['Constituency Name']));
+
+		for (var party in seat) {
+			if (winner.votes < seat[party + '_adjusted'] && this.isValidParty(party)) {
 				winner.party = party;
 				winner.votes = seat[party + '_adjusted'];
 			}
 		}
 
-		this.setSeatColor(mapSeat,winner.party);
-		this.setConstituencyName(mapSeat,seat["Constituency Name"]);
-		this.setClickHandlers();
+		this.setSeatColor(mapSeat, winner.party);
+		mapSeat.on('click',this.constituencyClickHandler);
 	};
-
-	mapConvertor.prototype.setConstituencyName = function(ref,constituency) {
-		if (!ref) {
-			this.numberOfUndefinedMapItems++;
-		}
-
-		d3.select('#' + ref).attr('constituency',constituency);
-	};
-
-	mapConvertor.prototype.setClickHandlers = function() {
-		d3.selectAll('path').on('click',this.constituencyClickHandler)
-	};
-
 
 	mapConvertor.prototype.setSeatColor = function(ref, party) {
 		var style = this.setStyle(party);
-
-		d3.select('#' + ref)
-			.attr('class',style + ' seat');
-	};
-
-	mapConvertor.prototype.getMapSeat = function(constituency) {
-		if ( this.mapSeatLookup[constituency] ) {
-			return this.mapSeatLookup[constituency].seatId;
-		} else {
-			return;
-		}
+		ref.attr('class', style + ' seat');
 	};
 
 	mapConvertor.prototype.partyCodeLookup = function(party) {
@@ -225,31 +162,16 @@
 			default:
 				return 'other';
 		}
-
 	};
 
 	mapConvertor.prototype.setStyle = function(party) {
 		var styles = {'Lab':'labour','Con':'tory','LD':'libdem','SNP':'snp','Grn':'grn','PC':'pc','Respect':'respect','SDLP':'sdlp','PC':'pc','DUP':'dup','UUP':'uup','SF':'sf','UKIP':'ukip'};
-		//todo handle the independent styles
-
 		return styles?styles[party] : 'unknown';
 	};
 
 	mapConvertor.prototype.constituencyClickHandler = function() {
-		var votes;
-
-		if (!this.getAttribute('constituency')) {
-			console.log(this.getAttribute('id') + ' - no constituency set ');
-
-			return;
-		}
-
-		console.log(this.getAttribute('constituency'));
-
-		for(var party in this.mapSeatLookup[this.getAttribute('constituency')].result) {
-			votes = this.mapSeatLookup[this.getAttribute('constituency')].result[party];
-		}
-
+		var id = this.getAttribute('id');
+		console.log(id + ': ' + this.seats[id]);
 	};
 
 	if(!window.mapConvertor){
