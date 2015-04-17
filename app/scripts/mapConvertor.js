@@ -117,11 +117,6 @@
 
 	};
 
-	mapConvertor.prototype.isNotAMainParty = function(partyCode) {
-		var mainParties = ['Con','Lab','LD'];
-		return !(mainParties.indexOf(partyCode) > -1);
-	};
-
 	mapConvertor.prototype.isValidParty = function(party) {
 		var notValidParties = ['Press Association Reference','Constituency Name','Region','Election Year','Electorate','Votes'];
 		return !(notValidParties.indexOf(party) > -1);
