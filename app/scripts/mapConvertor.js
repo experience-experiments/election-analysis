@@ -1,4 +1,6 @@
 (function(){
+	var seats;
+
 	function mapConvertor() {
 
 		this.visibleParties = ["Con","Lab","LD"];
@@ -52,8 +54,8 @@
 
 		delete voteDiffs['other']; // not a valid party anymore
 
-		for (var id in this.seats){
-			var constituency = this.seats[id];
+		for (var id in seats){
+			var constituency = seats[id];
 			for (var voteDiffParty in voteDiffs) {
 				var adjustedVotes = Math.round( (constituency[voteDiffParty] * voteDiffs[voteDiffParty] ) );
 				constituency[voteDiffParty + '_adjusted'] = adjustedVotes;
@@ -97,8 +99,8 @@
 
 	mapConvertor.prototype.loadData = function() {
 
-		d3.json("data/2010.json", function(seats) {
-			this.seats = seats;
+		d3.json("data/2010.json", function(constituencies) {
+			seats = constituencies;
 			for(var id in seats) {
 				this.storeVotesPerConstituency(seats[id]);
 				this.calculateSeatColor(seats[id]);
@@ -106,12 +108,12 @@
 		}.bind(this));
 	};
 
-	mapConvertor.prototype.storeVotesPerConstituency = function(seat) {
+	mapConvertor.prototype.storeVotesPerConstituency = function(constituency) {
 
 		// store in an adjusted variable as well
-		for (var party in seat) {
+		for (var party in constituency) {
 			if (this.isValidParty(party)) {
-				seat[party + '_adjusted'] = seat[party];
+				constituency[party + '_adjusted'] = constituency[party];
 			}
 		}
 
@@ -122,15 +124,15 @@
 		return !(notValidParties.indexOf(party) > -1);
 	};
 
-	mapConvertor.prototype.calculateSeatColor = function(seat) {
+	mapConvertor.prototype.calculateSeatColor = function(constituency) {
 		var winner = {party:null, votes:0};
 
-		var mapSeat = d3.select('#' + this.convertToId(seat['Constituency Name']));
+		var mapSeat = d3.select('#' + this.convertToId(constituency['Constituency Name']));
 
-		for (var party in seat) {
-			if (winner.votes < seat[party + '_adjusted'] && this.isValidParty(party)) {
+		for (var party in constituency) {
+			if (winner.votes < constituency[party + '_adjusted'] && this.isValidParty(party)) {
 				winner.party = party;
-				winner.votes = seat[party + '_adjusted'];
+				winner.votes = constituency[party + '_adjusted'];
 			}
 		}
 
@@ -166,7 +168,8 @@
 
 	mapConvertor.prototype.constituencyClickHandler = function() {
 		var id = this.getAttribute('id');
-		console.log(id + ': ' + this.seats[id]);
+
+		console.log(id + ': ' + JSON.stringify(seats[id]));
 	};
 
 	if(!window.mapConvertor){
