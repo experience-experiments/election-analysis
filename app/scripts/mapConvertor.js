@@ -1,4 +1,4 @@
-(function(d3){
+(function(){
 	'use strict';
 
 	var seats;

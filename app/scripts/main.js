@@ -1,7 +1,9 @@
 'use strict';
-var electionAnalyser = function(d3, MapConvertor){
-	var votingMap = new MapConvertor(d3);
-	votingMap.initialise();
+
+var votingMap = new MapConvertor();
+votingMap.initialise();
+
+(function mapZoom(){
 
 	var transform = function(e) {
 		return "translate(" + x(e.translate[0]) + "," + y(e.translate[1]) + ")scale(" + e.scale + ")";
@@ -20,6 +22,4 @@ var electionAnalyser = function(d3, MapConvertor){
 
 	svg.call(d3.behavior.zoom().x(x).y(y).scaleExtent([1, 8]).on("zoom", zoom));
 
-};
-
-electionAnalyser(window.d3, window.MapConvertor);
+})();
