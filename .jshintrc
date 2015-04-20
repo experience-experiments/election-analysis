@@ -23,6 +23,7 @@
 		"crypto": true,
 		"define": true,
 		"require": true,
-		"d3":true
+		"d3":true,
+		"MapConvertor":true
 	}
 }
