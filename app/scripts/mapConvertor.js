@@ -37,6 +37,7 @@
 		this.updateRangeValues();
 
 		this.updateVotes();
+		this.updateTotalNumberOfSeats();
 
 	};
 
