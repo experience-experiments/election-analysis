@@ -36,13 +36,13 @@ fs.readFile("2010UKElectionMap.svg", "utf-8", function(err, data) {
 	//simplify default embedded styles
 	var newStyles = '\n\t<style type="text/css">\n \
 		.seat {\n \
-			stroke: black;\n \
-			stroke-width: 0.5;\n \
+			stroke: #999;\n \
+			stroke-width: 0.3;\n \
 			fill: #eee;\n \
 		}\n\n \
 		.countyboundary {\n \
-			stroke: black;\n \
-			stroke-width: 1;\n \
+			stroke: #999;\n \
+			stroke-width: 0.3;\n \
 			fill: none;\n \
 		}\n\t</style>\n';
 

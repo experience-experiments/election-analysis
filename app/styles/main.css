@@ -36,10 +36,15 @@ svg *.dup { fill: #C30; }        /* Democratic Unionist Party */
 svg *.respect { fill: #F60; }    /* Respect Party (George Galloway) */
 svg *.ind { fill: #C0C0C0; }     /* independent candidate */
 svg *.green {fill: #0F0;}
-svg *.seat { stroke: black; stroke-width: 0.3; }
+svg *.seat { stroke: #999; stroke-width: 0.3; }
 svg *.ukip { fill: #7027C3;}
 svg *.other {fill: #FAA51A;}
 
+
+svg path:hover {
+    stroke: black;
+    stroke-width: 2px;
+}
 
 .legend {
     position: absolute;
