@@ -1,28 +1,39 @@
 'use strict';
 
-var votingMap = new MapConvertor();
-votingMap.initialise();
+var votingMap;
 
-(function mapZoom(){
 
-	var svg = d3.select('svg');
-	var allG = d3.selectAll('svg g');
-	var allPaths = d3.selectAll('svg path');
-	var width = svg.attr('width');
-	var height = svg.attr('height');
+d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 
-	var x = d3.scale.linear().domain([0, width]);
-	var y = d3.scale.linear().domain([0, height]);
+	document.querySelector('.panel-body').innerHTML = svgData.response;
+	votingMap = new MapConvertor();
+	votingMap.initialise();
 
-	var transform = function(e) {
-		return "translate(" + x(e.translate[0]) + "," + y(e.translate[1]) + ")scale(" + e.scale + ")";
-	};
+	(function mapZoom(){
 
-	var zoom = 	function() {
-		allG.attr("transform", transform(d3.event));
-		allPaths.style("stroke-width", 0.5 / d3.event.scale);
-	};
+		var svg = d3.select('svg');
+		var allG = d3.selectAll('svg g');
+		var allPaths = d3.selectAll('svg path');
+		var width = svg.attr('width');
+		var height = svg.attr('height');
 
-	svg.call(d3.behavior.zoom().x(x).y(y).scaleExtent([1, 9]).on("zoom", zoom));
+		var x = d3.scale.linear().domain([0, width]);
+		var y = d3.scale.linear().domain([0, height]);
 
-})();
+		var transform = function(e) {
+			return "translate(" + x(e.translate[0]) + "," + y(e.translate[1]) + ")scale(" + e.scale + ")";
+		};
+
+		var zoom = 	function() {
+			allG.attr("transform", transform(d3.event));
+			allPaths.style("stroke-width", 0.5 / d3.event.scale);
+		};
+
+		svg.call(d3.behavior.zoom().x(x).y(y).scaleExtent([0.5, 9]).on("zoom", zoom));
+
+	})();
+
+});
+
+
+

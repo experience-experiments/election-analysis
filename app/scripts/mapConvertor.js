@@ -90,6 +90,7 @@
 
 		// set the changed value to the state store
 		this.previousPercentageState[valueChanged] = this.elements[valueChanged + '_rangeinput'];
+		document.getElementById(valueChanged + '_rangevalue').value = Math.ceil(this.previousPercentageState[valueChanged] * 10) / 10;
 
 		for (var party in this.twentyTenPercentageResult) {
 			if (valueChanged !== party) {
