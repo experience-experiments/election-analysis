@@ -1,10 +1,8 @@
+.DS_Store
 node_modules
 dist
 .tmp
 bower_components
-.DS_Store
 edited.svg
-optimised2010Results.json
-test.js
 archive.zip
 aws-s3-credentials.json
