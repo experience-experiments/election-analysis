@@ -59,7 +59,9 @@
 		for (var id in seats){
 			var constituency = seats[id];
 			for (var voteDiffParty in voteDiffs) {
-				constituency[voteDiffParty + '_adjusted'] = Math.round( (constituency[voteDiffParty] * voteDiffs[voteDiffParty] ) );
+				if(constituency.hasOwnProperty(voteDiffParty)){
+					constituency[voteDiffParty + '_adjusted'] = Math.round( (constituency[voteDiffParty] * voteDiffs[voteDiffParty] ) );
+				}
 			}
 			this.calculateSeatColor(constituency);
 		}

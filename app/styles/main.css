@@ -37,7 +37,7 @@ svg path.uup { fill: #99F; }        /* Ulster Unionist Party */
 svg path.dup { fill: #C30; }        /* Democratic Unionist Party */
 svg path.respect { fill: #F60; }    /* Respect Party (George Galloway) */
 svg path.ind { fill: #C0C0C0; }     /* independent candidate */
-svg path.grn {fill: #0F0;}
+svg path.grn, svg path.green {fill: #0F0;}
 svg path.seat { stroke: black; stroke-width: 0.3; }
 svg path.ukip { fill: #7027C3;}
 svg path.other {fill: #FAA51A;}
@@ -53,7 +53,7 @@ svg polygon.uup { fill: #99F; }
 svg polygon.dup { fill: #C30; }
 svg polygon.respect { fill: #F60; }
 svg polygon.ind { fill: #C0C0C0; }
-svg polygon.grn {fill: #0F0;}
+svg polygon.grn, svg path.green {fill: #0F0;}
 svg polygon.ukip { fill: #7027C3;}
 svg polygon.other {fill: #FAA51A;}
 
