@@ -11,11 +11,9 @@ body {
     opacity: .6;
 }
 
-.mapContainer {
+svg {
     border: solid black 1px;
     background-color: lightblue;
-    margin: 40px;
-    padding: 2px;
 }
 
 input[type=range] {
@@ -47,16 +45,16 @@ svg *.other {fill: #FAA51A;}
     position: absolute;
     top: 370px;
     right: 15px;
-    width: 200px;
+    width: 150px;
     height: auto;
 }
 
 .legend ul{
     list-style: none;
+    padding-left: 0;
 }
 
 .legend ul li{
-    margin-left: 20px;
     line-height: 30px;
     font-size: 20px;
     margin-bottom: 5px;
@@ -90,4 +88,13 @@ svg *.other {fill: #FAA51A;}
 }
 .legend ul li.other:before {
     color: #FAA51A;
+}
+
+.detail{
+    position: absolute;
+    top: 390px;
+    right: 185px;
+    width: 230px;
+    height: auto;
+    opacity: .6;
 }

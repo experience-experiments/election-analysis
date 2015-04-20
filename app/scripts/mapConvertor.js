@@ -2,6 +2,7 @@
 	'use strict';
 
 	var seats;
+	var selectedId = null;
 
 	function MapConvertor() {
 
@@ -181,9 +182,33 @@
 	};
 
 	MapConvertor.prototype.constituencyClickHandler = function() {
-		var id = this.getAttribute('id');
 
-		console.log(id + ': ' + JSON.stringify(seats[id]));
+		selectedId = this.getAttribute('id');
+		var selectedSeat = seats[selectedId];
+		console.log(selectedId + ': ' + JSON.stringify(selectedSeat));
+
+		var nameEl = document.querySelector('.detail.well h5');
+		var tbodyEl = document.querySelector('.detail.well table tbody');
+
+		nameEl.innerHTML = selectedSeat['Constituency Name'];
+		tbodyEl.innerHTML = '';
+
+		var votes = [];
+		for(var i in selectedSeat){
+			if(selectedSeat.hasOwnProperty(i) && i.indexOf('adjusted') > -1){
+				votes.push(i)
+			}
+		}
+		var sorted = votes.sort(function(a, b){
+			return selectedSeat[a] <= selectedSeat[b];
+		});
+
+		for(var j in sorted){
+			tbodyEl.innerHTML += '<tr><td>' + sorted[j].substring(0, sorted[j].indexOf('adjusted') - 1) + '</td><td>' + selectedSeat[sorted[j]] + '</td></tr>';
+		}
+
+
+
 	};
 
 	if(!window.MapConvertor){
