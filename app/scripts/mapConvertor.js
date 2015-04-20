@@ -16,14 +16,21 @@
 	MapConvertor.prototype.initialise = function(){
 		this.loadData();
 		this.setTwentyTenResults();
-		this.updateRangeValues();
 		this.updateTotalNumberOfSeats();
+
+		document.getElementById('reset').addEventListener('click',MapConvertor.prototype.resetPercentages.bind(this), false);
 	};
 
+	MapConvertor.prototype.resetPercentages = function(){
+		this.setTwentyTenResults();
+		this.updateVotes();
+		this.updateTotalNumberOfSeats();
+	};
 
 	MapConvertor.prototype.setTwentyTenResults = function() {
 		for (var party in this.twentyTenPercentageResult) {
 			this.previousPercentageState[party] = document.getElementById(party + '_rangeinput').value = this.twentyTenPercentageResult[party];
+			document.getElementById(party + '_rangevalue').value = Math.ceil(this.previousPercentageState[party] * 10) / 10;
 		}
 	};
 
@@ -34,7 +41,6 @@
 		}
 
 		this.reCalculateTo100percent(node.id);
-		this.updateRangeValues();
 
 		this.updateVotes();
 		this.updateTotalNumberOfSeats();
@@ -88,13 +94,8 @@
 			if (valueChanged !== party) {
 				this.previousPercentageState[party] = this.previousPercentageState[party] - amountChanged;
 				document.getElementById(party + '_rangeinput').value = this.previousPercentageState[party];
+				document.getElementById(party + '_rangevalue').value = Math.ceil(this.previousPercentageState[party] * 10) / 10;
 			}
-		}
-	};
-
-	MapConvertor.prototype.updateRangeValues = function() {
-		for (var party in this.twentyTenPercentageResult) {
-			document.getElementById(party + '_rangevalue').value = Math.ceil(this.previousPercentageState[party] * 10) / 10;
 		}
 	};
 
