@@ -17,6 +17,7 @@
 		this.loadData();
 		this.setTwentyTenResults();
 		this.updateRangeValues();
+		this.updateTotalNumberOfSeats();
 	};
 
 
@@ -161,8 +162,19 @@
 		}
 	};
 
+	MapConvertor.prototype.updateTotalNumberOfSeats = function(){
+		var elems = document.querySelectorAll('.legend li');
+		for(var i in elems){
+			if(typeof elems[i] === 'object'){
+				var adjustedSeatCount = document.querySelectorAll('svg g *.' + elems[i].className + '.seat').length;
+				elems[i].querySelector('span.badge').innerHTML = adjustedSeatCount;
+			}
+		}
+
+	}
+
 	MapConvertor.prototype.setStyle = function(party) {
-		var styles = {'Lab':'labour','Con':'tory','LD':'libdem','SNP':'snp','Grn':'grn','Respect':'respect','SDLP':'sdlp','PC':'pc','DUP':'dup','UUP':'uup','SF':'sf','UKIP':'ukip'};
+		var styles = {'Lab':'labour','Con':'tory','LD':'libdem','SNP':'snp','Grn':'green','Respect':'respect','SDLP':'sdlp','PC':'pc','DUP':'dup','UUP':'uup','SF':'sf','UKIP':'ukip'};
 		return styles?styles[party] : 'unknown';
 	};
 
