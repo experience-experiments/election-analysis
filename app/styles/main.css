@@ -26,36 +26,21 @@ input[type=range] {
     display: inline-block;
 }
 
-svg path.labour { fill: #F00; }     /* Labour Party */
-svg path.tory { fill: #33C; }       /* Conservative Party */
-svg path.libdem { fill: #FC0; }     /* Liberal Democrat Party */
-svg path.snp { fill: #FF0; }        /* Scottish National Party */
-svg path.pc { fill: #6C3; }         /* Plaid Cymru */
-svg path.sf { fill: #060; }         /* Sinn Féin */
-svg path.sdlp { fill: #3C3; }       /* Social Democratic and Labour Party */
-svg path.uup { fill: #99F; }        /* Ulster Unionist Party */
-svg path.dup { fill: #C30; }        /* Democratic Unionist Party */
-svg path.respect { fill: #F60; }    /* Respect Party (George Galloway) */
-svg path.ind { fill: #C0C0C0; }     /* independent candidate */
-svg path.grn, svg path.green {fill: #0F0;}
-svg path.seat { stroke: black; stroke-width: 0.3; }
-svg path.ukip { fill: #7027C3;}
-svg path.other {fill: #FAA51A;}
-
-svg polygon.labour { fill: #F00; }
-svg polygon.tory { fill: #33C; }
-svg polygon.libdem { fill: #FC0; }
-svg polygon.snp { fill: #FF0; }
-svg polygon.pc { fill: #6C3; }
-svg polygon.sf { fill: #060; }
-svg polygon.sdlp { fill: #3C3; }
-svg polygon.uup { fill: #99F; }
-svg polygon.dup { fill: #C30; }
-svg polygon.respect { fill: #F60; }
-svg polygon.ind { fill: #C0C0C0; }
-svg polygon.grn, svg path.green {fill: #0F0;}
-svg polygon.ukip { fill: #7027C3;}
-svg polygon.other {fill: #FAA51A;}
+svg *.labour { fill: #F00; }     /* Labour Party */
+svg *.tory { fill: #33C; }       /* Conservative Party */
+svg *.libdem { fill: #FC0; }     /* Liberal Democrat Party */
+svg *.snp { fill: #FF0; }        /* Scottish National Party */
+svg *.pc { fill: #6C3; }         /* Plaid Cymru */
+svg *.sf { fill: #060; }         /* Sinn Féin */
+svg *.sdlp { fill: #3C3; }       /* Social Democratic and Labour Party */
+svg *.uup { fill: #99F; }        /* Ulster Unionist Party */
+svg *.dup { fill: #C30; }        /* Democratic Unionist Party */
+svg *.respect { fill: #F60; }    /* Respect Party (George Galloway) */
+svg *.ind { fill: #C0C0C0; }     /* independent candidate */
+svg *.grn, svg path.green {fill: #0F0;}
+svg *.seat { stroke: black; stroke-width: 0.3; }
+svg *.ukip { fill: #7027C3;}
+svg *.other {fill: #FAA51A;}
 
 
 .legend {
