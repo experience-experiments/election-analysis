@@ -145,7 +145,7 @@
 		}
 
 		this.setSeatColor(mapSeat, winner.party);
-		mapSeat.on('click',this.constituencyClickHandler);
+		//mapSeat.on('click',this.constituencyClickHandler);
 	};
 
 	MapConvertor.prototype.setSeatColor = function(ref, party) {
@@ -186,29 +186,34 @@
 
 		selectedId = this.getAttribute('id');
 		var selectedSeat = seats[selectedId];
-		console.log(selectedId + ': ' + JSON.stringify(selectedSeat));
+
 
 		var tableEl = document.querySelector('.detail table');
 		var nameEl = tableEl.querySelector('th');
 		var tbodyEl = tableEl.querySelector('tbody');
 
-		tableEl.classList.remove('hidden');
-		nameEl.innerHTML = selectedSeat['Constituency Name'];
-		tbodyEl.innerHTML = '';
+		if(selectedSeat){
+			tableEl.classList.remove('hidden');
+			nameEl.innerHTML = selectedSeat['Constituency Name'];
+			tbodyEl.innerHTML = '';
 
-		var votes = [];
-		for(var i in selectedSeat){
-			if(selectedSeat.hasOwnProperty(i) && i.indexOf('adjusted') > -1){
-				votes.push(i)
+			var votes = [];
+			for(var i in selectedSeat){
+				if(selectedSeat.hasOwnProperty(i) && i.indexOf('adjusted') > -1){
+					votes.push(i)
+				}
 			}
-		}
-		var sorted = votes.sort(function(a, b){
-			return selectedSeat[a] <= selectedSeat[b];
-		});
+			var sorted = votes.sort(function(a, b){
+				return selectedSeat[a] <= selectedSeat[b];
+			});
 
-		for(var j in sorted){
-			tbodyEl.innerHTML += '<tr><td>' + sorted[j].substring(0, sorted[j].indexOf('adjusted') - 1) + '</td><td>' + selectedSeat[sorted[j]] + '</td></tr>';
+			for(var j in sorted){
+				tbodyEl.innerHTML += '<tr><td>' + sorted[j].substring(0, sorted[j].indexOf('adjusted') - 1) + '</td><td>' + selectedSeat[sorted[j]] + '</td></tr>';
+			}
+		} else {
+			console.log('No seat found for ' + selectedId + ': ' + JSON.stringify(selectedSeat));
 		}
+
 
 	};
 

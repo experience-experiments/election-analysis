@@ -54,6 +54,14 @@ svg path:hover {
     opacity: 0.5;
 }
 
+svg path.selected:hover{
+    opacity: 1;
+}
+
+svg.selected path:not(.selected) {
+    opacity: 0.7;
+}
+
 .legend {
     padding-top: 10px;
 }
