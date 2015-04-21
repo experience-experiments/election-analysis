@@ -22,12 +22,13 @@ module.exports = function (grunt) {
 		dist: 'dist'
 	};
 
+	var awsConfig = {};
+
 	// Define the configuration for all the tasks
 	grunt.initConfig({
 
 		// Project settings
 		config: config,
-		awsConfig: grunt.file.readJSON("aws-s3-credentials.json"),
 
 		s3: {
 			options: {
@@ -191,10 +192,14 @@ module.exports = function (grunt) {
 		'copy:dist'
 	]);
 
-	grunt.registerTask('release', [
-		'build',
-		's3:publish'
-	]);
+	grunt.registerTask('release', function(target) {
+		awsConfig = grunt.file.readJSON("aws-s3-credentials.json");
+		
+		grunt.task.run([
+			'build',
+			's3:publish'
+		]);
+	});
 
 	grunt.registerTask('default', [
 		'newer:jshint',
