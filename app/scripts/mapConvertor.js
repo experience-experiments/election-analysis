@@ -188,8 +188,8 @@
 		var selectedSeat = seats[selectedId];
 		console.log(selectedId + ': ' + JSON.stringify(selectedSeat));
 
-		var nameEl = document.querySelector('.detail.well h5');
-		var tbodyEl = document.querySelector('.detail.well table tbody');
+		var nameEl = document.querySelector('.detail h5');
+		var tbodyEl = document.querySelector('.detail table tbody');
 
 		nameEl.innerHTML = selectedSeat['Constituency Name'];
 		tbodyEl.innerHTML = '';

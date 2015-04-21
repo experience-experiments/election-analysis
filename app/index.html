@@ -13,70 +13,65 @@
 </head>
 <body>
 
-<!-- Add your site or application content here -->
-<header>
-    <h3>UK General Election Vote Analyser</h3>
-</header>
+<div class="container-fluid">
+    <div class="row content">
+        <div class="panel-body col-md-5">
 
-<div class="panel panel-default">
+        </div>
+        <div class="side-controls col-md-7">
+            <div class="controls col-md-12">
+                <h4>Adjust national percentages</h4>
+                Conservative
+                <div id="con_slider" class="slider-and-output">
+                    <input class="bar" type="range" id="con_rangeinput" step="0.1" min="1" max="90"
+                           onchange="votingMap.recalculateSeats(this)"/>
+                    <output id="con_rangevalue">36.1</output>
+                </div>
+                Labour
+                <div id="lab_slider" class="slider-and-output">
+                    <input class="bar" type="range" id="lab_rangeinput" step="0.1" min="1" max="90"
+                           onchange="votingMap.recalculateSeats(this)"/>
+                    <output id="lab_rangevalue">29.0</output>
+                </div>
+                Libdem
+                <div id="libdem_slider" class="slider-and-output">
+                    <input class="bar" type="range" id="libdem_rangeinput" step="0.1" min="1" max="90"
+                           onchange="votingMap.recalculateSeats(this)"/>
+                    <output id="libdem_rangevalue">23.0</output>
+                </div>
+                Other
+                <div id="other_slider" class="slider-and-output">
+                    <input class="bar" type="range" id="other_rangeinput" step="0.1" min="1" max="90"
+                           onchange="votingMap.recalculateSeats(this)"/>
+                    <output id="other_rangevalue">11.9</output>
+                </div>
+                <br/>
+                <button id="reset" class="btn btn-default">Reset to 2010</button>
+            </div>
+            <div class="detail col-md-6">
+                <h5>Click on the map</h5>
+                <table class="table table-striped">
+                    <tbody>
 
-    <div class="panel-body"/>
-
-</div>
-
-<div class="controls well">
-    <h4>Adjust national percentages</h4>
-    Conservative
-    <div id="con_slider" class="slider-and-output">
-        <input class="bar" type="range" id="con_rangeinput" step="0.1" min="1" max="90"
-               onchange="votingMap.recalculateSeats(this)"/>
-        <output id="con_rangevalue">36.1</output>
+                    </tbody>
+                </table>
+            </div>
+            <div class="legend col-md-4">
+                <h3>Seats</h3>
+                <ul>
+                    <li class="labour">Labour <span class="badge">42</span></li>
+                    <li class="tory">Tory <span class="badge">42</span></li>
+                    <li class="libdem">LibDem <span class="badge">42</span></li>
+                    <li class="ukip">UKIP <span class="badge">42</span></li>
+                    <li class="green">Green <span class="badge">42</span></li>
+                    <li class="snp">SNP <span class="badge">42</span></li>
+                    <li class="pc">PC <span class="badge">42</span></li>
+                    <li class="other">Other <span class="badge">42</span></li>
+                </ul>
+            </div>
+        </div>
     </div>
-    Labour
-    <div id="lab_slider" class="slider-and-output">
-        <input class="bar" type="range" id="lab_rangeinput" step="0.1" min="1" max="90"
-               onchange="votingMap.recalculateSeats(this)"/>
-        <output id="lab_rangevalue">29.0</output>
-    </div>
-    Libdem
-    <div id="libdem_slider" class="slider-and-output">
-        <input class="bar" type="range" id="libdem_rangeinput" step="0.1" min="1" max="90"
-               onchange="votingMap.recalculateSeats(this)"/>
-        <output id="libdem_rangevalue">23.0</output>
-    </div>
-    Other
-    <div id="other_slider" class="slider-and-output">
-        <input class="bar" type="range" id="other_rangeinput" step="0.1" min="1" max="90"
-               onchange="votingMap.recalculateSeats(this)"/>
-        <output id="other_rangevalue">11.9</output>
-    </div>
-    <br/>
-    <button id="reset" class="btn btn-default pull-right">Reset to 2010</button>
 </div>
-
-<div class="legend">
-    <h3>Seats</h3>
-    <ul>
-        <li class="labour">Labour <span class="badge">42</span></li>
-        <li class="tory">Tory <span class="badge">42</span></li>
-        <li class="libdem">LibDem <span class="badge">42</span></li>
-        <li class="ukip">UKIP <span class="badge">42</span></li>
-        <li class="green">Green <span class="badge">42</span></li>
-        <li class="snp">SNP <span class="badge">42</span></li>
-        <li class="pc">PC <span class="badge">42</span></li>
-        <li class="other">Other <span class="badge">42</span></li>
-    </ul>
-</div>
-
-<div class="detail well">
-    <h5></h5>
-    <table class="table table-striped">
-        <tbody>
-
-        </tbody>
-    </table>
-</div>
-
 
 <script src="bower_components/d3/d3.min.js" charset="utf-8"></script>
 <script src="scripts/mapConvertor.js"></script>

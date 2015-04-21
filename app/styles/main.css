@@ -1,14 +1,9 @@
 body {
-    padding: 10px;
+
 }
 
 .controls {
-    position: absolute;
-    top: 70px;
-    right: 15px;
-    width: 400px;
-    height: auto;
-    opacity: .6;
+
 }
 
 svg {
@@ -17,7 +12,7 @@ svg {
 }
 
 input[type=range] {
-    width: 300px;
+    width: 80%;
 }
 
 .slider-and-output input, output {
@@ -47,11 +42,7 @@ svg path:hover {
 }
 
 .legend {
-    position: absolute;
-    top: 370px;
-    right: 15px;
-    width: 150px;
-    height: auto;
+
 }
 
 .legend ul{
@@ -94,14 +85,6 @@ svg path:hover {
     color: #FAA51A;
 }
 
-.detail{
-    position: absolute;
-    top: 390px;
-    right: 185px;
-    width: 230px;
-    height: auto;
-    opacity: .6;
-}
 
 .slider-and-output output:after{
     content: '%';
