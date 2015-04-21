@@ -1,5 +1,15 @@
 body {
+    padding: 0;
+    margin: 0;
+}
 
+.container-fluid{
+    padding: 0;
+}
+
+.svg-container{
+    min-height: 560px;
+    height: 600px;
 }
 
 .controls {
@@ -7,15 +17,19 @@ body {
 }
 
 svg {
-    border: solid black 1px;
-    background-color: lightblue;
+    border: solid #d3d3d3 1px;
+    background-color: #b9def0;
 }
 
-input[type=range] {
-    width: 80%;
+.slider-and-output input[type=range] {
+    width: 60%;
 }
 
-.slider-and-output input, output {
+.slider-and-output label {
+    width: 100px;
+}
+
+.slider-and-output input, .slider-and-output output, .slider-and-output label {
     display: inline-block;
 }
 
@@ -37,12 +51,11 @@ svg *.other {fill: #FAA51A;}
 
 
 svg path:hover {
-    stroke: black;
-    stroke-width: 2px;
+    opacity: 0.5;
 }
 
 .legend {
-
+    padding-top: 10px;
 }
 
 .legend ul{

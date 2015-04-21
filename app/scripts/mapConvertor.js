@@ -188,9 +188,11 @@
 		var selectedSeat = seats[selectedId];
 		console.log(selectedId + ': ' + JSON.stringify(selectedSeat));
 
-		var nameEl = document.querySelector('.detail h5');
-		var tbodyEl = document.querySelector('.detail table tbody');
+		var tableEl = document.querySelector('.detail table');
+		var nameEl = tableEl.querySelector('th');
+		var tbodyEl = tableEl.querySelector('tbody');
 
+		tableEl.classList.remove('hidden');
 		nameEl.innerHTML = selectedSeat['Constituency Name'];
 		tbodyEl.innerHTML = '';
 
@@ -208,8 +210,11 @@
 			tbodyEl.innerHTML += '<tr><td>' + sorted[j].substring(0, sorted[j].indexOf('adjusted') - 1) + '</td><td>' + selectedSeat[sorted[j]] + '</td></tr>';
 		}
 
+	};
 
-
+	MapConvertor.prototype.clearSelection = function(){
+		var tableEl = document.querySelector('.detail table');
+		tableEl.classList.add('hidden');
 	};
 
 	if(!window.MapConvertor){
