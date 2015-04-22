@@ -1,12 +1,4 @@
-// Generated on 2015-04-16 using
-// generator-webapp 0.5.1
 'use strict';
-
-// # Globbing
-// for performance reasons we're only matching one level down:
-// 'test/spec/{,*/}*.js'
-// If you want to recursively match all subfolders, use:
-// 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
 
@@ -22,13 +14,12 @@ module.exports = function (grunt) {
 		dist: 'dist'
 	};
 
-	var awsConfig = {};
-
 	// Define the configuration for all the tasks
 	grunt.initConfig({
 
 		// Project settings
 		config: config,
+		awsConfig: grunt.file.exists('aws-s3-credentials.json')?grunt.file.readJSON('aws-s3-credentials.json'):{'accessKeyId':'undefined'},
 
 		s3: {
 			options: {
@@ -170,7 +161,6 @@ module.exports = function (grunt) {
 		}
 	});
 
-
 	grunt.registerTask('serve', 'start the server and preview your app, --allow-remote for remote access', function (target) {
 		if (grunt.option('allow-remote')) {
 			grunt.config.set('connect.options.hostname', '0.0.0.0');
@@ -192,14 +182,10 @@ module.exports = function (grunt) {
 		'copy:dist'
 	]);
 
-	grunt.registerTask('release', function(target) {
-		awsConfig = grunt.file.readJSON("aws-s3-credentials.json");
-		
-		grunt.task.run([
+	grunt.registerTask('release', [
 			'build',
 			's3:publish'
-		]);
-	});
+	]);
 
 	grunt.registerTask('default', [
 		'newer:jshint',
