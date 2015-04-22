@@ -3,16 +3,17 @@ var fs = require('fs');
 var lookup = require('./2010.json');
 
 fs.readFile("2010UKElectionMap.svg", "utf-8", function(err, data) {
+	"use strict";
 	var text = data;
 
 	//remove partial paths for zoomed in views
-   text = text.replace(/\s*M\s[56]\d\d\.[^,]+,[89]\d\.[^"]*z/g, 'z');
-   text = text.replace(/\s*M\s[6]\d\d\.[^,]+,[1234]\d\d\.[^"]*z/g, 'z');
-   text = text.replace(/\s*M\s[5][^0]\d\.[^,]+,[1234]\d\d\.[^"]*z/g, 'z');
-   text = text.replace(/\s*M\s59\d\.[^,]+,44\d\.[^"]*"/g, '"');
-   text = text.replace(/\s*M\s[6]\d\d\.[^,]+,[5]\d\d\.[^"]*z/g, 'z');
-   text = text.replace(/\s*M\s[789]\d\d\.[^"]*z/g, 'z');
-   text = text.replace(/\s*M\s[789]\d\d\.[^"]*"/g, '"');
+	text = text.replace(/\s*M\s[56]\d\d\.[^,]+,[89]\d\.[^"]*z/g, 'z');
+	text = text.replace(/\s*M\s[6]\d\d\.[^,]+,[1234]\d\d\.[^"]*z/g, 'z');
+	text = text.replace(/\s*M\s[5][^0]\d\.[^,]+,[1234]\d\d\.[^"]*z/g, 'z');
+	text = text.replace(/\s*M\s59\d\.[^,]+,44\d\.[^"]*"/g, '"');
+	text = text.replace(/\s*M\s[6]\d\d\.[^,]+,[5]\d\d\.[^"]*z/g, 'z');
+	text = text.replace(/\s*M\s[789]\d\d\.[^"]*z/g, 'z');
+	text = text.replace(/\s*M\s[789]\d\d\.[^"]*"/g, '"');
 
 
 	//set the new svg width
@@ -116,7 +117,7 @@ fs.readFile("2010UKElectionMap.svg", "utf-8", function(err, data) {
 		}
 	}
 
-	for(var i in missingIds){
+	for(i in missingIds){
 		text = text.replace(missingIds[i], missingDataIds[i]);
 	}
 
