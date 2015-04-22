@@ -31,7 +31,6 @@
 	MapConvertor.prototype.setTwentyTenResults = function() {
 		for (var party in this.twentyTenPercentageResult) {
 			this.previousPercentageState[party] = document.getElementById(party + '_rangeinput').value = this.twentyTenPercentageResult[party];
-			document.getElementById(party + '_rangevalue').value = Math.ceil(this.previousPercentageState[party] * 10) / 10;
 		}
 	};
 
@@ -52,9 +51,7 @@
 		var voteDiffs = {};
 
 		for (var party in this.twentyTenPercentageResult) {
-			console.log('party ' + party + ' ' + this.twentyTenPercentageResult[party] + ' ' + this.previousPercentageState[party]);
 			voteDiffs[this.partyCodeLookup(party)] = (Number(this.previousPercentageState[party]) / Number(this.twentyTenPercentageResult[party]) ) ;
-			console.log('result: ' + voteDiffs[this.partyCodeLookup(party)]);
 		}
 
 		var otherParties = this.getOtherParties();
@@ -90,13 +87,11 @@
 
 		// set the changed value to the state store
 		this.previousPercentageState[valueChanged] = this.elements[valueChanged + '_rangeinput'];
-		document.getElementById(valueChanged + '_rangevalue').value = Math.ceil(this.previousPercentageState[valueChanged] * 10) / 10;
 
 		for (var party in this.twentyTenPercentageResult) {
 			if (valueChanged !== party) {
 				this.previousPercentageState[party] = this.previousPercentageState[party] - amountChanged;
-				document.getElementById(party + '_rangeinput').value = this.previousPercentageState[party];
-				document.getElementById(party + '_rangevalue').value = Math.ceil(this.previousPercentageState[party] * 10) / 10;
+				document.getElementById(party + '_rangeinput').value = this.previousPercentageState[party].toFixed(1);
 			}
 		}
 	};
@@ -154,15 +149,15 @@
 	};
 
 	MapConvertor.prototype.partyCodeLookup = function(party) {
-		switch(party) {
-			case 'con':
-				return 'Con';
-			case 'lab':
-				return 'Lab';
-			case 'libdem':
-				return 'LD';
-			default:
-				return 'other';
+		switch (party) {
+		case 'con':
+			return 'Con';
+		case 'lab':
+			return 'Lab';
+		case 'libdem':
+			return 'LD';
+		default:
+			return 'other';
 		}
 	};
 
@@ -175,7 +170,7 @@
 			}
 		}
 
-	}
+	};
 
 	MapConvertor.prototype.setStyle = function(party) {
 		var styles = {'Lab':'labour','Con':'tory','LD':'libdem','SNP':'snp','Grn':'green','Respect':'respect','SDLP':'sdlp','PC':'pc','DUP':'dup','UUP':'uup','SF':'sf','UKIP':'ukip'};
@@ -200,7 +195,7 @@
 			var votes = [];
 			for(var i in selectedSeat){
 				if(selectedSeat.hasOwnProperty(i) && i.indexOf('adjusted') > -1){
-					votes.push(i)
+					votes.push(i);
 				}
 			}
 			var sorted = votes.sort(function(a, b){
