@@ -8,25 +8,39 @@ body {
 }
 
 .svg-container{
+    padding-left: 0;
     min-height: 560px;
-    height: 600px;
+    height: 100vh;
 }
 
-.controls {
-
+.side-controls {
+    border-right: 5px solid #212121;
+    height: 100vh;
 }
 
 svg {
-    border: solid #d3d3d3 1px;
-    background-color: #b9def0;
+    border: solid #fff 0px;
+    background-color: #83A2B8;
+    background: -webkit-radial-gradient(#b8def1, #7ebad8);
+    background: -o-radial-gradient(#b8def1, #7ebad8);
+    background: -moz-radial-gradient(#b8def1, #7ebad8);
+    background: radial-gradient(#b8def1, #7ebad8);
 }
 
 .slider-and-output input[type=range] {
     width: 60%;
 }
 
-.slider-and-output label {
-    width: 100px;
+.controls label {
+    display: block;
+    padding-top: 10px;
+}
+
+.detail {
+    border-left: 5px solid #212121;
+    height: 100vh;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 .slider-and-output input, .slider-and-output output, .slider-and-output label {
@@ -45,7 +59,7 @@ svg *.dup { fill: #C30; }        /* Democratic Unionist Party */
 svg *.respect { fill: #F60; }    /* Respect Party (George Galloway) */
 svg *.ind { fill: #C0C0C0; }     /* independent candidate */
 svg *.green {fill: #0F0;}
-svg *.seat { stroke: #999; stroke-width: 0.3; }
+svg *.seat { stroke: white; stroke-width: 0.1; }
 svg *.ukip { fill: #7027C3;}
 svg *.other {fill: #FAA51A;}
 
@@ -107,6 +121,3 @@ svg.selected path:not(.selected) {
 }
 
 
-.slider-and-output output:after{
-    content: '%';
-}

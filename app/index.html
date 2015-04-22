@@ -15,54 +15,26 @@
 
 <div class="container-fluid">
     <div class="row content">
-        <div class="svg-container col-md-5">
 
-        </div>
-        <div class="side-controls col-md-7">
+        <div class="side-controls col-md-2">
+            <div class="buttons panel col-md-12">
+                <button id="reset" class="btn btn-default">2010 Votes</button>
+            </div>
             <div class="controls col-md-12">
-                <h4>Adjust national percentages</h4>
+                <h4>Adjust national vote</h4>
+                <label for="con_rangeinput">Con %</label>
+                <input type="number" id="con_rangeinput" step="0.1" min="1" max="90" onchange="votingMap.recalculateSeats(this)"/>
+                <label for="lab_rangeinput">Lab %</label>
+                <input type="number" id="lab_rangeinput" step="0.1" min="1" max="90" onchange="votingMap.recalculateSeats(this)"/>
+                <label for="libdem_rangeinput">Libdem %</label>
+                <input type="number" id="libdem_rangeinput" step="0.1" min="1" max="90" onchange="votingMap.recalculateSeats(this)"/>
+                <label for="other_rangeinput">Other %</label>
+                <input type="number" id="other_rangeinput" step="0.1" min="1" max="90" onchange="votingMap.recalculateSeats(this)"/>
+            </div>
 
-                <div id="con_slider" class="slider-and-output">
-                    <label for="con_rangeinput">Conservative</label>
-                    <input class="bar" type="range" id="con_rangeinput" step="0.1" min="1" max="90"
-                           onchange="votingMap.recalculateSeats(this)"/>
-                    <output id="con_rangevalue">36.1</output>
-                </div>
-                <div id="lab_slider" class="slider-and-output">
-                    <label for="lab_rangeinput">Labour</label>
-                    <input class="bar" type="range" id="lab_rangeinput" step="0.1" min="1" max="90"
-                           onchange="votingMap.recalculateSeats(this)"/>
-                    <output id="lab_rangevalue">29.0</output>
-                </div>
-                <div id="libdem_slider" class="slider-and-output">
-                    <label for="libdem_rangeinput">Libdem</label>
-                    <input class="bar" type="range" id="libdem_rangeinput" step="0.1" min="1" max="90"
-                           onchange="votingMap.recalculateSeats(this)"/>
-                    <output id="libdem_rangevalue">23.0</output>
-                </div>
-                <div id="other_slider" class="slider-and-output">
-                    <label for="other_rangeinput">Other</label>
-                    <input class="bar" type="range" id="other_rangeinput" step="0.1" min="1" max="90"
-                           onchange="votingMap.recalculateSeats(this)"/>
-                    <output id="other_rangevalue">11.9</output>
-                </div>
-            </div>
-            <div class="buttons well col-md-12">
-                <button id="reset" class="btn btn-default">Reset to 2010</button>
-            </div>
-            <div class="detail col-md-6">
-                <p>Click on the map to select a constituency.</p>
-                <table class="table table-striped hidden">
-                    <thead>
-                        <tr><th colspan="2"></th></tr>
-                    </thead>
-                    <tbody>
 
-                    </tbody>
-                </table>
-            </div>
-            <div class="legend col-md-4">
-                <h3>Total Seats</h3>
+            <div class="legend col-md-12">
+                <h4>Total Seats</h4>
                 <ul>
                     <li class="labour">Labour <span class="badge">42</span></li>
                     <li class="tory">Tory <span class="badge">42</span></li>
@@ -75,6 +47,21 @@
                 </ul>
             </div>
         </div>
+        <div class="container-fluid col-md-10">
+            <div class="svg-container col-md-10"></div>
+            <div class="detail col-md-2">
+                <h5>Click on the map to select a constituency.</h5>
+                <table class="table table-striped hidden">
+                    <thead>
+                    <tr><th colspan="2"></th></tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
     </div>
 </div>
 
