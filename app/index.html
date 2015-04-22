@@ -23,13 +23,13 @@
             <div class="controls col-md-12">
                 <h4>Adjust national vote</h4>
                 <label for="con_rangeinput">Con %</label>
-                <input type="number" id="con_rangeinput" step="0.1" min="1" max="90" onchange="votingMap.recalculateSeats(this)"/>
+                <input type="number" id="con_rangeinput" step="0.1" min="1" max="90"/>
                 <label for="lab_rangeinput">Lab %</label>
-                <input type="number" id="lab_rangeinput" step="0.1" min="1" max="90" onchange="votingMap.recalculateSeats(this)"/>
+                <input type="number" id="lab_rangeinput" step="0.1" min="1" max="90"/>
                 <label for="libdem_rangeinput">Libdem %</label>
-                <input type="number" id="libdem_rangeinput" step="0.1" min="1" max="90" onchange="votingMap.recalculateSeats(this)"/>
+                <input type="number" id="libdem_rangeinput" step="0.1" min="1" max="90"/>
                 <label for="other_rangeinput">Other %</label>
-                <input type="number" id="other_rangeinput" step="0.1" min="1" max="90" onchange="votingMap.recalculateSeats(this)"/>
+                <input type="number" id="other_rangeinput" step="0.1" min="1" max="90"/>
             </div>
 
 
@@ -66,7 +66,7 @@
 </div>
 
 <script src="bower_components/d3/d3.min.js" charset="utf-8"></script>
-<script src="scripts/mapConvertor.js"></script>
+<script src="scripts/election-projector.js"></script>
 <script src="scripts/main.js"></script>
 
 </body>

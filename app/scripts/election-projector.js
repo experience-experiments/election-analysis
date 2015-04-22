@@ -4,7 +4,7 @@
 	var seats;
 	var selectedId = null;
 
-	function MapConvertor() {
+	function ElectionProjector() {
 
 		this.visibleParties = ["Con","Lab","LD"];
 
@@ -14,27 +14,27 @@
 
 	}
 
-	MapConvertor.prototype.initialise = function(){
+	ElectionProjector.prototype.initialise = function(){
 		this.loadData();
 		this.setTwentyTenResults();
 		this.updateTotalNumberOfSeats();
 
-		document.getElementById('reset').addEventListener('click',MapConvertor.prototype.resetPercentages.bind(this), false);
+		document.getElementById('reset').addEventListener('click',ElectionProjector.prototype.resetPercentages.bind(this), false);
 	};
 
-	MapConvertor.prototype.resetPercentages = function(){
+	ElectionProjector.prototype.resetPercentages = function(){
 		this.setTwentyTenResults();
 		this.updateVotes();
 		this.updateTotalNumberOfSeats();
 	};
 
-	MapConvertor.prototype.setTwentyTenResults = function() {
+	ElectionProjector.prototype.setTwentyTenResults = function() {
 		for (var party in this.twentyTenPercentageResult) {
 			this.previousPercentageState[party] = document.getElementById(party + '_rangeinput').value = this.twentyTenPercentageResult[party];
 		}
 	};
 
-	MapConvertor.prototype.recalculateSeats = function(node) {
+	ElectionProjector.prototype.recalculateSeats = function(node) {
 
 		for (var party in this.twentyTenPercentageResult) {
 			this.elements[party + '_rangeinput'] = document.getElementById(party + '_rangeinput').value;
@@ -47,7 +47,7 @@
 
 	};
 
-	MapConvertor.prototype.updateVotes = function() {
+	ElectionProjector.prototype.updateVotes = function() {
 		var voteDiffs = {};
 
 		for (var party in this.twentyTenPercentageResult) {
@@ -73,14 +73,14 @@
 		}
 	};
 
-	MapConvertor.prototype.getOtherParties = function() {
+	ElectionProjector.prototype.getOtherParties = function() {
 		var allParties = ["AC","AD","AGS","APNI","APP","AWL","AWP","BB","BCP","Bean","Best","BGPV","BIB","BIC","Blue","BNP","BP Elvis","C28","Cam Soc","CG","Ch M","Ch P","CIP","CITY","CNPG","Comm","Comm L","Con","Cor D","CPA","CSP","CTDP","CURE","D Lab","D Nat","DDP","DUP","ED","EIP","EPA","FAWG","FDP","FFR","Grn","GSOT","Hum","ICHC","IEAC","IFED","ILEU","Impact","Ind1","Ind2","Ind3","Ind4","Ind5","IPT","ISGB","ISQM","IUK","IVH","IZB","JAC","Joy","JP","Lab","Land","LD","Lib","Libert","LIND","LLPB","LTT","MACI","MCP","MEDI","MEP","MIF","MK","MPEA","MRLP","MRP","Nat Lib","NCDV","ND","New","NF","NFP","NICF","Nobody","NSPS","PBP","PC","Pirate","PNDP","Poet","PPBF","PPE","PPNV","Reform","Respect","Rest","RRG","RTBP","SACL","Sci","SDLP","SEP","SF","SIG","SJP","SKGP","SMA","SMRA","SNP","Soc","Soc Alt","Soc Dem","Soc Lab","South","Speaker","SSP","TF","TOC","Trust","TUSC","TUV","UCUNF","UKIP","UPS","UV","VCCA","Vote","Wessex Reg","WRP","You","Youth","YRDPL"];
 		return allParties.filter(function(item){
 			return this.visibleParties.indexOf(item) === -1;
 		}.bind(this));
 	};
 
-	MapConvertor.prototype.reCalculateTo100percent = function(valueChanged) {
+	ElectionProjector.prototype.reCalculateTo100percent = function(valueChanged) {
 		valueChanged = valueChanged.replace(/\_.+/,'');
 		var amountChanged = this.elements[valueChanged + '_rangeinput'] - this.previousPercentageState[valueChanged];
 		amountChanged = amountChanged / 3; // 3 is the number of other other parties to share adjustment accross
@@ -96,11 +96,11 @@
 		}
 	};
 
-	MapConvertor.prototype.convertToId = function(constituencyName) {
+	ElectionProjector.prototype.convertToId = function(constituencyName) {
 		return constituencyName.replace(/[\s,]/g,'_').replace(/&/g,'and').replace(/[()]/g,'');
 	};
 
-	MapConvertor.prototype.loadData = function() {
+	ElectionProjector.prototype.loadData = function() {
 
 		d3.json("data/2010.json", function(constituencies) {
 			seats = constituencies;
@@ -111,7 +111,7 @@
 		}.bind(this));
 	};
 
-	MapConvertor.prototype.storeVotesPerConstituency = function(constituency) {
+	ElectionProjector.prototype.storeVotesPerConstituency = function(constituency) {
 
 		// store in an adjusted variable as well
 		for (var party in constituency) {
@@ -122,12 +122,12 @@
 
 	};
 
-	MapConvertor.prototype.isValidParty = function(party) {
+	ElectionProjector.prototype.isValidParty = function(party) {
 		var notValidParties = ['Press Association Reference','Constituency Name','Region','Election Year','Electorate','Votes'];
 		return notValidParties.indexOf(party) === -1;
 	};
 
-	MapConvertor.prototype.calculateSeatColor = function(constituency) {
+	ElectionProjector.prototype.calculateSeatColor = function(constituency) {
 		var winner = {party:null, votes:0};
 
 		var mapSeat = d3.select('#' + this.convertToId(constituency['Constituency Name']));
@@ -143,12 +143,12 @@
 		//mapSeat.on('click',this.constituencyClickHandler);
 	};
 
-	MapConvertor.prototype.setSeatColor = function(ref, party) {
+	ElectionProjector.prototype.setSeatColor = function(ref, party) {
 		var style = this.setStyle(party);
 		ref.attr('class', style + ' seat');
 	};
 
-	MapConvertor.prototype.partyCodeLookup = function(party) {
+	ElectionProjector.prototype.partyCodeLookup = function(party) {
 		switch (party) {
 		case 'con':
 			return 'Con';
@@ -161,7 +161,7 @@
 		}
 	};
 
-	MapConvertor.prototype.updateTotalNumberOfSeats = function(){
+	ElectionProjector.prototype.updateTotalNumberOfSeats = function(){
 		var elems = document.querySelectorAll('.legend li');
 		for(var i in elems){
 			if(typeof elems[i] === 'object'){
@@ -172,12 +172,12 @@
 
 	};
 
-	MapConvertor.prototype.setStyle = function(party) {
+	ElectionProjector.prototype.setStyle = function(party) {
 		var styles = {'Lab':'labour','Con':'tory','LD':'libdem','SNP':'snp','Grn':'green','Respect':'respect','SDLP':'sdlp','PC':'pc','DUP':'dup','UUP':'uup','SF':'sf','UKIP':'ukip'};
 		return styles?styles[party] : 'unknown';
 	};
 
-	MapConvertor.prototype.constituencyClickHandler = function() {
+	ElectionProjector.prototype.constituencyClickHandler = function() {
 
 		selectedId = this.getAttribute('id');
 		var selectedSeat = seats[selectedId];
@@ -212,14 +212,14 @@
 
 	};
 
-	MapConvertor.prototype.clearSelection = function(){
+	ElectionProjector.prototype.clearSelection = function(){
 		var tableEl = document.querySelector('.detail table');
 		tableEl.classList.add('hidden');
 	};
 
-	if(!window.MapConvertor){
-		window.MapConvertor = MapConvertor;
+	if(!window.ElectionProjector){
+		window.ElectionProjector = ElectionProjector;
 	}
-	return MapConvertor;
+	return ElectionProjector;
 })();
 

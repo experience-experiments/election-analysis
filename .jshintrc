@@ -24,6 +24,6 @@
 		"define": true,
 		"require": true,
 		"d3":true,
-		"MapConvertor":true
+		"ElectionProjector":true
 	}
 }
