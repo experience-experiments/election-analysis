@@ -140,7 +140,6 @@ module.exports = function (grunt) {
 					src: [
 						'bootstrap/dist/css/bootstrap.min.css',
 						'bootstrap/dist/js/bootstrap.min.js',
-						'bootstrap-vertical-tabs/bootstrap.vertical-tabs.min.css',
 						'd3/d3.min.js',
 						'jquery/dist/jquery.min.js'
 					],
@@ -161,10 +160,17 @@ module.exports = function (grunt) {
 			server: [
 				'copy:styles'
 			]
+		},
+
+		shell: {
+			generateSvg: {
+				command: 'node app/data/editsvg.js > app/data/edited.svg'
+			}
 		}
 	});
 
 	grunt.registerTask('serve', 'start the server and preview your app, --allow-remote for remote access', function (target) {
+
 		if (grunt.option('allow-remote')) {
 			grunt.config.set('connect.options.hostname', '0.0.0.0');
 		}
@@ -173,6 +179,7 @@ module.exports = function (grunt) {
 		}
 
 		grunt.task.run([
+			'shell:generateSvg',
 			'clean:server',
 			'concurrent:server',
 			'connect:livereload',
@@ -181,6 +188,7 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask('build', [
+		'shell:generateSvg',
 		'clean:dist',
 		'copy:dist'
 	]);

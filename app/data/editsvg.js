@@ -2,10 +2,9 @@ var fs = require('fs');
 //use this as node editsvg.js > edited.svg
 var lookup = require('./2010.json');
 
-fs.readFile("2010UKElectionMap.svg", "utf-8", function(err, data) {
+fs.readFile(__dirname + "/2010UKElectionMap.svg", "utf-8", function(err, data) {
 	"use strict";
 	var text = data;
-
 	//remove partial paths for zoomed in views
 	text = text.replace(/\s*M\s[56]\d\d\.[^,]+,[89]\d\.[^"]*z/g, 'z');
 	text = text.replace(/\s*M\s[6]\d\d\.[^,]+,[1234]\d\d\.[^"]*z/g, 'z');
