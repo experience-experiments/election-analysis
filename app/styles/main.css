@@ -32,7 +32,7 @@ div.title h1{
 
 .side-controls {
     height: 100vh;
-    padding-left: 0;
+    padding-left: 10px;
     padding-right: 0;
     padding-right: 0;
 }
@@ -48,25 +48,18 @@ svg {
     background: -o-radial-gradient(#b8def1, #7ebad8);
     background: -moz-radial-gradient(#b8def1, #7ebad8);
     background: radial-gradient(#b8def1, #7ebad8);
+    border-right-style: ridge;
+    border-right-width: 4px;
+    border-right-color: #7ebad8;
 }
 
-.slider-and-output input[type=range] {
-    width: 60%;
-}
-
-.controls label {
-    display: inline-block;
-    padding-top: 10px;
-}
 
 .controls #reset {
     display: inline-block;
 }
 
 .detail {
-    height: 100vh;
-    padding-left: 4px;
-    padding-right: 4px;
+
 }
 
 svg *.labour { fill: #F00; }     /* Labour Party */
@@ -117,31 +110,34 @@ svg.selected path:not(.selected) {
     font-size: 20px;
 }
 
-.legend ul li.labour:before {
-    color: #F00;
+.lab .progress-bar {
+    background-color: #F00;
 }
-.legend ul li.tory:before {
-    color: #33C;
+.con .progress-bar {
+    background-color: #33C;
 }
-.legend ul li.libdem:before {
-    color: #FC0;
+.libdem .progress-bar {
+    background-color: #FC0;
 }
-.legend ul li.ukip:before {
-    color: #7027C3;
+.ukip .progress-bar {
+    background-color: #7027C3;
 }
-.legend ul li.green:before {
-    color: #0F0;
+.green .progress-bar {
+    background-color: #0F0;
 }
-.legend ul li.snp:before {
-    color: #FF0;
+.snp .progress-bar {
+    background-color: #FF0;
 }
-.legend ul li.pc:before {
-    color: #6C3;
+.pc .progress-bar {
+    background-color: #6C3;
 }
-.legend ul li.other:before {
-    color: #FAA51A;
+.other .progress-bar {
+    background-color: #FAA51A;
 }
 
+.progress-bar{
+    box-shadow: inset 0 -10px 0 rgba(0,0,0,.15);
+}
 
 .nav.nav-tabs.tabs-left{
     height: 100vh;
@@ -149,4 +145,57 @@ svg.selected path:not(.selected) {
     color: white;
     padding-left: 2px;
     padding-right: 0;
+}
+
+.controls .party-row{
+    vertical-align: top;
+    height: 40px;
+    line-height: 35px;
+    width: 100%;
+
+}
+
+.controls .party-row span.logo {
+    display: inline-block;
+    width: 40px;
+    float: left;
+}
+
+.controls .party-row input {
+    vertical-align: top;
+    display: inline-block;
+    width: 50px;
+    border: none;
+    padding: 0;
+}
+
+.controls .party-row .input:before {
+    content: '%';
+    font-size: 10px;
+    position: absolute;
+    left: 77px;
+}
+
+
+.controls .party-row span.progress {
+    display: inline-block;
+    width: 200px;
+    height: 35px;
+    margin: 0;
+}
+
+.controls .party-row span.value {
+    display: inline;
+    margin-top: -2px;
+}
+
+.controls .party-row .handle {
+    height: 35px;
+    line-height: 35px;
+    width: 8px;
+    background-color: #3D3D3D;
+    color: white;
+    font-size: 8px;
+    float: right;
+    cursor: pointer;
 }

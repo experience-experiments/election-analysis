@@ -3,14 +3,28 @@
 
 	var seats;
 	var selectedId = null;
+	var tableEl = document.querySelector('.detail table');
+	var nameEl = tableEl.querySelector('th');
+	var tbodyEl = tableEl.querySelector('tbody');
+
+	var inputElements = [];
+	var barElements = [];
+
+	function setPartyBarWidth(party, width){
+		barElements[party].style.width = width + '%';
+	}
 
 	function ElectionProjector() {
 
 		this.visibleParties = ["Con","Lab","LD"];
 
-		this.twentyTenPercentageResult = {'con':36.1,'lab':29.1,'libdem':23,'other':11.9};
+		this.twentyTenPercentageResult = {'con':36.1,'lab':29.1,'libdem':23.0,'other':11.9};
 		this.previousPercentageState = {};
-		this.elements = [];
+
+		for (var party in this.twentyTenPercentageResult) {
+			inputElements[party] = document.getElementById(party + '_rangeinput');
+			barElements[party] = document.querySelector('.controls .party-row.' + party + ' .progress-bar');
+		}
 
 	}
 
@@ -21,6 +35,13 @@
 
 	};
 
+	ElectionProjector.prototype.setProjection = function(projectedValues){
+		for (var party in projectedValues) {
+			this.previousPercentageState[party] = inputElements[party].value = projectedValues[party];
+			setPartyBarWidth(party, projectedValues[party]);
+		}
+	};
+
 	ElectionProjector.prototype.resetPercentages = function(){
 		this.setTwentyTenResults();
 		this.updateVotes();
@@ -28,16 +49,10 @@
 	};
 
 	ElectionProjector.prototype.setTwentyTenResults = function() {
-		for (var party in this.twentyTenPercentageResult) {
-			this.previousPercentageState[party] = document.getElementById(party + '_rangeinput').value = this.twentyTenPercentageResult[party];
-		}
+		this.setProjection(this.twentyTenPercentageResult);
 	};
 
 	ElectionProjector.prototype.recalculateSeats = function(node) {
-
-		for (var party in this.twentyTenPercentageResult) {
-			this.elements[party + '_rangeinput'] = document.getElementById(party + '_rangeinput').value;
-		}
 
 		this.reCalculateTo100percent(node.id);
 
@@ -81,16 +96,17 @@
 
 	ElectionProjector.prototype.reCalculateTo100percent = function(valueChanged) {
 		valueChanged = valueChanged.replace(/\_.+/,'');
-		var amountChanged = this.elements[valueChanged + '_rangeinput'] - this.previousPercentageState[valueChanged];
+		var amountChanged = inputElements[valueChanged].value - this.previousPercentageState[valueChanged];
 		amountChanged = amountChanged / 3; // 3 is the number of other other parties to share adjustment accross
 
 		// set the changed value to the state store
-		this.previousPercentageState[valueChanged] = this.elements[valueChanged + '_rangeinput'];
+		this.previousPercentageState[valueChanged] = inputElements[valueChanged].value;
 
 		for (var party in this.twentyTenPercentageResult) {
 			if (valueChanged !== party) {
 				this.previousPercentageState[party] = this.previousPercentageState[party] - amountChanged;
-				document.getElementById(party + '_rangeinput').value = this.previousPercentageState[party].toFixed(1);
+				inputElements[party].value = this.previousPercentageState[party].toFixed(1);
+				setPartyBarWidth(party, inputElements[party].value);
 			}
 		}
 	};
@@ -160,15 +176,28 @@
 		}
 	};
 
-	ElectionProjector.prototype.updateTotalNumberOfSeats = function(){
-		var elems = document.querySelectorAll('.legend li');
-		for(var i in elems){
-			if(typeof elems[i] === 'object'){
-				var adjustedSeatCount = document.querySelectorAll('svg g *.' + elems[i].className + '.seat').length;
-				elems[i].querySelector('span.badge').innerHTML = adjustedSeatCount;
-			}
+	ElectionProjector.prototype.lookupSVGStyle = function(inputId){
+		switch (inputId) {
+		case 'con':
+			return 'tory';
+		case 'lab':
+			return 'labour';
+		case 'libdem':
+			return 'libdem';
+		default:
+			return 'other';
 		}
+	};
 
+	ElectionProjector.prototype.updateTotalNumberOfSeats = function(){
+		var remaining = 650;
+		for (var party in this.previousPercentageState) {
+			var elem = document.querySelector('.controls .party-row.' + party + ' .value');
+			var adjustedSeatCount = document.querySelectorAll('svg g *.' + this.lookupSVGStyle(party) + '.seat').length;
+			elem.innerHTML = adjustedSeatCount;
+			remaining = remaining - adjustedSeatCount;
+		}
+		document.querySelector('.controls .party-row.' + party + ' .value').innerHTML = remaining;
 	};
 
 	ElectionProjector.prototype.setStyle = function(party) {
@@ -180,11 +209,6 @@
 
 		selectedId = this.getAttribute('id');
 		var selectedSeat = seats[selectedId];
-
-
-		var tableEl = document.querySelector('.detail table');
-		var nameEl = tableEl.querySelector('th');
-		var tbodyEl = tableEl.querySelector('tbody');
 
 		if(selectedSeat){
 			tableEl.classList.remove('hidden');
@@ -205,14 +229,12 @@
 				tbodyEl.innerHTML += '<tr><td>' + sorted[j].substring(0, sorted[j].indexOf('adjusted') - 1) + '</td><td>' + selectedSeat[sorted[j]] + '</td></tr>';
 			}
 		} else {
-			console.log('No seat found for ' + selectedId + ': ' + JSON.stringify(selectedSeat));
+			console.log('No seat found for ' + selectedId);
 		}
-
 
 	};
 
 	ElectionProjector.prototype.clearSelection = function(){
-		var tableEl = document.querySelector('.detail table');
 		tableEl.classList.add('hidden');
 	};
 

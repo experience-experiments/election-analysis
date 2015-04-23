@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/bootstrap-vertical-tabs/bootstrap.vertical-tabs.min.css">
 
     <link rel="stylesheet" href="styles/main.css">
 </head>
@@ -23,68 +22,59 @@
             <div class="svg-container"></div>
         </div>
         <div class="side-controls col-md-5">
-            <ul class="nav nav-tabs tabs-left col-xs-2"><!-- 'tabs-right' for right tabs -->
-                <li class="active"><a href="#2010" data-toggle="tab">2010</a></li>
-                <li><a href="#polls" data-toggle="tab">Polls</a></li>
-            </ul>
-            <div class="col-xs-10">
-                <div class="tab-content">
-                    <div class="tab-pane active" id="2010">
-                        <h4>Adjust national vote <a id="reset" class="btn btn-link">reset</a></h4>
 
-                        <div class="controls col-md-12 row">
-                            <div class="col-md-3">
-                                <label for="con_rangeinput">Con</label>
-                                <input type="number" id="con_rangeinput" step="0.1" min="1" max="90"/>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="lab_rangeinput">Lab</label>
-                                <input type="number" id="lab_rangeinput" step="0.1" min="1" max="90"/>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="libdem_rangeinput">Libdem</label>
-                                <input type="number" id="libdem_rangeinput" step="0.1" min="1" max="90"/>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="other_rangeinput">Other</label>
-                                <input type="number" id="other_rangeinput" step="0.1" min="1" max="90"/>
-                            </div>
+            <h4>Adjust national vote <a id="reset" class="btn btn-link">reset</a></h4>
 
 
-
-                        <div class="legend col-md-12">
-                            <h4>Total Seats</h4>
-                            <ul>
-                                <li class="labour">Labour <span class="badge">42</span></li>
-                                <li class="tory">Tory <span class="badge">42</span></li>
-                                <li class="libdem">LibDem <span class="badge">42</span></li>
-                                <li class="ukip">UKIP <span class="badge">42</span></li>
-                                <li class="green">Green <span class="badge">42</span></li>
-                                <li class="snp">SNP <span class="badge">42</span></li>
-                                <li class="pc">PC <span class="badge">42</span></li>
-                                <li class="other">Other <span class="badge">42</span></li>
-                            </ul>
-                        </div>
-
-                        <div class="detail col-md-12">
-                            <h5>Click on the map to select a constituency.</h5>
-                            <table class="table table-striped hidden">
-                                <thead>
-                                <tr><th colspan="2"></th></tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="polls">Polls Tab.</div>
+            <div class="controls">
+                <div class="party-row con">
+                    <span class="logo">@</span>
+                    <span class="input"><input type="number" id="con_rangeinput" step="0.1" min="1" max="100"/></span>
+                    <span class="progress">
+                        <div class="progress-bar" role="progressbar" style="width:5%"><span class="handle">&#x276e;&#x276f;</span></div>
+                    </span>
+                    <span class="badge value">0</span>
                 </div>
-
-
+                <div class="party-row lab">
+                    <span class="logo">@</span>
+                    <span class="input"><input type="number" id="lab_rangeinput" step="0.1" min="1" max="100"/></span>
+                    <span class="progress">
+                        <div class="progress-bar" role="progressbar" style="width:5%"><span class="handle">&#x276e;&#x276f;</span></div>
+                    </span>
+                    <span class="badge value">0</span>
+                </div>
+                <div class="party-row libdem">
+                    <span class="logo">@</span>
+                    <span class="input"><input type="number" id="libdem_rangeinput" step="0.1" min="1" max="100"/></span>
+                    <span class="progress">
+                        <div class="progress-bar" role="progressbar" style="width:5%"><span class="handle">&#x276e;&#x276f;</span></div>
+                    </span>
+                    <span class="badge value">0</span>
+                </div>
+                <div class="party-row other">
+                    <span class="logo">@</span>
+                    <span class="input"><input type="number" id="other_rangeinput" step="0.1" min="1" max="100"/></span>
+                    <span class="progress">
+                        <div class="progress-bar" role="progressbar" style="width:5%"><span class="handle">&#x276e;&#x276f;</span></div>
+                    </span>
+                    <span class="badge value">0</span>
+                </div>
             </div>
-        </div>
 
+            <div class="detail col-md-12">
+                <h5>Click on the map to view a constituency.</h5>
+                <table class="table table-striped hidden">
+                    <thead>
+                    <tr><th colspan="2"></th></tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
 
     </div>
 </div>
@@ -92,7 +82,6 @@
 
 <script src="bower_components/d3/d3.min.js" charset="utf-8"></script>
 <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
 
 <script src="scripts/election-projector.js"></script>
 <script src="scripts/main.js"></script>
