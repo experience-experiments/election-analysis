@@ -19,7 +19,6 @@
 		this.setTwentyTenResults();
 		this.updateTotalNumberOfSeats();
 
-		document.getElementById('reset').addEventListener('click',ElectionProjector.prototype.resetPercentages.bind(this), false);
 	};
 
 	ElectionProjector.prototype.resetPercentages = function(){

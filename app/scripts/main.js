@@ -6,7 +6,7 @@ var CONSTANTS = {
 	TRANSITION_DURATION: 500,
 	MIN_SCALE: 0.5,
 	MAX_SCALE: 9,
-	BOUNDING_BOX_FACTOR: 0.5
+	BOUNDING_BOX_FACTOR: 0.8
 };
 
 d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
@@ -17,7 +17,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	var width = svgContainer.offsetWidth;
 	var height = svgContainer.offsetHeight;
 	var defaultScale = Math.min(width / CONSTANTS.IMAGE_WIDTH, height / CONSTANTS.IMAGE_HEIGHT);
-	var defaultTranslate = [Math.abs(width - CONSTANTS.IMAGE_WIDTH), 0];
+	var defaultTranslate = [Math.abs(width - CONSTANTS.IMAGE_WIDTH) + 50, 0];
 	console.log('Svg container: ' + width + ', ' + height + '. Default zoom level: ' + defaultScale);
 
 
@@ -38,11 +38,13 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 		});
 	});
 
+	document.getElementById('reset').addEventListener('click',electionProjector.resetPercentages.bind(electionProjector), false);
+
 	var zoomed = function() {
 		var translate = d3.event.translate;
 		var scale = d3.event.scale;
 		allG.attr("transform", "translate(" + translate[0] + "," + translate[1] + ")scale(" + scale + ")");
-		allPaths.style("stroke-width", 0.1 / scale);
+		allPaths.style("stroke-width", 0.2 / scale);
 	};
 
 	var resetMap = function() {
@@ -89,7 +91,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 					resetMap();
 				} else {
 					selectElement(d3.event.target);
-					zoomToBoundingBox(selectedEl);
+					zoomToBoundingBox(selectedEl.parentNode);
 					electionProjector.constituencyClickHandler.bind(selectedEl)();
 				}
 			}
@@ -100,8 +102,8 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 		width = svgContainer.offsetWidth;
 		height = svgContainer.offsetHeight;
 		defaultScale = Math.min(width / CONSTANTS.IMAGE_WIDTH, height / CONSTANTS.IMAGE_HEIGHT);
-		defaultTranslate = [Math.abs(width - CONSTANTS.IMAGE_WIDTH), 0];
-		console.log('Svg container: ' + width + ', ' + height + '. Default zoom level: ' + defaultScale);
+		defaultTranslate = [Math.abs(width - CONSTANTS.IMAGE_WIDTH) + 50, 0];
+//		console.log('Svg container: ' + width + ', ' + height + '. Default zoom level: ' + defaultScale);
 
 		svg.attr("width", width).attr("height", height);
 		resetMap();
