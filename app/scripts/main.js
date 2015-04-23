@@ -117,6 +117,39 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	svg.on('click', clicked);
 	window.onresize = resized;
 
+	function addDragHandlers(progressContainers) {
+		progressContainers.find('.handle').mousedown(function (downEvent) {
+			var handleEl = downEvent.target;
+			var fullBar = window.jQuery(handleEl.parentNode.parentNode);
+			var input = fullBar.siblings('.input').find('input');
+			var bar = window.jQuery(handleEl.parentNode);
+
+			var maxWidth = fullBar.outerWidth();
+			var currentPercentage = bar.outerWidth() / maxWidth;
+
+			progressContainers.mousemove(function (moveEvent) {
+				fullBar.addClass('dragging');
+				bar.addClass('active');
+
+				var diffPercentage = (moveEvent.pageX - downEvent.pageX) / maxWidth;
+
+				var newPercentage = ((currentPercentage + diffPercentage) * 100).toFixed(1) + '%';
+				bar.css('width', newPercentage);
+				input.val( ((currentPercentage + diffPercentage) * 100).toFixed(1));
+				electionProjector.recalculateSeats(input.get(0));
+			});
+
+			progressContainers.mouseup(function () {
+				progressContainers.unbind("mousemove");
+				progressContainers.unbind("mouseup");
+				fullBar.removeClass('dragging');
+				bar.removeClass('active');
+			});
+		});
+	}
+
+	addDragHandlers(window.jQuery('.progress'));
+
 });
 
 
