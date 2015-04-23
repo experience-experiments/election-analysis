@@ -17,8 +17,9 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	var width = svgContainer.offsetWidth;
 	var height = svgContainer.offsetHeight;
 	var defaultScale = Math.min(width / CONSTANTS.IMAGE_WIDTH, height / CONSTANTS.IMAGE_HEIGHT);
-	var defaultTranslate = [Math.abs(width - CONSTANTS.IMAGE_WIDTH) + 50, 0];
-	console.log('Svg container: ' + width + ', ' + height + '. Default zoom level: ' + defaultScale);
+	var scaledWidth = CONSTANTS.IMAGE_WIDTH * defaultScale;
+	var defaultTranslate = [(width - scaledWidth) > 0 ? (width - scaledWidth)/2 : 0, 0];
+	console.log('Svg container: ' + width + ', ' + height + '. Scale: ' + defaultScale + '. Translate: ' + defaultTranslate);
 
 
 	var electionProjector = new ElectionProjector();
@@ -102,8 +103,10 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 		width = svgContainer.offsetWidth;
 		height = svgContainer.offsetHeight;
 		defaultScale = Math.min(width / CONSTANTS.IMAGE_WIDTH, height / CONSTANTS.IMAGE_HEIGHT);
-		defaultTranslate = [Math.abs(width - CONSTANTS.IMAGE_WIDTH) + 50, 0];
-//		console.log('Svg container: ' + width + ', ' + height + '. Default zoom level: ' + defaultScale);
+		scaledWidth = CONSTANTS.IMAGE_WIDTH * defaultScale;
+		defaultTranslate = [(width - scaledWidth) > 0 ? (width - scaledWidth)/2 : 0, 0];
+		console.log('Svg container: ' + width + ', ' + height + '. Scale: ' + defaultScale + '. Translate: ' + defaultTranslate);
+
 
 		svg.attr("width", width).attr("height", height);
 		resetMap();
