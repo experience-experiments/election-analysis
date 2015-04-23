@@ -11,10 +11,11 @@ div.title{
     top: 0;
     width: 50px;
     height: 100vh;
+    opacity: 0.5;
 }
 
 div.title h1{
-    transform: rotate(270deg) translate(-370px,0px);
+    transform: rotate(270deg) translate(-380px,5px);
     white-space: nowrap;
 }
 
@@ -24,8 +25,9 @@ div.title h1{
 
 .svg-container{
     padding-left: 0;
-    min-height: 560px;
+    min-height: 500px;
     height: 100vh;
+    width: 100%;
 }
 
 .side-controls {
@@ -33,6 +35,10 @@ div.title h1{
     padding-left: 0;
     padding-right: 0;
     padding-right: 0;
+}
+
+.visual-adjust{
+    padding-top: 20px;
 }
 
 svg {
@@ -48,9 +54,18 @@ svg {
     width: 60%;
 }
 
+.controls > div{
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
 .controls label {
-    display: inline-block;
+    display: block;
     padding-top: 10px;
+}
+
+.controls input {
+    display: block;
 }
 
 .controls #reset {
@@ -61,10 +76,6 @@ svg {
     height: 100vh;
     padding-left: 4px;
     padding-right: 4px;
-}
-
-.slider-and-output input, .slider-and-output output, .slider-and-output label {
-    display: inline-block;
 }
 
 svg *.labour { fill: #F00; }     /* Labour Party */
@@ -116,7 +127,7 @@ svg.selected path:not(.selected) {
 }
 
 .legend ul li.labour:before {
-    color: #f00;
+    color: #F00;
 }
 .legend ul li.tory:before {
     color: #33C;
@@ -147,4 +158,73 @@ svg.selected path:not(.selected) {
     color: white;
     padding-left: 2px;
     padding-right: 0;
+}
+
+
+.multibar-slider{
+    height: 400px;
+    width: 70px;
+    max-height: 400px;
+    overflow-y: hidden;
+}
+
+.multibar-slider-list{
+    height: 100%;
+    width: 60px;
+    list-style: none;
+    padding: 0;
+    margin-left: 5px;
+}
+
+.multibar-slider-list .bucket{
+    position: relative;
+    color: white;
+}
+
+.multibar-slider .bucket span{
+    position: absolute;
+    top: 5px;
+    height: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.multibar-slider .bucket .handle{
+    position: absolute;
+    bottom: 0px;
+    left: -5px;
+    height: 6px;
+    width: 70px;
+    background-color: grey;
+    cursor: pointer;
+}
+
+
+.multibar-slider .bucket:last-child .handle{
+    display: none;
+}
+
+.multibar-slider .dragging .bucket.active{
+    font-weight: bold;
+}
+
+.multibar-slider .dragging .bucket:not(.active){
+    opacity: 0.2;
+}
+
+.multibar-slider .dragging .bucket.active .handle{
+    background-color: black;
+    cursor: pointer;
+}
+
+.multibar-slider-list div.tory{
+    background-color: #33C;
+}
+
+.multibar-slider-list div.labour{
+    background-color: #F00;
+}
+
+.multibar-slider-list div.other{
+    background-color: #FAA51A;
 }

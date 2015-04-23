@@ -179,9 +179,9 @@
 	ElectionProjector.prototype.constituencyClickHandler = function() {
 
 		selectedId = this.getAttribute('id');
-		var selectedSeat = seats[selectedId];
+		//var selectedSeat = seats[selectedId];
 
-
+		/*
 		var tableEl = document.querySelector('.detail table');
 		var nameEl = tableEl.querySelector('th');
 		var tbodyEl = tableEl.querySelector('tbody');
@@ -204,16 +204,17 @@
 			for(var j in sorted){
 				tbodyEl.innerHTML += '<tr><td>' + sorted[j].substring(0, sorted[j].indexOf('adjusted') - 1) + '</td><td>' + selectedSeat[sorted[j]] + '</td></tr>';
 			}
+
 		} else {
 			console.log('No seat found for ' + selectedId + ': ' + JSON.stringify(selectedSeat));
 		}
-
+		 */
 
 	};
 
 	ElectionProjector.prototype.clearSelection = function(){
-		var tableEl = document.querySelector('.detail table');
-		tableEl.classList.add('hidden');
+		//var tableEl = document.querySelector('.detail table');
+		//tableEl.classList.add('hidden');
 	};
 
 	if(!window.ElectionProjector){
