@@ -132,11 +132,13 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 				bar.addClass('active');
 
 				var diffPercentage = (moveEvent.pageX - downEvent.pageX) / maxWidth;
+				if(Math.abs(diffPercentage) > 0.01){
+					var newPercentage = ((currentPercentage + diffPercentage) * 100).toFixed(1) + '%';
+					bar.css('width', newPercentage);
+					input.val( ((currentPercentage + diffPercentage) * 100).toFixed(1));
+					electionProjector.recalculateSeats(input.get(0));
+				}
 
-				var newPercentage = ((currentPercentage + diffPercentage) * 100).toFixed(1) + '%';
-				bar.css('width', newPercentage);
-				input.val( ((currentPercentage + diffPercentage) * 100).toFixed(1));
-				electionProjector.recalculateSeats(input.get(0));
 			});
 
 			progressContainers.mouseup(function () {
