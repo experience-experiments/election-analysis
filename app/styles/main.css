@@ -62,21 +62,24 @@ svg {
 
 }
 
-svg *.labour { fill: #F00; }     /* Labour Party */
-svg *.tory { fill: #33C; }       /* Conservative Party */
-svg *.libdem { fill: #FC0; }     /* Liberal Democrat Party */
-svg *.snp { fill: #FF0; }        /* Scottish National Party */
-svg *.pc { fill: #6C3; }         /* Plaid Cymru */
+
+svg *.seat { stroke: white; stroke-width: 0.2; }
+
+svg *.labour { fill: #d50000; }     /* Labour Party */
+svg *.tory { fill: #0087dc; }       /* Conservative Party */
+svg *.libdem { fill: #FDBB30; }     /* Liberal Democrat Party */
+svg *.snp { fill: #FFF95D; }        /* Scottish National Party */
+svg *.pc { fill: #3F8428; }         /* Plaid Cymru */
+svg *.green {fill: #008066;}
+svg *.ukip { fill: #EFE600;}
+svg *.other {fill: #FAA51A;}
+
 svg *.sf { fill: #060; }         /* Sinn Féin */
 svg *.sdlp { fill: #3C3; }       /* Social Democratic and Labour Party */
 svg *.uup { fill: #99F; }        /* Ulster Unionist Party */
 svg *.dup { fill: #C30; }        /* Democratic Unionist Party */
 svg *.respect { fill: #F60; }    /* Respect Party (George Galloway) */
 svg *.ind { fill: #C0C0C0; }     /* independent candidate */
-svg *.green {fill: #0F0;}
-svg *.seat { stroke: white; stroke-width: 0.2; }
-svg *.ukip { fill: #7027C3;}
-svg *.other {fill: #FAA51A;}
 
 
 svg path:hover {
@@ -111,28 +114,28 @@ svg.selected path:not(.selected) {
 }
 
 .labour .progress-bar {
-    background-color: #F00;
+    background-color: #d50000;
 }
 .tory .progress-bar {
-    background-color: #33C;
+    background-color: #0087dc;
 }
 .libdem .progress-bar {
-    background-color: #FC0;
-}
-.ukip .progress-bar {
-    background-color: #7027C3;
-}
-.green .progress-bar {
-    background-color: #0F0;
+    background-color: #FDBB30;
 }
 .snp .progress-bar {
-    background-color: #FF0;
+    background-color: #FFF95D;
 }
 .pc .progress-bar {
-    background-color: #6C3;
+    background-color: #3F8428;
+}
+.green .progress-bar {
+    background-color: #008066;
+}
+.ukip .progress-bar {
+    background-color: #EFE600;
 }
 .other .progress-bar {
-    background-color: #FAA51A;
+    background-color: #C0C0C0;
 }
 
 .progress-bar{

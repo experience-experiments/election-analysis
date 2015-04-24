@@ -71,17 +71,17 @@
 	ElectionProjector.prototype.updateVotes = function() {
 		var voteDiffs = {};
 
+		var otherDiff = this.previousPercentageState.other / this.twentyTenPercentageResult.other;
+
+		for (var i = 0; i < allParties.length; i++) {
+			voteDiffs[allParties[i]] = otherDiff;
+		}
 		for (var partyId in this.twentyTenPercentageResult) {
-			voteDiffs[this.getPartyCodeById(partyId)] = (Number(this.previousPercentageState[partyId]) / Number(this.twentyTenPercentageResult[partyId]) ) ;
+			voteDiffs[this.getPartyCodeById(partyId)] = this.previousPercentageState[partyId] / this.twentyTenPercentageResult[partyId];
 		}
 
-		var otherParties = this.getOtherParties();
 
-		for (var i = 0; i < otherParties.length; i++) {
-			voteDiffs[otherParties[i]] = voteDiffs.other;
-		}
-
-		delete voteDiffs.other; // not a valid party anymore
+		console.log(voteDiffs);
 
 		for (var id in seats){
 			var constituency = seats[id];
@@ -189,7 +189,7 @@
 
 	ElectionProjector.prototype.getPartyCodeById = function( id ) {
 		for( var code in partyIds ) {
-			if( this.hasOwnProperty( code ) && this[ code ] === id ) {
+			if( partyIds.hasOwnProperty( code ) && partyIds[ code ] === id ) {
 				return code;
 			}
 		}
