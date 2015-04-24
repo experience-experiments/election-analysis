@@ -105,8 +105,6 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 		defaultScale = Math.min(width / CONSTANTS.IMAGE_WIDTH, height / CONSTANTS.IMAGE_HEIGHT);
 		scaledWidth = CONSTANTS.IMAGE_WIDTH * defaultScale;
 		defaultTranslate = [(width - scaledWidth) > 0 ? (width - scaledWidth)/2 : 0, 0];
-		console.log('Svg container: ' + width + ', ' + height + '. Scale: ' + defaultScale + '. Translate: ' + defaultTranslate);
-
 
 		svg.attr("width", width).attr("height", height);
 		resetMap();
@@ -127,26 +125,48 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 			var maxWidth = fullBar.outerWidth();
 			var currentPercentage = bar.outerWidth() / maxWidth;
 
-			progressContainers.mousemove(function (moveEvent) {
-				fullBar.addClass('dragging');
-				bar.addClass('active');
+			var trackObj = fullBar.offset();
+			trackObj.width = fullBar.get(0).offsetWidth;
+			trackObj.height = fullBar.get(0).offsetHeight;
+			console.log(trackObj );
 
-				var diffPercentage = (moveEvent.pageX - downEvent.pageX) / maxWidth;
-				if(Math.abs(diffPercentage) > 0.01){
-					var newPercentage = ((currentPercentage + diffPercentage) * 100).toFixed(1) + '%';
-					bar.css('width', newPercentage);
-					input.val( ((currentPercentage + diffPercentage) * 100).toFixed(1));
-					electionProjector.recalculateSeats(input.get(0));
-				}
-
-			});
-
-			progressContainers.mouseup(function () {
+			function finishDrag(){
 				progressContainers.unbind("mousemove");
 				progressContainers.unbind("mouseup");
 				fullBar.removeClass('dragging');
 				bar.removeClass('active');
+			}
+
+			function isOutOfBounds(e){
+				return (e.pageX < trackObj.left ||
+					e.pageX > (trackObj.left + trackObj.width) ||
+					e.pageY < trackObj.top ||
+					e.pageY > (trackObj.top + trackObj.height)
+				);
+			}
+
+			progressContainers.mousemove(function (moveEvent) {
+				fullBar.addClass('dragging');
+				bar.addClass('active');
+
+				if(isOutOfBounds(moveEvent)){
+					finishDrag();
+				}
+
+				var diffPercentage = (moveEvent.pageX - downEvent.pageX) / maxWidth;
+				if(Math.abs(diffPercentage) > 0.01){
+					var newPercentage = ((currentPercentage + diffPercentage) * 100).toFixed(1);
+					if(newPercentage > 0.1 && newPercentage < 99){
+						bar.css('width', newPercentage + '%');
+						input.val(newPercentage);
+						electionProjector.recalculateSeats(input.get(0));
+					}
+				}
+
 			});
+
+			progressContainers.mouseup(finishDrag);
+
 		});
 	}
 
