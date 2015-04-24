@@ -110,10 +110,10 @@ svg.selected path:not(.selected) {
     font-size: 20px;
 }
 
-.lab .progress-bar {
+.labour .progress-bar {
     background-color: #F00;
 }
-.con .progress-bar {
+.tory .progress-bar {
     background-color: #33C;
 }
 .libdem .progress-bar {

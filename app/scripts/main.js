@@ -128,7 +128,6 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 			var trackObj = fullBar.offset();
 			trackObj.width = fullBar.get(0).offsetWidth;
 			trackObj.height = fullBar.get(0).offsetHeight;
-			console.log(trackObj );
 
 			function finishDrag(){
 				progressContainers.unbind("mousemove");
