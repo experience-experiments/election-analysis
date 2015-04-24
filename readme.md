@@ -10,11 +10,23 @@ You can adjust the national percantages to see how it projects onto the constitu
 
 To run/test the project locally, you need to have `NPM` and `Grunt-CLI` and `bower` installed on your dev environment.
 
-Once you clone the repository you can run the following commands from the project root to debug the project locally.
+Run the following commands when you pull the repository for initial setup. Generation of optimized result data from 2010 with.
+
+```
+npm install
+bower install
+cd app/data
+node optimiseResults.js > 2010.json
+cd ../..
+
+```
+
+You complete the initial setup you can run the following commands from the project root to debug the project locally.
 
 `grunt serve`
 
 For more information check the `Gruntfile`
+
 
 ### Releasing to public
 
