@@ -22,7 +22,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	console.log('Svg container: ' + width + ', ' + height + '. Scale: ' + defaultScale + '. Translate: ' + defaultTranslate);
 
 	var electionProjector = new ElectionProjector('data/2010.json');
-	electionProjector.initialise({'tory':36.1,'labour':29.1,'libdem':23.0,'other':11.9});
+	electionProjector.initialise({'tory':36.1, 'labour':29.0, 'libdem':23.0, 'snp':1.7, 'pc':0.6, 'green':1.0, ukip:3.1, 'other':5.5});
 
 	var selectedEl = null;
 	var svgEl = document.querySelector('svg');

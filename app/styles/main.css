@@ -113,6 +113,12 @@ svg.selected path:not(.selected) {
     font-size: 20px;
 }
 
+.progress{
+    background-color: inherit;
+    border-radius: 0;
+    box-shadow: none;
+}
+
 .labour .progress-bar {
     background-color: #d50000;
 }
@@ -165,7 +171,6 @@ svg.selected path:not(.selected) {
     height: 40px;
     line-height: 35px;
     width: 100%;
-
 }
 
 .controls .party-row span.logo {
@@ -189,7 +194,6 @@ svg.selected path:not(.selected) {
     left: 77px;
 }
 
-
 .controls .party-row span.progress {
     display: inline-block;
     width: 200px;
@@ -199,14 +203,14 @@ svg.selected path:not(.selected) {
 
 .controls .party-row span.value {
     display: inline;
-    margin-top: -2px;
+    vertical-align: middle;
 }
 
 .controls .party-row .handle {
     height: 35px;
     line-height: 35px;
     width: 8px;
-    background-color: #3D3D3D;
+    background-color: transparent;
     color: white;
     font-size: 8px;
     float: right;
