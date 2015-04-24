@@ -1,5 +1,7 @@
 (function(){
 	'use strict';
+	var MAX_AMOUNT = 99;
+	var MIN_AMOUNT = 1;
 
 	var seats;
 	var selectedId = null;
@@ -94,19 +96,40 @@
 		}.bind(this));
 	};
 
-	ElectionProjector.prototype.reCalculateTo100percent = function(valueChanged) {
-		valueChanged = valueChanged.replace(/\_.+/,'');
-		var amountChanged = inputElements[valueChanged].value - this.previousPercentageState[valueChanged];
-		amountChanged = amountChanged / 3; // 3 is the number of other other parties to share adjustment accross
+	ElectionProjector.prototype.reCalculateTo100percent = function(partyChanged) {
+
+		partyChanged = partyChanged.replace(/\_.+/,'');
+		var amountChanged = inputElements[partyChanged].value - this.previousPercentageState[partyChanged];
+
+		var intended = amountChanged / this.visibleParties.length;
+
+		var redistributionParties = [];
+		for(var party in this.previousPercentageState){
+			if((this.previousPercentageState[party] - intended) > MIN_AMOUNT && (this.previousPercentageState[party]  - intended) < MAX_AMOUNT){
+				redistributionParties.push(party);
+			}
+		}
+
+		var distribute = amountChanged / (redistributionParties.length - 1);
 
 		// set the changed value to the state store
-		this.previousPercentageState[valueChanged] = inputElements[valueChanged].value;
+		this.previousPercentageState[partyChanged] = inputElements[partyChanged].value;
 
-		for (var party in this.twentyTenPercentageResult) {
-			if (valueChanged !== party) {
-				this.previousPercentageState[party] = this.previousPercentageState[party] - amountChanged;
-				inputElements[party].value = this.previousPercentageState[party].toFixed(1);
-				setPartyBarWidth(party, inputElements[party].value);
+		for (var i in redistributionParties) {
+			party = redistributionParties[i];
+			if (partyChanged !== party) {
+				var newVal = this.previousPercentageState[party] - distribute;
+				newVal = Math.round(newVal * 10) / 10;
+				if(newVal < 0){
+					newVal = MIN_AMOUNT;
+				}
+				if(newVal > 100) {
+					newVal = MAX_AMOUNT;
+				}
+				this.previousPercentageState[party] = newVal;
+				inputElements[party].value = newVal;
+				setPartyBarWidth(party, newVal);
+
 			}
 		}
 	};
