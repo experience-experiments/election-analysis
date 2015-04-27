@@ -93,7 +93,7 @@ svg *.libdem { fill: #FDBB30; }     /* Liberal Democrat Party */
 svg *.snp { fill: #FFF95D; }        /* Scottish National Party */
 svg *.pc { fill: #3F8428; }         /* Plaid Cymru */
 svg *.green {fill: #008066;}
-svg *.ukip { fill: #EFE600;}
+svg *.ukip { fill: #5A1B7F;}
 svg *.other {fill: #FAA51A;}
 
 svg *.sf { fill: #060; }         /* Sinn Féin */
@@ -123,7 +123,7 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
     background-color: #008066;
 }
 .ukip .progress-bar {
-    background-color: #EFE600;
+    background-color: #5A1B7F;
 }
 .other .progress-bar {
     background-color: #C0C0C0;
@@ -148,7 +148,7 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
     border-color: #008066 !important;
 }
 .ukip input {
-    border-color: #EFE600 !important;
+    border-color: #5A1B7F !important;
 }
 .other input {
     border-color: #C0C0C0 !important;
