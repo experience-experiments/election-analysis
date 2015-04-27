@@ -130,8 +130,8 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 
 	var mouseOver = function() {
 		
-		if(d3.event.target.parentNode.id){
-			tooltip.html(d3.event.target.parentNode.id);
+		if(d3.event.target.id){
+			tooltip.html(d3.event.target.id);
 	      	tooltip.style("opacity", "1");
 	      	tooltip.style("left", -20+mouse.x+"px");
 	      	tooltip.style("top", (-55+mouse.y)+"px");
