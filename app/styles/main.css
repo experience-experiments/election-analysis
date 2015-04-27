@@ -420,3 +420,21 @@ select.scenarios {
     display: inline;
     line-height: 66px;
 }
+
+
+
+#tooltip{
+    background: #333;
+    background: rgba(10,10,10,.75);
+    border-radius: 5px;
+    color: #fff;    
+    padding: 5px 19px;
+    position: absolute;
+    z-index: 198;
+  font-family: avenir,sans,arial;
+   text-outline: 1px 1px #000;
+   color: #fafafa;
+   font-weight: 500;
+
+}
+

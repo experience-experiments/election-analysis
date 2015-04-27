@@ -19,6 +19,9 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	var svgContainer = document.querySelector('.svg-container');
 	svgContainer.innerHTML = svgData.response;
 
+	var tooltip = d3.select("#tooltip");
+	var mouse = {x:0,y:0};
+
 	var width = svgContainer.offsetWidth;
 	var height = svgContainer.offsetHeight;
 	var defaultScale = Math.min(width / CONSTANTS.IMAGE_WIDTH, height / CONSTANTS.IMAGE_HEIGHT);
@@ -58,6 +61,12 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	});
 
 	document.getElementById('reset').addEventListener('click',electionProjector.resetPercentages.bind(electionProjector), false);
+	document.addEventListener('mousemove',function(e){
+	        mouse = {
+	            x: e.pageX-(e.clientX - e.offsetX),
+	            y: e.pageY-(e.clientY - e.offsetY)
+	        };
+	});
 
 	var zoomed = function() {
 		var translate = d3.event.translate;
@@ -106,16 +115,41 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 			if(d3.event.target === svgEl){
 				resetMap();
 			} else {
+
 				if(selectedEl === d3.event.target){
 					resetMap();
 				} else {
 					selectElement(d3.event.target);
 					zoomToBoundingBox(selectedEl.parentNode);
 					electionProjector.constituencyClickHandler.bind(selectedEl)();
+
 				}
 			}
 		}
 	};
+
+	var mouseOver = function() {
+		
+		console.log(d3.event.target.parentNode.id);
+		if(d3.event.target.parentNode.id){
+			tooltip.html(d3.event.target.parentNode.id);
+	      	tooltip.style("opacity", "1");
+	      	tooltip.style("left", -20+mouse.x+"px");
+	      	tooltip.style("top", (-55+mouse.y)+"px");
+	      }else{
+	      	tooltip.style("opacity", "0");
+      	 	tooltip.style("left", (-20000+mouse.x)+"px");
+	      }
+				
+	};
+	var mouseOut = function() {
+		
+		console.log(d3.event.target.parentNode.id);
+		 tooltip.style("opacity", "0");
+      	 tooltip.style("left", (-20000+mouse.x)+"px");
+
+	};
+
 
 	var resized = function(){
 		width = svgContainer.offsetWidth;
@@ -131,6 +165,8 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	var zoom = d3.behavior.zoom();
 	svg.call(zoom.translate(defaultTranslate).scale(defaultScale).scaleExtent([CONSTANTS.MIN_SCALE, CONSTANTS.MAX_SCALE]).on("zoom", zoomed));
 	svg.on('click', clicked);
+	svg.on('mouseover', mouseOver);
+	svg.on('mouseout', mouseOut);
 	window.onresize = resized;
 
 	function addDragHandlers(progressContainers) {
@@ -141,7 +177,9 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 			var bar = window.jQuery(handleEl.parentNode);
 
 			var maxWidth = fullBar.outerWidth() - handleEl.offsetWidth;
-			maxWidth = 2.5*100; //Mathieu override: we now use static width for progresses bar
+			console.log("fullBar.outerWidth() = "+fullBar.outerWidth());
+			console.log("handleEl.offsetWidth= "+handleEl.offsetWidth);
+			maxWidth = 2.0*100; //Mathieu override: we now use static width for progresses bar
 			var currentPercentage = bar.outerWidth() / maxWidth;
 
 			var trackObj = fullBar.offset();
@@ -172,8 +210,6 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 				//	finishDrag();
 				//}
 
-				console.log("moveEvent.pageX = "+moveEvent.pageX + "downEvent.pageX = "+downEvent.pageX +" maxWidth: "+maxWidth);
-
 				var handleWidth = 10;
 				var diffPercentage = ( -handleWidth+ moveEvent.pageX - downEvent.pageX) / (maxWidth -handleWidth);
 				if(Math.abs(diffPercentage) > 0.01){
@@ -182,7 +218,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 						newPercentage = Math.max(0,newPercentage);
 						//bar.css('width', 'calc(' +newPercentage + '% + 10px)');
 						//Mathieu override: using fixed width for progress bar
-						bar.css('width', (newPercentage*2.5+10) + ' px)');
+						bar.css('width', (newPercentage*2.0+10) + ' px)');
 						input.val(newPercentage);
 						electionProjector.recalculateSeats(input.get(0));
 					}

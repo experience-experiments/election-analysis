@@ -15,6 +15,7 @@
 	var tableEl = detailEl.querySelector('table');
 	var nameEl = tableEl.querySelector('th');
 	var tbodyEl = tableEl.querySelector('tbody');
+	
 
 	var resultEl = document.querySelector('.current-projection-result');
 	var winnerEl = resultEl.querySelector('.winner');
@@ -28,7 +29,7 @@
 
 	function setPartyBarWidth(party, width){
 		//barElements[party].style.width = 'calc('+width + '% + 10px)';
-		barElements[party].style.width = (width*2.5) + 10+"px";
+		barElements[party].style.width = (width*2.0) + 10+"px";
 	}
 
 	function ElectionProjector(dataUrl) {
