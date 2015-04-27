@@ -6,6 +6,7 @@
 
 	var allParties = ["AC","AD","AGS","APNI","APP","AWL","AWP","BB","BCP","Bean","Best","BGPV","BIB","BIC","Blue","BNP","BP Elvis","C28","Cam Soc","CG","Ch M","Ch P","CIP","CITY","CNPG","Comm","Comm L","Con","Cor D","CPA","CSP","CTDP","CURE","D Lab","D Nat","DDP","DUP","ED","EIP","EPA","FAWG","FDP","FFR","Grn","GSOT","Hum","ICHC","IEAC","IFED","ILEU","Impact","Ind1","Ind2","Ind3","Ind4","Ind5","IPT","ISGB","ISQM","IUK","IVH","IZB","JAC","Joy","JP","Lab","Land","LD","Lib","Libert","LIND","LLPB","LTT","MACI","MCP","MEDI","MEP","MIF","MK","MPEA","MRLP","MRP","Nat Lib","NCDV","ND","New","NF","NFP","NICF","Nobody","NSPS","PBP","PC","Pirate","PNDP","Poet","PPBF","PPE","PPNV","Reform","Respect","Rest","RRG","RTBP","SACL","Sci","SDLP","SEP","SF","SIG","SJP","SKGP","SMA","SMRA","SNP","Soc","Soc Alt","Soc Dem","Soc Lab","South","Speaker","SSP","TF","TOC","Trust","TUSC","TUV","UCUNF","UKIP","UPS","UV","VCCA","Vote","Wessex Reg","WRP","You","Youth","YRDPL"];
 	var partyIds = {'Lab':'labour','Con':'tory','LD':'libdem','SNP':'snp','Grn':'green','Respect':'respect','SDLP':'sdlp','PC':'pc','DUP':'dup','UUP':'uup','SF':'sf','UKIP':'ukip'};
+	var partyFullnames = {'Lab':'Labour','Con':'Conservatives','LD':'Liberal Democrats','SNP':'Scottish National Party','Grn':'Green party','Respect':'The Respect Party','SDLP':'SDLP','PC':'Communist Party','DUP':'dup','UUP':'uup','SF':'sf','UKIP':'UKIP'};
 
 
 	var seats;
@@ -204,7 +205,7 @@
 
 		if(selectedSeat){
 			tableEl.classList.remove('hidden');
-			nameEl.innerHTML = selectedSeat['Constituency Name'];
+			nameEl.innerHTML = "Constituency: <b>"+selectedSeat['Constituency Name']+"</b>";
 			tbodyEl.innerHTML = '';
 
 			var votes = [];
@@ -218,7 +219,8 @@
 			});
 
 			for(var j in sorted){
-				tbodyEl.innerHTML += '<tr><td>' + sorted[j].substring(0, sorted[j].indexOf('adjusted') - 1) + '</td><td>' + selectedSeat[sorted[j]] + '</td></tr>';
+				console.log(partyIds[sorted[j].substring(0, sorted[j].indexOf('adjusted') - 1)].toLowerCase());
+				tbodyEl.innerHTML += '<tr><td class="color"><div class="color '+partyIds[sorted[j].substring(0, sorted[j].indexOf('adjusted') - 1)].toLowerCase() +'">&nbsp;</div></td><td>' + partyFullnames[sorted[j].substring(0, sorted[j].indexOf('adjusted') - 1)] + '</td><td>' + selectedSeat[sorted[j]] + '</td></tr>';
 			}
 		} else {
 			console.log('No seat found for ' + selectedId);

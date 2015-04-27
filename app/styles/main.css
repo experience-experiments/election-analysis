@@ -38,8 +38,23 @@ body {
 .title-container h1{
     transform: rotate(-90deg);
     white-space: nowrap;
-    margin-top: calc(100vh - 150px);
+    margin-top: calc(100vh - 200px);
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-style: normal;
+
 }
+
+.title-container h1:before{
+    position: absolute;
+    top:-15px;
+    left: -67px;
+    content:url('../images/header_Icon.png');
+}
+
+
+
 
 .svg-container{
     padding: 0;
@@ -128,6 +143,34 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
 .other .progress-bar {
     background-color: #C0C0C0;
 }
+
+
+
+.color.labour  {
+    background-color: #d50000;
+}
+.color.tory  {
+    background-color: #0087dc;
+}
+.color.libdem {
+    background-color: #FDBB30;
+}
+.color.snp  {
+    background-color: #FFF95D;
+}
+.color.pc  {
+    background-color: #3F8428;
+}
+.color.green {
+    background-color: #008066;
+}
+.color.ukip  {
+    background-color: #EFE600;
+}
+.color.other  {
+    background-color: #C0C0C0;
+}
+
 
 
 
@@ -265,6 +308,34 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
     width: 100%;
     max-width: 100%;
     margin-bottom: 20px;
+}
+
+
+
+
+.detail{
+    background-color: white;
+    position: absolute;
+    bottom: 10px;
+    left: 85px;
+    width: 290px;
+    height: 195px;
+    box-shadow: 0px 1px 14px rgba(0,0,0,0.4);
+    text-align: left;
+}
+
+.detail table{
+    margin: 20px;
+    width: 250px;
+}
+.detail td{
+    margin: 2px;
+}
+
+
+.detail .color{
+    width: 12px;
+    height: 12px;
 }
 
 
