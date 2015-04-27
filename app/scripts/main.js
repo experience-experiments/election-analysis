@@ -130,7 +130,6 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 
 	var mouseOver = function() {
 		
-		console.log(d3.event.target.parentNode.id);
 		if(d3.event.target.parentNode.id){
 			tooltip.html(d3.event.target.parentNode.id);
 	      	tooltip.style("opacity", "1");
@@ -144,7 +143,6 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	};
 	var mouseOut = function() {
 		
-		console.log(d3.event.target.parentNode.id);
 		 tooltip.style("opacity", "0");
       	 tooltip.style("left", (-20000+mouse.x)+"px");
 
