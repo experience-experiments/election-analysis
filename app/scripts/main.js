@@ -9,6 +9,11 @@ var CONSTANTS = {
 	BOUNDING_BOX_FACTOR: 0.8
 };
 
+var scenarios = {
+	'results2010':{'tory': 36.1, 'labour': 29.0, 'libdem': 23.0, 'snp': 1.7, 'pc': 0.6, 'green': 1.0, ukip: 3.1, 'other': 5.5},
+	'ukipInsurgence': {'tory': 23.9, 'labour': 25.4, 'libdem': 6.9, 'snp': 2.5, 'pc': 0.7, 'green': 7.9, 'ukip': 27.5, 'other': 5.2}
+};
+
 d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 
 	var svgContainer = document.querySelector('.svg-container');
@@ -22,7 +27,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	console.log('Svg container: ' + width + ', ' + height + '. Scale: ' + defaultScale + '. Translate: ' + defaultTranslate);
 
 	var electionProjector = new ElectionProjector('data/2010.json');
-	electionProjector.initialise({'tory':36.1, 'labour':29.0, 'libdem':23.0, 'snp':1.7, 'pc':0.6, 'green':1.0, ukip:3.1, 'other':5.5});
+	electionProjector.initialise(scenarios.results2010);
 
 	var selectedEl = null;
 	var svgEl = document.querySelector('svg');
@@ -36,6 +41,12 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 		el.addEventListener('change',function(){
 			electionProjector.recalculateSeats(el);
 		});
+	});
+
+	document.getElementById('scenario-selector').addEventListener('change',function(e){
+		electionProjector.setProjection(scenarios[e.target.value]);
+		electionProjector.updateVotes();
+		electionProjector.updateTotalNumberOfSeats();
 	});
 
 	document.getElementById('reset').addEventListener('click',electionProjector.resetPercentages.bind(electionProjector), false);
