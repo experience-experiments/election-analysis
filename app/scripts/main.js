@@ -51,6 +51,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 				document.querySelector('.' + i).classList.add('hidden');
 			}
 		}
+		resetMap();
 		electionProjector.setProjection(scenarios[e.target.value]);
 		electionProjector.updateVotes();
 		electionProjector.updateTotalNumberOfSeats();
