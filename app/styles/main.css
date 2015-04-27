@@ -38,8 +38,23 @@ body {
 .title-container h1{
     transform: rotate(-90deg);
     white-space: nowrap;
-    margin-top: calc(100vh - 150px);
+    margin-top: calc(100vh - 200px);
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-style: normal;
+
 }
+
+.title-container h1:before{
+    position: absolute;
+    top:-15px;
+    left: -67px;
+    content:url('../images/header_Icon.png');
+}
+
+
+
 
 .svg-container{
     padding: 0;
@@ -155,6 +170,34 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
 }
 
 
+.color.labour  {
+    background-color: #d50000;
+}
+.color.tory  {
+    background-color: #0087dc;
+}
+.color.libdem {
+    background-color: #FDBB30;
+}
+.color.snp  {
+    background-color: #FFF95D;
+}
+.color.pc  {
+    background-color: #3F8428;
+}
+.color.green {
+    background-color: #008066;
+}
+.color.ukip  {
+    background-color: #EFE600;
+}
+.color.other  {
+    background-color: #C0C0C0;
+}
+
+
+
+
 .labour .logo {
     background: url(../images/labour_lrg.png) no-repeat;
     background-size: contain;
@@ -184,7 +227,8 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
     background-size: contain;
 }
 .other .logo {
-
+    background: url(../images/others_lrg.png) no-repeat;
+    background-size: contain;
 }
 
 
@@ -197,7 +241,7 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
     color: #fff;
     text-align: center;
     transition: width .6s ease;
-    box-shadow: inset 0 -10px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 -8px 0 rgba(0,0,0,.25);
 }
 
 .progress .dragging *{
@@ -220,15 +264,15 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
 
 .controls .party-row{
     vertical-align: top;
-    height: 40px;
-    line-height: 35px;
+    height: 33px;
+    line-height: 30px;
     width: 100%;
 }
 
 .controls .party-row span.logo {
     display: inline;
     width: 40px;
-    height: 35px;
+    height: 30px;
     float: left;
 }
 
@@ -237,9 +281,9 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
     display: inline-block;
     width: 50px;
     border: 1px solid;
-    padding: 0;
-    font-size: 14px;
-    height: 35px;
+    padding-left: 5px;
+    font-size: 12px;
+    height: 30px;
     margin-right: -4px;
 }
 
@@ -253,7 +297,7 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
 .controls .party-row span.progress {
     display: inline-block;
     width: 50%;
-    height: 35px;
+    height: 30px;
     margin: 0;
     background-color: inherit;
     border-radius: 0;
@@ -264,22 +308,23 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
 .controls .party-row span.value {
     display: inline;
     vertical-align: middle;
-    color: gray;
-    font-size: small;
+    color: #999;
+    font-size: 9px;
     font-style: italic;
     padding-left: 8px;
 }
 
 .controls .party-row .handle {
-    height: 35px;
-    line-height: 35px;
-    width: 8px;
-    background-color: black;
-    opacity: .4;
+    height: 100%;
+    line-height: 30px;
+    width: 10px;
     color: white;
     font-size: 8px;
+    font-weight: lighter;
     float: right;
     cursor: col-resize;
+    background-color: black;
+    opacity: .3;
 }
 
 .hidden {
@@ -291,6 +336,50 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
     width: 100%;
     max-width: 100%;
     margin-bottom: 20px;
+}
+
+
+
+
+.detail{
+    background-color: white;
+    position: absolute;
+    bottom: 10px;
+    left: 85px;
+    width: 290px;
+ 
+    box-shadow: 0px 1px 14px rgba(0,0,0,0.4);
+    text-align: left;
+    color: #222;
+
+}
+
+.detail h3{
+    margin-top: -10px;
+    margin-bottom: 1px;
+    font-weight: "800";
+    font-style: bold;
+    font-size: 22px;
+    color: black;
+
+}
+
+.detail table{
+    margin-top:  20px;
+    margin-left:  10px;
+    margin-right:  10px;
+     margin-bottom: 10px;
+    width: 250px;
+   
+}
+.detail td{
+    margin: 2px;
+}
+
+
+.detail .color{
+    width: 12px;
+    height: 12px;
 }
 
 
