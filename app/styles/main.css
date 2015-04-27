@@ -129,6 +129,30 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
     background-color: #C0C0C0;
 }
 
+.labour input {
+    border-color: #d50000 !important;
+}
+.tory input {
+    border-color: #0087dc !important;
+}
+.libdem input {
+    border-color: #FDBB30 !important;
+}
+.snp input {
+    border-color: #FFF95D !important;
+}
+.pc input {
+    border-color: #3F8428 !important;
+}
+.green input {
+    border-color: #008066 !important;
+}
+.ukip input {
+    border-color: #EFE600 !important;
+}
+.other input {
+    border-color: #C0C0C0 !important;
+}
 
 
 .labour .logo {
@@ -162,6 +186,7 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
 .other .logo {
 
 }
+
 
 
 .progress-bar{
@@ -211,10 +236,11 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
     vertical-align: top;
     display: inline-block;
     width: 50px;
-    border: none;
+    border: 1px solid;
     padding: 0;
     font-size: 14px;
     height: 35px;
+    margin-right: -4px;
 }
 
 .controls .party-row .input:before {
