@@ -177,7 +177,11 @@
 	};
 
 	ElectionProjector.prototype.setSeatColor = function(ref, partyCode) {
-		ref.attr('class', this.getSeatStyle(partyCode));
+		var newStyle = partyIds[partyCode]?partyIds[partyCode] + ' seat' : 'unknown seat';
+		if(ref.attr('class').indexOf('selected') > -1){
+			newStyle += ' selected';
+		}
+		ref.attr('class', newStyle);
 	};
 
 	ElectionProjector.prototype.getPartyCodeById = function( id ) {
@@ -208,10 +212,6 @@
 
 		winnerEl.className = 'winner ' + majorityPartyId;
 		descriptionEl.innerHTML = resultDescription;
-	};
-
-	ElectionProjector.prototype.getSeatStyle = function(partyCode) {
-		return partyIds[partyCode]?partyIds[partyCode] + ' seat' : 'unknown seat';
 	};
 
 	ElectionProjector.prototype.constituencyClickHandler = function() {
