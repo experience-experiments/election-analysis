@@ -44,6 +44,13 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	});
 
 	document.getElementById('scenario-selector').addEventListener('change',function(e){
+		for(var i in scenarios){
+			if(i === e.target.value){
+				document.querySelector('.' + i).classList.remove('hidden');
+			} else {
+				document.querySelector('.' + i).classList.add('hidden');
+			}
+		}
 		electionProjector.setProjection(scenarios[e.target.value]);
 		electionProjector.updateVotes();
 		electionProjector.updateTotalNumberOfSeats();
