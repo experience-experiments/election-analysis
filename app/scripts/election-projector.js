@@ -11,7 +11,8 @@
 
 	var seats;
 	var selectedId = null;
-	var tableEl = document.querySelector('.detail table');
+	var detailEl = document.querySelector('.detail')
+	var tableEl = detailEl.querySelector('table');
 	var nameEl = tableEl.querySelector('th');
 	var tbodyEl = tableEl.querySelector('tbody');
 
@@ -204,7 +205,7 @@
 		var selectedSeat = seats[selectedId];
 
 		if(selectedSeat){
-			tableEl.classList.remove('hidden');
+			detailEl.classList.remove('hidden');
 			nameEl.innerHTML = "<h3>"+selectedSeat['Constituency Name']+"</h3>";
 			tbodyEl.innerHTML = '';
 
@@ -215,26 +216,24 @@
 				}
 			}
 			var sorted = votes.sort(function(a, b){
-				return selectedSeat[a] <= selectedSeat[b];
-			});
+				return Number(selectedSeat[a]) <= Number(selectedSeat[b]);
+			}).slice(0,5);
 
 			for(var j in sorted){
 				var partyId = sorted[j].substring(0, sorted[j].indexOf('adjusted') - 1) ;
-				console.log(partyId);
 				var partyClass = partyIds[partyId] || "other";
-				//if(partyClass){
-					tbodyEl.innerHTML += '<tr><td class="color"><div class="color '+partyClass.toLowerCase() +'">&nbsp;</div></td><td>' + (partyFullnames[partyId]||partyId) + '</td><td>' + selectedSeat[sorted[j]] + '</td></tr>';	
-				//}
-				
+				tbodyEl.innerHTML += '<tr><td class="color"><div class="color '+partyClass.toLowerCase() +'">&nbsp;</div></td><td>' + (partyFullnames[partyId]||partyId) + '</td><td>' + selectedSeat[sorted[j]] + '</td></tr>';
+
 			}
 		} else {
+			detailEl.classList.remove('hidden');
 			console.log('No seat found for ' + selectedId);
 		}
 
 	};
 
 	ElectionProjector.prototype.clearSelection = function(){
-		tableEl.classList.add('hidden');
+		detailEl.classList.add('hidden');
 	};
 
 	if(!window.ElectionProjector){

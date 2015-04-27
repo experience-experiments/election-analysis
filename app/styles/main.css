@@ -39,16 +39,15 @@ body {
     transform: rotate(-90deg);
     white-space: nowrap;
     margin-top: calc(100vh - 200px);
-    margin-left: 10px;
     text-transform: uppercase;
-    font-weight: 400;
     font-style: normal;
+    font-size: 18px;
 
 }
 
 .title-container h1:before{
     position: absolute;
-    top:-15px;
+    top:-20px;
     left: -67px;
     content:url('../images/header_Icon.png');
 }
@@ -346,36 +345,31 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
     position: absolute;
     bottom: 10px;
     left: 85px;
-    width: 290px;
+    width: 220px;
+    height: 150px;
+    overflow-y: scroll;
  
     box-shadow: 0px 1px 14px rgba(0,0,0,0.4);
     text-align: left;
     color: #222;
+    font-size: 12px;
 
 }
 
 .detail h3{
     margin-top: -10px;
     margin-bottom: 1px;
-    font-weight: "800";
-    font-style: bold;
-    font-size: 22px;
-    color: black;
-
+    font-size: 15px;
 }
 
 .detail table{
-    margin-top:  20px;
-    margin-left:  10px;
-    margin-right:  10px;
-     margin-bottom: 10px;
-    width: 250px;
-   
+    margin:  20px 10px 10px 10px;
+    width: 200px;
 }
+
 .detail td{
     margin: 2px;
 }
-
 
 .detail .color{
     width: 12px;
