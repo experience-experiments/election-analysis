@@ -187,10 +187,10 @@
 		for (var partyId in previousState) {
 			var elem = document.querySelector('.controls .party-row.' + partyId + ' .value');
 			var adjustedSeatCount = document.querySelectorAll('svg g *.' + partyId + '.seat').length;
-			elem.innerHTML = adjustedSeatCount;
+			elem.innerHTML = adjustedSeatCount + ' Seats';
 			remaining = remaining - adjustedSeatCount;
 		}
-		document.querySelector('.controls .party-row.' + 'other' + ' .value').innerHTML = remaining;
+		document.querySelector('.controls .party-row.' + 'other' + ' .value').innerHTML = remaining + ' Seats';
 	};
 
 	ElectionProjector.prototype.getSeatStyle = function(partyCode) {

@@ -138,8 +138,6 @@ module.exports = function (grunt) {
 					dot: true,
 					cwd: 'bower_components',
 					src: [
-						'bootstrap/dist/css/bootstrap.min.css',
-						'bootstrap/dist/js/bootstrap.min.js',
 						'd3/d3.min.js',
 						'jquery/dist/jquery.min.js'
 					],

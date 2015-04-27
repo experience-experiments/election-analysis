@@ -1,56 +1,64 @@
+html {
+    webkit-text-size-adjust: 100%;
+}
+
 body {
     padding: 0;
     margin: 0;
+    min-height: 560px;
 }
 
-div.title{
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.title-container{
+    display: table-cell;
     background-color: black;
     color: white;
-    z-index: 1000;
-    position: absolute;
-    top: 0;
-    width: 50px;
+    width: 75px;
     height: 100vh;
-    opacity: 0.5;
+    float: left;
 }
 
-div.title h1{
-    transform: rotate(270deg) translate(-380px,5px);
+.title-container a img{
+    border: 0;
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.title-container h1{
+    transform: rotate(-90deg);
     white-space: nowrap;
-}
-
-.container-fluid{
-    padding: 0;
+    margin-top: calc(100vh - 150px);
 }
 
 .svg-container{
-    padding-left: 0;
-    min-height: 500px;
+    padding: 0;
+    float: left;
+    width: calc(100% - 525px);
     height: 100vh;
-    width: 100%;
 }
 
 .side-controls {
-    height: 100vh;
+    width: 450px;
+    float: left;
     padding-left: 10px;
     padding-right: 0;
     padding-right: 0;
-}
-
-.visual-adjust{
-    padding-top: 20px;
+    height: 100vh;
+    border-left: 10px solid black;
 }
 
 svg {
-    border: solid #fff 0px;
     background-color: #83A2B8;
     background: -webkit-radial-gradient(#b8def1, #7ebad8);
     background: -o-radial-gradient(#b8def1, #7ebad8);
     background: -moz-radial-gradient(#b8def1, #7ebad8);
     background: radial-gradient(#b8def1, #7ebad8);
-    border-right-style: ridge;
-    border-right-width: 4px;
-    border-right-color: #7ebad8;
 }
 
 
@@ -58,9 +66,6 @@ svg {
     display: inline-block;
 }
 
-.detail {
-
-}
 
 
 svg *.seat { stroke: white; stroke-width: 0.2; }
@@ -94,31 +99,6 @@ svg.selected path:not(.selected) {
     opacity: 0.2;
 }
 
-.legend {
-    padding-top: 10px;
-}
-
-.legend ul{
-    list-style: none;
-    padding-left: 0;
-}
-
-.legend ul li{
-    line-height: 30px;
-    font-size: 20px;
-}
-
-.legend ul li:before{
-    content: ' \25CF';
-    font-size: 20px;
-}
-
-.progress{
-    background-color: inherit;
-    border-radius: 0;
-    box-shadow: none;
-}
-
 .labour .progress-bar {
     background-color: #d50000;
 }
@@ -144,7 +124,23 @@ svg.selected path:not(.selected) {
     background-color: #C0C0C0;
 }
 
+
+.progress{
+    background-color: inherit;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+
 .progress-bar{
+    float: left;
+    height: 100%;
+    font-size: 12px;
+    line-height: 35px;
+    color: #fff;
+    text-align: center;
+    transition: width .6s ease;
     box-shadow: inset 0 -10px 0 rgba(0,0,0,.15);
 }
 
@@ -185,13 +181,15 @@ svg.selected path:not(.selected) {
     width: 50px;
     border: none;
     padding: 0;
+    font-size: 14px;
+    height: 35px;
 }
 
 .controls .party-row .input:before {
     content: '%';
     font-size: 10px;
     position: absolute;
-    left: 77px;
+    margin-left: 28px;
 }
 
 .controls .party-row span.progress {
@@ -204,6 +202,10 @@ svg.selected path:not(.selected) {
 .controls .party-row span.value {
     display: inline;
     vertical-align: middle;
+    color: gray;
+    font-size: small;
+    font-style: italic;
+    padding-left: 8px;
 }
 
 .controls .party-row .handle {
@@ -214,5 +216,16 @@ svg.selected path:not(.selected) {
     color: white;
     font-size: 8px;
     float: right;
-    cursor: pointer;
+    cursor: col-resize;
+}
+
+.hidden {
+    display: none!important;
+    visibility: hidden!important;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
 }
