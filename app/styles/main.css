@@ -393,6 +393,30 @@ select.scenarios {
     border-radius: 3px;
     background-color: white;
     padding: 0.65em 2.5em 0.55em 0.75em;
+}
 
+.current-projection-result{
+    position: absolute;
+    bottom: 10px;
+    left: calc(60% + 10px);
+    width: calc(40% - 20px);
+}
 
+.current-projection-result .winner{
+    width: 100%;
+    height: 66px;
+}
+
+.winner span.logo {
+    display: inline;
+    width: 66px;
+    height: 66px;
+    float: left;
+    background-size: contain;
+}
+
+.winner span.description {
+    padding-left: 10px;
+    display: inline;
+    line-height: 66px;
 }
