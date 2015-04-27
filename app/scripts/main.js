@@ -121,7 +121,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 			var input = fullBar.siblings('.input').find('input');
 			var bar = window.jQuery(handleEl.parentNode);
 
-			var maxWidth = fullBar.outerWidth();
+			var maxWidth = fullBar.outerWidth() - handleEl.offsetWidth;
 			var currentPercentage = bar.outerWidth() / maxWidth;
 
 			var trackObj = fullBar.offset();

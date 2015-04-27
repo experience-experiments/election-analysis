@@ -39,12 +39,13 @@ body {
 .svg-container{
     padding: 0;
     float: left;
-    width: calc(100% - 525px);
+    width: calc(60% - 75px);
     height: 100vh;
 }
 
 .side-controls {
-    width: 450px;
+    width: 40%;
+
     float: left;
     padding-left: 10px;
     padding-right: 0;
@@ -67,6 +68,17 @@ svg {
 }
 
 
+svg path:hover {
+    opacity: 0.5;
+}
+
+svg path.selected:hover{
+    opacity: 1;
+}
+
+svg.selected path:not(.selected) {
+    opacity: 0.2;
+}
 
 svg *.seat { stroke: white; stroke-width: 0.2; }
 
@@ -86,18 +98,6 @@ svg *.dup { fill: #C30; }        /* Democratic Unionist Party */
 svg *.respect { fill: #F60; }    /* Respect Party (George Galloway) */
 svg *.ind { fill: #C0C0C0; }     /* independent candidate */
 
-
-svg path:hover {
-    opacity: 0.5;
-}
-
-svg path.selected:hover{
-    opacity: 1;
-}
-
-svg.selected path:not(.selected) {
-    opacity: 0.2;
-}
 
 .labour .progress-bar {
     background-color: #d50000;
@@ -125,11 +125,37 @@ svg.selected path:not(.selected) {
 }
 
 
-.progress{
-    background-color: inherit;
-    border-radius: 0;
-    box-shadow: none;
-    overflow: hidden;
+
+.labour .logo {
+    background: url(../images/labour_lrg.png) no-repeat;
+    background-size: contain;
+}
+.tory .logo {
+    background: url(../images/tory_lrg.png) no-repeat;
+    background-size: contain;
+}
+.libdem .logo {
+    background: url(../images/libdem_lrg.png) no-repeat;
+    background-size: contain;
+}
+.snp .logo {
+    background: url(../images/snp_lrg.png) no-repeat;
+    background-size: contain;
+}
+.pc .logo {
+    background: url(../images/pc_lrg.png) no-repeat;
+    background-size: contain;
+}
+.green .logo {
+    background: url(../images/green_lrg.png) no-repeat;
+    background-size: contain;
+}
+.ukip .logo {
+    background: url(../images/ukip_lrg.png) no-repeat;
+    background-size: contain;
+}
+.other .logo {
+
 }
 
 
@@ -170,8 +196,9 @@ svg.selected path:not(.selected) {
 }
 
 .controls .party-row span.logo {
-    display: inline-block;
+    display: inline;
     width: 40px;
+    height: 35px;
     float: left;
 }
 
@@ -194,9 +221,13 @@ svg.selected path:not(.selected) {
 
 .controls .party-row span.progress {
     display: inline-block;
-    width: 200px;
+    width: 50%;
     height: 35px;
     margin: 0;
+    background-color: inherit;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: hidden;
 }
 
 .controls .party-row span.value {
@@ -212,7 +243,8 @@ svg.selected path:not(.selected) {
     height: 35px;
     line-height: 35px;
     width: 8px;
-    background-color: transparent;
+    background-color: black;
+    opacity: .4;
     color: white;
     font-size: 8px;
     float: right;
@@ -229,3 +261,6 @@ svg.selected path:not(.selected) {
     max-width: 100%;
     margin-bottom: 20px;
 }
+
+
+
