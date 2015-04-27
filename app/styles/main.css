@@ -20,7 +20,7 @@ body {
 
 .title-container{
     display: table-cell;
-    background-color: black;
+    background-color: #003142;
     color: white;
     width: 75px;
     height: 100vh;
@@ -58,7 +58,7 @@ body {
 .svg-container{
     padding: 0;
     float: left;
-    width: calc(60% - 75px);
+    width: calc(60% - 76px);
     height: 100vh;
 }
 
@@ -70,7 +70,7 @@ body {
     padding-right: 0;
     padding-right: 0;
     height: 100vh;
-    border-left: 10px solid black;
+    border-left: 10px solid #003142;
     overflow: hidden;
 }
 
@@ -256,7 +256,7 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
 
 .nav.nav-tabs.tabs-left{
     height: 100vh;
-    background-color: black;
+    background-color: #003142;
     color: white;
     padding-left: 2px;
     padding-right: 0;
@@ -421,17 +421,15 @@ select.scenarios {
 
 
 #tooltip{
-    background: #333;
-    background: rgba(10,10,10,.75);
-    border-radius: 5px;
+    background: #003142;
+    opacity: 0.75;
+
     color: #fff;    
     padding: 5px 19px;
     position: absolute;
     z-index: 198;
-  font-family: avenir,sans,arial;
-   text-outline: 1px 1px #000;
-   color: #fafafa;
-   font-weight: 500;
 
+    font-family: caslon,sans,arial;
+    
 }
 

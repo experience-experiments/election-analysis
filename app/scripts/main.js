@@ -77,7 +77,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 
 	var resetMap = function() {
 		selectElement(null);
-		svg.transition().duration(CONSTANTS.TRANSITION_DURATION).call(zoom.translate(defaultTranslate).scale(defaultScale).event);
+		svg.transition().ease('quad').duration(CONSTANTS.TRANSITION_DURATION).call(zoom.translate(defaultTranslate).scale(defaultScale).event);
 		electionProjector.clearSelection();
 	};
 
@@ -106,7 +106,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 		var scale = CONSTANTS.BOUNDING_BOX_FACTOR / Math.max(boundingRect.width / width, boundingRect.height / height);
 		var translate = [width / 2 - scale * (boundingRect.x + boundingRect.width / 2), height / 2 - scale * (boundingRect.y + boundingRect.height / 2)];
 
-		svg.transition().duration(CONSTANTS.TRANSITION_DURATION).call(zoom.translate(translate).scale(scale).event);
+		svg.transition().ease('quad').duration(CONSTANTS.TRANSITION_DURATION).call(zoom.translate(translate).scale(scale).event);
 	};
 
 	var clicked = function() {
