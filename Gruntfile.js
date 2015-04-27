@@ -131,6 +131,7 @@ module.exports = function (grunt) {
 						'data/*.json',
 						'data/edited.svg',
 						'styles/*.css',
+						'styles/fonts/*.ttf',
 						'images/*',
 						'{,*/}*.html'
 					]
