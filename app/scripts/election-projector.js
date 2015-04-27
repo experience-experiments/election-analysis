@@ -179,13 +179,15 @@
 
 	ElectionProjector.prototype.setSeatColor = function(ref, partyCode) {
 		var newStyle = partyIds[partyCode]?partyIds[partyCode] + ' seat' : 'unknown seat';
-		var isSelected = ref.attr('class').indexOf('selected') > -1;
-		if(isSelected){
-			newStyle += ' selected';
-		}
-		ref.attr('class', newStyle);
-		if(isSelected){
-			this.constituencyClickHandler.bind(ref[0][0])();
+		if(ref.node()){
+			var isSelected = ref.attr('class').indexOf('selected') > -1;
+			if(isSelected){
+				newStyle += ' selected';
+			}
+			ref.attr('class', newStyle);
+			if(isSelected){
+				this.constituencyClickHandler.bind(ref[0][0])();
+			}
 		}
 	};
 
@@ -254,6 +256,10 @@
 
 	ElectionProjector.prototype.clearSelection = function(){
 		detailEl.classList.add('hidden');
+	};
+
+	ElectionProjector.prototype.getConstituencyName = function(id){
+		return seats[id]['Constituency Name'];
 	};
 
 	if(!window.ElectionProjector){

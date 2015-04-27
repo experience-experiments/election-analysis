@@ -19,8 +19,8 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	var svgContainer = document.querySelector('.svg-container');
 	svgContainer.innerHTML = svgData.response;
 
-	var tooltip = d3.select("#tooltip");
-	var mouse = {x:0,y:0};
+	var tooltipEl = d3.select("#tooltip");
+	var mouseTracker = {x:0,y:0};
 
 	var width = svgContainer.offsetWidth;
 	var height = svgContainer.offsetHeight;
@@ -61,11 +61,11 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	});
 
 	document.getElementById('reset').addEventListener('click',electionProjector.resetPercentages.bind(electionProjector), false);
-	document.addEventListener('mousemove',function(e){
-	        mouse = {
-	            x: e.pageX-(e.clientX - e.offsetX),
-	            y: e.pageY-(e.clientY - e.offsetY)
-	        };
+	document.addEventListener('mousemove', function (e) {
+		mouseTracker = {
+			x: e.pageX - (e.clientX - e.offsetX),
+			y: e.pageY - (e.clientY - e.offsetY)
+		};
 	});
 
 	var zoomed = function() {
@@ -128,24 +128,20 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 		}
 	};
 
-	var mouseOver = function() {
-		
-		if(d3.event.target.id){
-			tooltip.html(d3.event.target.id);
-	      	tooltip.style("opacity", "1");
-	      	tooltip.style("left", -20+mouse.x+"px");
-	      	tooltip.style("top", (-55+mouse.y)+"px");
-	      }else{
-	      	tooltip.style("opacity", "0");
-      	 	tooltip.style("left", (-20000+mouse.x)+"px");
-	      }
-				
+	var mouseOver = function () {
+		if (d3.event.target.id) {
+			tooltipEl.html(electionProjector.getConstituencyName(d3.event.target.id));
+			tooltipEl.style("opacity", "1");
+			tooltipEl.style("left", -20 + mouseTracker.x + "px");
+			tooltipEl.style("top", (-55 + mouseTracker.y) + "px");
+		} else {
+			tooltipEl.style("opacity", "0");
+			tooltipEl.style("left", (-20000 + mouseTracker.x) + "px");
+		}
 	};
-	var mouseOut = function() {
-		
-		 tooltip.style("opacity", "0");
-      	 tooltip.style("left", (-20000+mouse.x)+"px");
-
+	var mouseOut = function () {
+		tooltipEl.style("opacity", "0");
+		tooltipEl.style("left", (-20000 + mouseTracker.x) + "px");
 	};
 
 
@@ -175,8 +171,6 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 			var bar = window.jQuery(handleEl.parentNode);
 
 			var maxWidth = fullBar.outerWidth() - handleEl.offsetWidth;
-			console.log("fullBar.outerWidth() = "+fullBar.outerWidth());
-			console.log("handleEl.offsetWidth= "+handleEl.offsetWidth);
 			maxWidth = 2.0*100; //Mathieu override: we now use static width for progresses bar
 			var currentPercentage = bar.outerWidth() / maxWidth;
 
@@ -185,28 +179,15 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 			trackObj.height = fullBar.get(0).offsetHeight;
 
 			function finishDrag(){
-				console.log('finish drag');
 				progressContainers.unbind("mousemove");
 				progressContainers.unbind("mouseup");
 				fullBar.removeClass('dragging');
 				bar.removeClass('active');
 			}
 
-			function isOutOfBounds(e){
-				return (e.pageX < trackObj.left ||
-					e.pageX > (trackObj.left + trackObj.width) ||
-					e.pageY < trackObj.top ||
-					e.pageY > (trackObj.top + trackObj.height)
-				);
-			}
-
 			progressContainers.mousemove(function (moveEvent) {
 				fullBar.addClass('dragging');
 				bar.addClass('active');
-
-				//if(isOutOfBounds(moveEvent)){
-				//	finishDrag();
-				//}
 
 				var handleWidth = 10;
 				var diffPercentage = ( -handleWidth+ moveEvent.pageX - downEvent.pageX) / (maxWidth -handleWidth);
@@ -214,7 +195,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 					var newPercentage = ((currentPercentage + diffPercentage) * 100).toFixed(1);
 					if(newPercentage > -10 && newPercentage < 99){
 						newPercentage = Math.max(0,newPercentage);
-						//bar.css('width', 'calc(' +newPercentage + '% + 10px)');
+
 						//Mathieu override: using fixed width for progress bar
 						bar.css('width', (newPercentage*2.0+10) + ' px)');
 						input.val(newPercentage);
@@ -224,9 +205,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 
 			});
 
-
-			$(window).mouseup(finishDrag);
-			//progressContainers.parent.mouseup(finishDrag);
+			window.jQuery(window).mouseup(finishDrag);
 
 		});
 	}
