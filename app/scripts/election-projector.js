@@ -178,10 +178,14 @@
 
 	ElectionProjector.prototype.setSeatColor = function(ref, partyCode) {
 		var newStyle = partyIds[partyCode]?partyIds[partyCode] + ' seat' : 'unknown seat';
-		if(ref.attr('class').indexOf('selected') > -1){
+		var isSelected = ref.attr('class').indexOf('selected') > -1;
+		if(isSelected){
 			newStyle += ' selected';
 		}
 		ref.attr('class', newStyle);
+		if(isSelected){
+			this.constituencyClickHandler.bind(ref[0][0])();
+		}
 	};
 
 	ElectionProjector.prototype.getPartyCodeById = function( id ) {
