@@ -319,14 +319,30 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
     bottom: 10px;
     left: 85px;
     width: 290px;
-    height: 195px;
+ 
     box-shadow: 0px 1px 14px rgba(0,0,0,0.4);
     text-align: left;
+    color: #222;
+
+}
+
+.detail h3{
+    margin-top: -10px;
+    margin-bottom: 1px;
+    font-weight: "800";
+    font-style: bold;
+    font-size: 22px;
+    color: black;
+
 }
 
 .detail table{
-    margin: 20px;
+    margin-top:  20px;
+    margin-left:  10px;
+    margin-right:  10px;
+     margin-bottom: 10px;
     width: 250px;
+   
 }
 .detail td{
     margin: 2px;

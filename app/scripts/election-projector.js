@@ -205,7 +205,7 @@
 
 		if(selectedSeat){
 			tableEl.classList.remove('hidden');
-			nameEl.innerHTML = "Constituency: <b>"+selectedSeat['Constituency Name']+"</b>";
+			nameEl.innerHTML = "<h3>"+selectedSeat['Constituency Name']+"</h3>";
 			tbodyEl.innerHTML = '';
 
 			var votes = [];
@@ -219,8 +219,13 @@
 			});
 
 			for(var j in sorted){
-				console.log(partyIds[sorted[j].substring(0, sorted[j].indexOf('adjusted') - 1)].toLowerCase());
-				tbodyEl.innerHTML += '<tr><td class="color"><div class="color '+partyIds[sorted[j].substring(0, sorted[j].indexOf('adjusted') - 1)].toLowerCase() +'">&nbsp;</div></td><td>' + partyFullnames[sorted[j].substring(0, sorted[j].indexOf('adjusted') - 1)] + '</td><td>' + selectedSeat[sorted[j]] + '</td></tr>';
+				var partyId = sorted[j].substring(0, sorted[j].indexOf('adjusted') - 1) ;
+				console.log(partyId);
+				var partyClass = partyIds[partyId] || "other";
+				//if(partyClass){
+					tbodyEl.innerHTML += '<tr><td class="color"><div class="color '+partyClass.toLowerCase() +'">&nbsp;</div></td><td>' + (partyFullnames[partyId]||partyId) + '</td><td>' + selectedSeat[sorted[j]] + '</td></tr>';	
+				//}
+				
 			}
 		} else {
 			console.log('No seat found for ' + selectedId);
