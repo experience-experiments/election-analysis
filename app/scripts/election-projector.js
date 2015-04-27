@@ -23,7 +23,8 @@
 	var previousState = {};
 
 	function setPartyBarWidth(party, width){
-		barElements[party].style.width = width + '%';
+		//barElements[party].style.width = 'calc('+width + '% + 10px)';
+		barElements[party].style.width = (width*2.5) + 10+"px";
 	}
 
 	function ElectionProjector(dataUrl) {

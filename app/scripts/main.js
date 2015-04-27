@@ -140,6 +140,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 			var bar = window.jQuery(handleEl.parentNode);
 
 			var maxWidth = fullBar.outerWidth() - handleEl.offsetWidth;
+			maxWidth = 2.5*100; //Mathieu override: we now use static width for progresses bar
 			var currentPercentage = bar.outerWidth() / maxWidth;
 
 			var trackObj = fullBar.offset();
@@ -147,6 +148,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 			trackObj.height = fullBar.get(0).offsetHeight;
 
 			function finishDrag(){
+				console.log('finish drag');
 				progressContainers.unbind("mousemove");
 				progressContainers.unbind("mouseup");
 				fullBar.removeClass('dragging');
@@ -165,15 +167,21 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 				fullBar.addClass('dragging');
 				bar.addClass('active');
 
-				if(isOutOfBounds(moveEvent)){
-					finishDrag();
-				}
+				//if(isOutOfBounds(moveEvent)){
+				//	finishDrag();
+				//}
 
-				var diffPercentage = (moveEvent.pageX - downEvent.pageX) / maxWidth;
+				console.log("moveEvent.pageX = "+moveEvent.pageX + "downEvent.pageX = "+downEvent.pageX +" maxWidth: "+maxWidth);
+
+				var handleWidth = 10;
+				var diffPercentage = ( -handleWidth+ moveEvent.pageX - downEvent.pageX) / (maxWidth -handleWidth);
 				if(Math.abs(diffPercentage) > 0.01){
 					var newPercentage = ((currentPercentage + diffPercentage) * 100).toFixed(1);
-					if(newPercentage > 0.1 && newPercentage < 99){
-						bar.css('width', newPercentage + '%');
+					if(newPercentage > -10 && newPercentage < 99){
+						newPercentage = Math.max(0,newPercentage);
+						//bar.css('width', 'calc(' +newPercentage + '% + 10px)');
+						//Mathieu override: using fixed width for progress bar
+						bar.css('width', (newPercentage*2.5+10) + ' px)');
 						input.val(newPercentage);
 						electionProjector.recalculateSeats(input.get(0));
 					}
@@ -181,7 +189,9 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 
 			});
 
-			progressContainers.mouseup(finishDrag);
+
+			$(window).mouseup(finishDrag);
+			//progressContainers.parent.mouseup(finishDrag);
 
 		});
 	}
