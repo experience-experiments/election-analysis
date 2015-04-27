@@ -130,8 +130,7 @@ module.exports = function (grunt) {
 						'scripts/*.js',
 						'data/*.json',
 						'data/edited.svg',
-						'styles/*.css',
-						'styles/fonts/*.ttf',
+						'styles/**',
 						'images/*',
 						'{,*/}*.html'
 					]
@@ -141,7 +140,7 @@ module.exports = function (grunt) {
 					cwd: 'bower_components',
 					src: [
 						'd3/d3.min.js',
-						'jquery/dist/jquery.min.js'
+						'jquery/dist/jquery.min*'
 					],
 					dest: '<%= config.dist %>/bower_components/'
 				}]
