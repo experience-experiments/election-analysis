@@ -267,6 +267,11 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
     height: 33px;
     line-height: 30px;
     width: 600px;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select:none;
 }
 
 .controls .party-row span.logo {
@@ -337,14 +342,6 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
     max-width: 100%;
     margin-bottom: 20px;
 }
-
-
-.unselectable { 
-        -moz-user-select: none; 
-        -khtml-user-select: none; 
-        -webkit-user-select: none; 
-        -o-user-select: none; 
-} 
 
 .detail{
     background-color: white;
