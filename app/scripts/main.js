@@ -167,7 +167,6 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 			var el = document.querySelector('article.' + id);
 			if(el && id === scenarioId){
 				el.classList.remove('hidden');
-				history.pushState(null, null, '#' + id);
 			} else if(el){
 				el.classList.add('hidden');
 			}
@@ -179,21 +178,8 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 		resetEl.classList.add('hidden');
 	};
 
-
-	if(window.location.hash){
-		scenariosEl.value = window.location.hash.substring(1);
-		switchScenario(window.location.hash.substring(1));
-	}
-
 	scenariosEl.addEventListener('change',function(e){
 		switchScenario(e.target.value);
-	});
-
-	window.addEventListener('popstate', function(){
-		if(window.location.hash){
-			scenariosEl.value = window.location.hash.substring(1);
-			switchScenario(window.location.hash.substring(1));
-		}
 	});
 
 	function addDragHandlers(progressContainers) {
