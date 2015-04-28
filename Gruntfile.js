@@ -132,6 +132,7 @@ module.exports = function (grunt) {
 						'data/edited.svg',
 						'styles/**',
 						'images/*',
+						'robots.txt',
 						'{,*/}*.html'
 					]
 				}, {

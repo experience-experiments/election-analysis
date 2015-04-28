@@ -439,6 +439,12 @@ button #reset {
     margin-left: -10px;
 }
 
+.current-projection-result small{
+    color: #999;
+    font-size: 9px;
+    font-style: italic;
+}
+
 .winner span.logo {
     display: inline;
     width: 66px;
