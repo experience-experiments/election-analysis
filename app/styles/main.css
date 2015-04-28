@@ -32,7 +32,7 @@ header a{
     vertical-align: top;
     text-decoration: none;
     font-size: 32px;
-
+    font-weight: 700;
 }
 
 header a img{
@@ -70,15 +70,17 @@ header a:visited{
     margin-top: calc(100vh - 200px);
     text-transform: uppercase;
     font-style: normal;
-    font-size: 18px;
-
+    font-size: 32px;
+    font-weight: 200;
+    padding-top: 8px;
+    padding-left: 20px;
 }
 
 .title-container h1:before{
     position: absolute;
-    top:-20px;
-    left: -67px;
-    content:url('../images/header_Icon.png');
+    top: -6px;
+    left: -47px;
+    content: url('../images/header_Icon.png');
 }
 
 .svg-container{
@@ -91,13 +93,14 @@ header a:visited{
 .side-controls {
     width: 40%;
     float: left;
-    padding-left: 10px;
+    padding-left: 20px;
     padding-right: 0;
-    padding-right: 0;
+    padding-right: 20px;
     height: 100vh;
     border-left: 10px solid #003142;
     overflow-x: hidden;
     overflow-y: auto;
+    padding-top: 20px;
 }
 
 svg {
@@ -408,14 +411,13 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
 select.scenarios {
     font-size: 16px;
     line-height: 18px;
-
-    width: 60%;
-    margin-bottom: 10px;
+    width: 80%;
+    margin-bottom: 20px;
     border: 1px solid darkgray;
     display: inline;
-
     border-radius: 3px;
     background-color: white;
+    margin-top: 10px;
 }
 
 select.scenarios option {
@@ -426,11 +428,12 @@ select.scenarios option {
 button #reset {
     display: inline;
     height: 16px;
+    width: 18%;
 }
 
 
 .current-projection-result{
-
+    border-top: 1px solid #eeeeee
 }
 
 .current-projection-result .winner{
@@ -473,8 +476,11 @@ button #reset {
 }
 
 article.scenario{
-    font-size: 13px;
+    font-size: 14px;
     padding-right: 20px;
+    margin-top: 24px;
+    font-weight: 200;
+    line-height: 22px;
 }
 
 @media screen and (max-width: 800px), screen and (max-height: 600px) {
