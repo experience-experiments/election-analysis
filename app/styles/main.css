@@ -422,8 +422,7 @@ select.scenarios {
 
 
 #tooltip{
-    background: #003142;
-    opacity: 0.75;
+    background: rgba(0,49,66,0.75);
 
     color: #fff;    
     padding: 5px 19px;
@@ -431,6 +430,9 @@ select.scenarios {
     z-index: 198;
 
     font-family: caslon,sans,arial;
+    font-size: 18px;
+    padding-bottom: 2px;
+
     
 }
 

@@ -63,9 +63,12 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	document.getElementById('reset').addEventListener('click',electionProjector.resetPercentages.bind(electionProjector), false);
 	document.addEventListener('mousemove', function (e) {
 		mouseTracker = {
-			x: e.pageX - (e.clientX - e.offsetX),
-			y: e.pageY - (e.clientY - e.offsetY)
+			//x: e.pageX - (e.clientX - e.offsetX),
+			//y: e.pageY - (e.clientY - e.offsetY)
+			x: e.pageX ,
+			y: e.pageY 
 		};
+		console.log(mouseTracker);
 	});
 
 	var zoomed = function() {
@@ -164,6 +167,23 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	window.onresize = resized;
 
 	function addDragHandlers(progressContainers) {
+
+		progressContainers.find('.handle').mousemove(function (downEvent) {
+			var handleEl = downEvent.target;
+			console.log(downEvent.target.parentNode.parentNode.parentNode);
+			console.log(mouseTracker);
+			
+			tooltipEl.html(downEvent.target.parentNode.parentNode.parentNode.id);
+			tooltipEl.style("opacity", "1");
+			tooltipEl.style("left", -20 + mouseTracker.x + "px");
+			tooltipEl.style("top", (-55 + mouseTracker.y) + "px");
+		});
+		progressContainers.find('.handle').mouseout(function (downEvent) {
+
+			tooltipEl.style("opacity", "0");
+			tooltipEl.style("left", (-20000 + mouseTracker.x) + "px");
+		});
+
 		progressContainers.find('.handle').mousedown(function (downEvent) {
 			var handleEl = downEvent.target;
 			var fullBar = window.jQuery(handleEl.parentNode.parentNode);
