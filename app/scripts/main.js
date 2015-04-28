@@ -67,25 +67,6 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 		};
 	});
 
-	d3.select(svgContainer).selectAll('button').data(['in','out'])
-		.enter().append('button')
-		.html(function(d){return d === 'in'?'+':'-';})
-		.attr('id', function(d){return d;})
-		.on('click', function(d){
-			var scale = Number(zoom.scale());
-			var translate = [width / 2 - scale * (CONSTANTS.IMAGE_WIDTH/2), height / 2 - scale * (CONSTANTS.IMAGE_HEIGHT/2)];
-
-			if(d === 'in'){
-				scale = Math.floor(scale) + 1;
-			} else {
-				scale = Math.floor(scale) - 1;
-			}
-			if(scale >= CONSTANTS.MIN_SCALE && scale <= CONSTANTS.MAX_SCALE){
-				svg.call(zoom.translate(translate).scale(scale).event);
-			}
-		});
-
-
 	var zoomed = function() {
 		var translate = d3.event.translate;
 		var scale = d3.event.scale;
