@@ -471,6 +471,27 @@ article.scenario{
     padding-right: 20px;
 }
 
+
+.svg-container button{
+    top: 10px;
+    z-index: 2000;
+    background: transparent;
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    color: white;
+    font-size: 30px;
+    line-height: 25px;
+}
+
+button#in{
+    left: 80px;
+}
+
+button#out{
+    left: 130px;
+}
+
 @media screen and (max-width: 800px), screen and (max-height: 600px) {
     body:after {
         content:'This app is designed for screens larger than 800 x 600.';
