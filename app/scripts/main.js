@@ -11,7 +11,12 @@ var CONSTANTS = {
 
 var scenarios = {
 	'results2010':{'tory': 36.1, 'labour': 29.0, 'libdem': 23.0, 'snp': 1.7, 'pc': 0.6, 'green': 1.0, ukip: 3.1, 'other': 5.5},
-	'ukipInsurgence': {'tory': 23.9, 'labour': 25.4, 'libdem': 6.9, 'snp': 2.5, 'pc': 0.7, 'green': 7.9, 'ukip': 27.5, 'other': 5.2}
+	'ukipInsurgence': {'tory': 23.9, 'labour': 25.4, 'libdem': 6.9, 'snp': 2.5, 'pc': 0.7, 'green': 7.9, 'ukip': 27.5, 'other': 5.2},
+	'snpRout': {'tory': 23.9, 'labour': 25.4, 'libdem': 6.9, 'snp': 2.5, 'pc': 0.7, 'green': 7.9, 'ukip': 27.5, 'other': 5.2},
+	'riseOfTheNutters': {'tory': 23.9, 'labour': 25.4, 'libdem': 6.9, 'snp': 2.5, 'pc': 0.7, 'green': 7.9, 'ukip': 27.5, 'other': 5.2},
+	'libdemsWinAMajority': {'tory': 23.9, 'labour': 25.4, 'libdem': 6.9, 'snp': 2.5, 'pc': 0.7, 'green': 7.9, 'ukip': 27.5, 'other': 5.2},
+	'ed': {'tory': 23.9, 'labour': 25.4, 'libdem': 6.9, 'snp': 2.5, 'pc': 0.7, 'green': 7.9, 'ukip': 27.5, 'other': 5.2},
+	'dave': {'tory': 23.9, 'labour': 25.4, 'libdem': 6.9, 'snp': 2.5, 'pc': 0.7, 'green': 7.9, 'ukip': 27.5, 'other': 5.2}
 };
 
 d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
@@ -35,6 +40,8 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	var selectedEl = null;
 	var svgEl = document.querySelector('svg');
 
+	var scenariosEl = document.getElementById('scenario-selector');
+
 	var svg = d3.select('svg').attr('width', width).attr('height', height);
 	var allG = d3.selectAll('svg g').attr('transform','translate(' + defaultTranslate[0] + ',' + defaultTranslate[1] + ')scale('+defaultScale+')');
 	var allPaths = d3.selectAll('svg path');
@@ -44,20 +51,6 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 		el.addEventListener('change',function(){
 			electionProjector.recalculateSeats(el);
 		});
-	});
-
-	document.getElementById('scenario-selector').addEventListener('change',function(e){
-		for(var i in scenarios){
-			if(i === e.target.value){
-				document.querySelector('.' + i).classList.remove('hidden');
-			} else {
-				document.querySelector('.' + i).classList.add('hidden');
-			}
-		}
-		resetMap();
-		electionProjector.setProjection(scenarios[e.target.value]);
-		electionProjector.updateVotes();
-		electionProjector.updateTotalNumberOfSeats();
 	});
 
 	document.getElementById('reset').addEventListener('click',electionProjector.resetPercentages.bind(electionProjector), false);
@@ -70,6 +63,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 		};
 		console.log(mouseTracker);
 	});
+
 
 	var zoomed = function() {
 		var translate = d3.event.translate;
@@ -165,6 +159,38 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	svg.on('mouseover', mouseOver);
 	svg.on('mouseout', mouseOut);
 	window.onresize = resized;
+
+	var switchScenario = function(scenarioId){
+		for(var id in scenarios){
+			if(id === scenarioId){
+				document.querySelector('.' + id).classList.remove('hidden');
+				history.pushState(null, null, '#' + id);
+			} else {
+				document.querySelector('.' + id).classList.add('hidden');
+			}
+		}
+		resetMap();
+		electionProjector.setProjection(scenarios[scenarioId]);
+		electionProjector.updateVotes();
+		electionProjector.updateTotalNumberOfSeats();
+	};
+
+
+	if(window.location.hash){
+		scenariosEl.value = window.location.hash.substring(1);
+		switchScenario(window.location.hash.substring(1));
+	}
+
+	scenariosEl.addEventListener('change',function(e){
+		switchScenario(e.target.value);
+	});
+
+	window.addEventListener('popstate', function(){
+		if(window.location.hash){
+			scenariosEl.value = window.location.hash.substring(1);
+			switchScenario(window.location.hash.substring(1));
+		}
+	});
 
 	function addDragHandlers(progressContainers) {
 
