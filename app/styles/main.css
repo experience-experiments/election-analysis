@@ -117,7 +117,7 @@ svg path.selected:hover{
 }
 
 svg.selected path:not(.selected) {
-    opacity: 0.2;
+    opacity: 0.4;
 }
 
 svg *.seat { stroke: white; stroke-width: 0.2; }
