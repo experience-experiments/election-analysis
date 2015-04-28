@@ -12,11 +12,11 @@ var CONSTANTS = {
 var scenarios = {
 	'results2010':{'tory': 36.1, 'labour': 29.0, 'libdem': 23.0, 'snp': 1.7, 'pc': 0.6, 'green': 1.0, ukip: 3.1, 'other': 5.5},
 	'ukipInsurgence': {'tory': 23.9, 'labour': 25.4, 'libdem': 6.9, 'snp': 2.5, 'pc': 0.7, 'green': 7.9, 'ukip': 27.5, 'other': 5.2},
-	'snpRout': {'tory': 23.9, 'labour': 25.4, 'libdem': 6.9, 'snp': 2.5, 'pc': 0.7, 'green': 7.9, 'ukip': 27.5, 'other': 5.2},
-	'riseOfTheNutters': {'tory': 23.9, 'labour': 25.4, 'libdem': 6.9, 'snp': 2.5, 'pc': 0.7, 'green': 7.9, 'ukip': 27.5, 'other': 5.2},
-	'libdemsWinAMajority': {'tory': 23.9, 'labour': 25.4, 'libdem': 6.9, 'snp': 2.5, 'pc': 0.7, 'green': 7.9, 'ukip': 27.5, 'other': 5.2},
-	'edsRedsWin': {'tory': 23.9, 'labour': 25.4, 'libdem': 6.9, 'snp': 2.5, 'pc': 0.7, 'green': 7.9, 'ukip': 27.5, 'other': 5.2},
-	'daveDefiesDoubters': {'tory': 23.9, 'labour': 25.4, 'libdem': 6.9, 'snp': 2.5, 'pc': 0.7, 'green': 7.9, 'ukip': 27.5, 'other': 5.2}
+	'snpRout': {'tory': 29.6, 'labour': 29.5, 'libdem': 8, 'snp': 10.1, 'pc': 2.5, 'green': 7, 'ukip': 13.8, 'other': 6.5},
+	'riseOfTheNutters': {'tory': 16.5, 'labour': 16.4, 'libdem': 2.4, 'snp': 2.4, 'pc': 2.4, 'green': 2.4, 'ukip': 2.2, 'other': 61.1},
+	'libdemsWinAMajority': {'tory': 24, 'labour': 20.3, 'libdem': 36.6, 'snp': 6.3, 'pc': 1.2, 'green': 6.1, 'ukip': 6.3, 'other': 2.4},
+	'edsRedsWin': {'tory': 26.4, 'labour': 30.4, 'libdem': 18.8, 'snp': 4.9, 'pc': 0.6, 'green': 5.6, 'ukip': 9.7, 'other': 1.3},
+	'daveDefiesDoubters': {'tory': 35.4, 'labour': 26, 'libdem': 6.9, 'snp': 6.6, 'pc': 2.3, 'green': 6.8, 'ukip': 13, 'other': 2.5}
 };
 
 d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
