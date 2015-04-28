@@ -40,6 +40,8 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	var selectedEl = null;
 	var svgEl = document.querySelector('svg');
 
+	var scenariosEl = document.getElementById('scenario-selector');
+
 	var svg = d3.select('svg').attr('width', width).attr('height', height);
 	var allG = d3.selectAll('svg g').attr('transform','translate(' + defaultTranslate[0] + ',' + defaultTranslate[1] + ')scale('+defaultScale+')');
 	var allPaths = d3.selectAll('svg path');
@@ -51,20 +53,6 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 		});
 	});
 
-	document.getElementById('scenario-selector').addEventListener('change',function(e){
-		for(var i in scenarios){
-			if(i === e.target.value){
-				document.querySelector('.' + i).classList.remove('hidden');
-			} else {
-				document.querySelector('.' + i).classList.add('hidden');
-			}
-		}
-		resetMap();
-		electionProjector.setProjection(scenarios[e.target.value]);
-		electionProjector.updateVotes();
-		electionProjector.updateTotalNumberOfSeats();
-	});
-
 	document.getElementById('reset').addEventListener('click',electionProjector.resetPercentages.bind(electionProjector), false);
 	document.addEventListener('mousemove', function (e) {
 		mouseTracker = {
@@ -72,6 +60,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 			y: e.pageY - (e.clientY - e.offsetY)
 		};
 	});
+
 
 	var zoomed = function() {
 		var translate = d3.event.translate;
@@ -167,6 +156,38 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	svg.on('mouseover', mouseOver);
 	svg.on('mouseout', mouseOut);
 	window.onresize = resized;
+
+	var switchScenario = function(scenarioId){
+		for(var id in scenarios){
+			if(id === scenarioId){
+				document.querySelector('.' + id).classList.remove('hidden');
+				history.pushState(null, null, '#' + id);
+			} else {
+				document.querySelector('.' + id).classList.add('hidden');
+			}
+		}
+		resetMap();
+		electionProjector.setProjection(scenarios[scenarioId]);
+		electionProjector.updateVotes();
+		electionProjector.updateTotalNumberOfSeats();
+	};
+
+
+	if(window.location.hash){
+		scenariosEl.value = window.location.hash.substring(1);
+		switchScenario(window.location.hash.substring(1));
+	}
+
+	scenariosEl.addEventListener('change',function(e){
+		switchScenario(e.target.value);
+	});
+
+	window.addEventListener('popstate', function(){
+		if(window.location.hash){
+			scenariosEl.value = window.location.hash.substring(1);
+			switchScenario(window.location.hash.substring(1));
+		}
+	});
 
 	function addDragHandlers(progressContainers) {
 		progressContainers.find('.handle').mousedown(function (downEvent) {
