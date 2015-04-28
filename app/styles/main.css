@@ -383,14 +383,19 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
 
 select.scenarios {
     font-size: 16px;
+    line-height: 18px;
+
     width: 80%;
     margin-bottom: 10px;
     border: 1px solid darkgray;
-    line-height: 1;
-    outline: 0;
+
     border-radius: 3px;
     background-color: white;
-    padding: 0.65em 2.5em 0.55em 0.75em;
+}
+
+select.scenarios option {
+    font-size: 16px;
+    line-height: 18px;
 }
 
 .current-projection-result{
@@ -437,6 +442,8 @@ select.scenarios {
 article.scenario{
     width: 80%;
     font-size: 14px;
+    height: calc(100vh - 450px);
+    overflow-y: scroll;
 }
 
 @media screen and (max-width: 760px), screen and (max-height: 560px) {

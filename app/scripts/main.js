@@ -53,7 +53,6 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 		});
 	});
 
-	document.getElementById('reset').addEventListener('click',electionProjector.resetPercentages.bind(electionProjector), false);
 	document.addEventListener('mousemove', function (e) {
 		mouseTracker = {
 			x: e.pageX ,
@@ -159,11 +158,14 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 
 	var switchScenario = function(scenarioId){
 		for(var id in scenarios){
-			if(id === scenarioId){
-				document.querySelector('.' + id).classList.remove('hidden');
-				history.pushState(null, null, '#' + id);
-			} else {
-				document.querySelector('.' + id).classList.add('hidden');
+			var el = document.querySelector('article.' + id);
+			if(el){
+				if(id === scenarioId){
+					el.classList.remove('hidden');
+					history.pushState(null, null, '#' + id);
+				} else {
+					el.classList.add('hidden');
+				}
 			}
 		}
 		resetMap();
