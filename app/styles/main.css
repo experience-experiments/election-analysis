@@ -418,8 +418,6 @@ select.scenarios {
     line-height: 66px;
 }
 
-
-
 #tooltip{
     background: #003142;
     opacity: 0.75;
@@ -431,6 +429,11 @@ select.scenarios {
 
     font-family: caslon,sans,arial;
     
+}
+
+article.scenario{
+    width: 80%;
+    font-size: 14px;
 }
 
 @media screen and (max-width: 760px), screen and (max-height: 560px) {
