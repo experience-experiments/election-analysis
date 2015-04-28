@@ -73,17 +73,16 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 		.attr('id', function(d){return d;})
 		.on('click', function(d){
 			var scale = Number(zoom.scale());
+			var translate = [width / 2 - scale * (CONSTANTS.IMAGE_WIDTH/2), height / 2 - scale * (CONSTANTS.IMAGE_HEIGHT/2)];
+
 			if(d === 'in'){
 				scale = Math.floor(scale) + 1;
 			} else {
 				scale = Math.floor(scale) - 1;
 			}
 			if(scale >= CONSTANTS.MIN_SCALE && scale <= CONSTANTS.MAX_SCALE){
-				console.log(zoom.translate());
-				var translate = [zoom.translate()[0],zoom.translate()[1]]
 				svg.call(zoom.translate(translate).scale(scale).event);
 			}
-
 		});
 
 
