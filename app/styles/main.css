@@ -75,9 +75,6 @@ header a:visited{
     content:url('../images/header_Icon.png');
 }
 
-
-
-
 .svg-container{
     padding: 0;
     float: left;
@@ -87,14 +84,14 @@ header a:visited{
 
 .side-controls {
     width: 40%;
-
     float: left;
     padding-left: 10px;
     padding-right: 0;
     padding-right: 0;
     height: 100vh;
     border-left: 10px solid #003142;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 svg {
@@ -309,11 +306,15 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
     margin-right: -4px;
 }
 
+.controls .party-row .input{
+    position: relative;
+}
+
 .controls .party-row .input:before {
     content: '%';
     font-size: 10px;
     position: absolute;
-    margin-left: 28px;
+    left: 27px;
 }
 
 .controls .party-row span.progress {
@@ -422,10 +423,7 @@ button #reset {
 
 
 .current-projection-result{
-    position: absolute;
-    bottom: 10px;
-    left: calc(60% + 10px);
-    width: calc(40% - 20px);
+
 }
 
 .current-projection-result .winner{
@@ -463,10 +461,8 @@ button #reset {
 }
 
 article.scenario{
-    width: 80%;
-    font-size: 14px;
-    height: calc(100vh - 450px);
-    overflow-y: scroll;
+    font-size: 13px;
+    padding-right: 20px;
 }
 
 @media screen and (max-width: 760px), screen and (max-height: 560px) {
