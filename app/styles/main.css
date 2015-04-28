@@ -433,3 +433,17 @@ select.scenarios {
     
 }
 
+@media screen and (max-width: 760px), screen and (max-height: 560px) {
+    body:after {
+        content:'This app is designed for screens larger than 800 x 600.';
+        position:absolute;
+        top: 10px;
+        left: 10px;
+        width: auto;
+        height: auto;
+        background: #003142;
+        opacity: 0.75;
+        color: white;
+        font-size: 52px;
+    }
+}
