@@ -32,6 +32,12 @@ header a{
     vertical-align: top;
     text-decoration: none;
     font-size: 32px;
+
+}
+
+header a img{
+    float: right;
+    margin-right: 10px;
 }
 
 header a:visited{
