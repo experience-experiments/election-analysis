@@ -83,12 +83,6 @@ svg {
     background: radial-gradient(#b8def1, #7ebad8);
 }
 
-
-.controls #reset {
-    display: inline-block;
-}
-
-
 svg path:hover {
     opacity: 0.5;
 }
@@ -385,9 +379,10 @@ select.scenarios {
     font-size: 16px;
     line-height: 18px;
 
-    width: 80%;
+    width: 60%;
     margin-bottom: 10px;
     border: 1px solid darkgray;
+    display: inline;
 
     border-radius: 3px;
     background-color: white;
@@ -397,6 +392,12 @@ select.scenarios option {
     font-size: 16px;
     line-height: 18px;
 }
+
+button #reset {
+    display: inline;
+    height: 16px;
+}
+
 
 .current-projection-result{
     position: absolute;

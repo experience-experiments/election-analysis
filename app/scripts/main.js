@@ -41,6 +41,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	var svgEl = document.querySelector('svg');
 
 	var scenariosEl = document.getElementById('scenario-selector');
+	var resetEl = document.getElementById('reset');
 
 	var svg = d3.select('svg').attr('width', width).attr('height', height);
 	var allG = d3.selectAll('svg g').attr('transform','translate(' + defaultTranslate[0] + ',' + defaultTranslate[1] + ')scale('+defaultScale+')');
@@ -53,6 +54,10 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 		});
 	});
 
+	resetEl.addEventListener('click',function(){
+		resetEl.classList.add('hidden');
+		electionProjector.resetPercentages.bind(electionProjector)();
+	}, false);
 	document.addEventListener('mousemove', function (e) {
 		mouseTracker = {
 			x: e.pageX ,
@@ -159,13 +164,11 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	var switchScenario = function(scenarioId){
 		for(var id in scenarios){
 			var el = document.querySelector('article.' + id);
-			if(el){
-				if(id === scenarioId){
-					el.classList.remove('hidden');
-					history.pushState(null, null, '#' + id);
-				} else {
-					el.classList.add('hidden');
-				}
+			if(el && id === scenarioId){
+				el.classList.remove('hidden');
+				history.pushState(null, null, '#' + id);
+			} else if(el){
+				el.classList.add('hidden');
 			}
 		}
 		resetMap();
@@ -227,6 +230,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 				progressContainers.unbind("mouseup");
 				fullBar.removeClass('dragging');
 				bar.removeClass('active');
+				resetEl.classList.remove('hidden');
 			}
 
 			progressContainers.mousemove(function (moveEvent) {
