@@ -175,6 +175,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 		electionProjector.setProjection(scenarios[scenarioId]);
 		electionProjector.updateVotes();
 		electionProjector.updateTotalNumberOfSeats();
+		resetEl.classList.add('hidden');
 	};
 
 
@@ -230,7 +231,6 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 				progressContainers.unbind("mouseup");
 				fullBar.removeClass('dragging');
 				bar.removeClass('active');
-				resetEl.classList.remove('hidden');
 			}
 
 			progressContainers.mousemove(function (moveEvent) {
@@ -248,6 +248,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 						bar.css('width', (newPercentage*2.0+10) + ' px)');
 						input.val(newPercentage);
 						electionProjector.recalculateSeats(input.get(0));
+						resetEl.classList.remove('hidden');
 					}
 				}
 
