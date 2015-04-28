@@ -25,6 +25,7 @@
 	var inputElements = {};
 	var barElements = {};
 	var initialDistribution = {};
+	var currentBaseDistribution = {};
 	var previousState = {};
 
 	function setPartyBarWidth(party, width){
@@ -52,6 +53,7 @@
 	};
 
 	ElectionProjector.prototype.setProjection = function(projectedValues){
+		currentBaseDistribution = projectedValues;
 		for (var party in projectedValues) {
 			previousState[party] = inputElements[party].value = projectedValues[party];
 			setPartyBarWidth(party, projectedValues[party]);
@@ -59,7 +61,7 @@
 	};
 
 	ElectionProjector.prototype.resetPercentages = function(){
-		this.setProjection(initialDistribution);
+		this.setProjection(currentBaseDistribution);
 		this.updateVotes();
 		this.updateTotalNumberOfSeats();
 	};

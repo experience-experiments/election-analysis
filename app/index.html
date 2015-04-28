@@ -30,19 +30,28 @@
 <div class="svg-container"></div>
 <div class="side-controls">
 
-    <h3>Election 2015</h3>
+    <header>
+        <a href="http://rma-consulting.com/">
+            Election 2015 by
+            <img width="auto" height="40px" src="http://v3.rma-consulting.com/wp-content/uploads/2015/04/rma_logo_test.png" alt="RMA Consulting">
+        </a>
+    </header>
 
-    <select id="scenario-selector" class="scenarios">
-        <option value="results2010">% share of votes based on 2010 Results</option>
-        <option value="ukipInsurgence">UKIP Insurgency</option>
-        <option value="snpRout">SNP Rout</option>
-        <option value="riseOfTheNutters">Rise of the nutters</option>
-        <option value="libdemsWinAMajority">Lib Dems win a majority</option>
-        <option value="ed">Ed</option>
-        <option value="dave">Dave</option>
-    </select>
+    <div>
+        <select id="scenario-selector" class="scenarios">
+            <option value="results2010">Play it again like it's 2010</option>
+            <option value="ukipInsurgence">UKIP Insurgency</option>
+            <option value="snpRout">SNP Rout</option>
+            <option value="riseOfTheNutters">Rise of the nutters</option>
+            <option value="libdemsWinAMajority">Lib Dems win a majority</option>
+            <option value="ed">Ed</option>
+            <option value="dave">Dave</option>
+        </select>
+        <button id="reset" class="hidden">Undo Changes</button>
+    </div>
 
-    <div class="controls results2010">
+
+    <div class="controls">
         <div id="Conservatives" class="party-row tory">
             <span class="logo"></span>
             <span class="input"><input type="number" id="tory_input" step="0.5" min="0.1" max="99"/></span>
@@ -107,9 +116,27 @@
                 <span class="value">0</span>
             </span>
         </div>
-        <button id="reset">reset</button>
+
     </div>
 
+    <article class="scenario results2010">
+        <p>
+            The map on the left shows the winners for each constituency as per 2010 election results.
+        </p>
+        <p>
+            You can drag the bars above or use the input controls to adjust national percentage of votes to see how it impacts the constituencies.
+            <br/>
+            Explore some scenarios we prepared for a bit of fun by selecting a scenario from the dropdown list above.
+        </p>
+        <p>
+            Select a constituency to view the number of votes for each candidate.
+            You can also zoom and pan the map to find your constituency.
+            You can click on the selected constituency again or click on the sea to reset the zoom level.
+        </p>
+        <p>
+            Have fun!
+        </p>
+    </article>
     <article class="scenario ukipInsurgence hidden">
         <p>
         Nigel and his barmy army did well at the European Elections - ironic we know - but what would happen if that picture was replicated across the country in the general election?

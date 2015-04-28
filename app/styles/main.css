@@ -18,6 +18,28 @@ body {
     font-family: caslon, sans-serif;
 }
 
+header{
+    padding-top: 5px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+header a{
+    color: black;
+    display: inline;
+    line-height: 40px;
+    height: 40px;
+    vertical-align: top;
+    text-decoration: none;
+    font-size: 32px;
+}
+
+header a:visited{
+    color: black;
+    text-decoration: none;
+
+}
+
 .title-container{
     display: table-cell;
     background-color: #003142;
@@ -53,9 +75,6 @@ body {
     content:url('../images/header_Icon.png');
 }
 
-
-
-
 .svg-container{
     padding: 0;
     float: left;
@@ -65,14 +84,14 @@ body {
 
 .side-controls {
     width: 40%;
-
     float: left;
     padding-left: 10px;
     padding-right: 0;
     padding-right: 0;
     height: 100vh;
     border-left: 10px solid #003142;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 svg {
@@ -82,12 +101,6 @@ svg {
     background: -moz-radial-gradient(#b8def1, #7ebad8);
     background: radial-gradient(#b8def1, #7ebad8);
 }
-
-
-.controls #reset {
-    display: inline-block;
-}
-
 
 svg path:hover {
     opacity: 0.5;
@@ -293,11 +306,15 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
     margin-right: -4px;
 }
 
+.controls .party-row .input{
+    position: relative;
+}
+
 .controls .party-row .input:before {
     content: '%';
     font-size: 10px;
     position: absolute;
-    margin-left: 28px;
+    left: 27px;
 }
 
 .controls .party-row span.progress {
@@ -384,21 +401,30 @@ svg *.ind { fill: #C0C0C0; }     /* independent candidate */
 
 select.scenarios {
     font-size: 16px;
-    width: 80%;
+    line-height: 18px;
+
+    width: 60%;
     margin-bottom: 10px;
     border: 1px solid darkgray;
-    line-height: 1;
-    outline: 0;
+    display: inline;
+
     border-radius: 3px;
     background-color: white;
-    padding: 0.65em 2.5em 0.55em 0.75em;
 }
 
+select.scenarios option {
+    font-size: 16px;
+    line-height: 18px;
+}
+
+button #reset {
+    display: inline;
+    height: 16px;
+}
+
+
 .current-projection-result{
-    position: absolute;
-    bottom: 10px;
-    left: calc(60% + 10px);
-    width: calc(40% - 20px);
+
 }
 
 .current-projection-result .winner{
@@ -436,8 +462,8 @@ select.scenarios {
 }
 
 article.scenario{
-    width: 80%;
-    font-size: 14px;
+    font-size: 13px;
+    padding-right: 20px;
 }
 
 @media screen and (max-width: 760px), screen and (max-height: 560px) {

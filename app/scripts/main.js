@@ -41,6 +41,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 	var svgEl = document.querySelector('svg');
 
 	var scenariosEl = document.getElementById('scenario-selector');
+	var resetEl = document.getElementById('reset');
 
 	var svg = d3.select('svg').attr('width', width).attr('height', height);
 	var allG = d3.selectAll('svg g').attr('transform','translate(' + defaultTranslate[0] + ',' + defaultTranslate[1] + ')scale('+defaultScale+')');
@@ -53,7 +54,10 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 		});
 	});
 
-	document.getElementById('reset').addEventListener('click',electionProjector.resetPercentages.bind(electionProjector), false);
+	resetEl.addEventListener('click',function(){
+		resetEl.classList.add('hidden');
+		electionProjector.resetPercentages.bind(electionProjector)();
+	}, false);
 	document.addEventListener('mousemove', function (e) {
 		mouseTracker = {
 			x: e.pageX ,
@@ -159,17 +163,19 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 
 	var switchScenario = function(scenarioId){
 		for(var id in scenarios){
-			if(id === scenarioId){
-				document.querySelector('.' + id).classList.remove('hidden');
+			var el = document.querySelector('article.' + id);
+			if(el && id === scenarioId){
+				el.classList.remove('hidden');
 				history.pushState(null, null, '#' + id);
-			} else {
-				document.querySelector('.' + id).classList.add('hidden');
+			} else if(el){
+				el.classList.add('hidden');
 			}
 		}
 		resetMap();
 		electionProjector.setProjection(scenarios[scenarioId]);
 		electionProjector.updateVotes();
 		electionProjector.updateTotalNumberOfSeats();
+		resetEl.classList.add('hidden');
 	};
 
 
@@ -191,17 +197,17 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 
 	function addDragHandlers(progressContainers) {
 
-		progressContainers.find('.progress-bar').mousemove(function (moveEvent) {
-			var rowEl = moveEvent.target.parentNode.parentNode;
-			if(moveEvent.target.classList.contains('handle')){
-				rowEl = rowEl.parentNode;
+		progressContainers.parent('.party-row').mousemove(function (moveEvent) {
+			console.log(moveEvent.target);
+			var rowEl = this;
+			if(!moveEvent.target.classList.contains('progress')){
+				tooltipEl.html(rowEl.id);
+				tooltipEl.style("opacity", "1");
+				tooltipEl.style("left", -20 + mouseTracker.x + "px");
+				tooltipEl.style("top", (-55 + mouseTracker.y) + "px");
 			}
-			tooltipEl.html(rowEl.id);
-			tooltipEl.style("opacity", "1");
-			tooltipEl.style("left", -20 + mouseTracker.x + "px");
-			tooltipEl.style("top", (-55 + mouseTracker.y) + "px");
 		});
-		progressContainers.find('.progress-bar').mouseout(function () {
+		progressContainers.parent('.party-row').mouseout(function () {
 			tooltipEl.style("opacity", "0");
 			tooltipEl.style("left", (-20000 + mouseTracker.x) + "px");
 		});
@@ -242,6 +248,7 @@ d3.xhr('data/edited.svg','image/svg+xml',function(error, svgData){
 						bar.css('width', (newPercentage*2.0+10) + ' px)');
 						input.val(newPercentage);
 						electionProjector.recalculateSeats(input.get(0));
+						resetEl.classList.remove('hidden');
 					}
 				}
 
